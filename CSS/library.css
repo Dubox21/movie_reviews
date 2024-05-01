@@ -1,5 +1,6 @@
 :root{
-    
+    --colorVioletDark: #470459;
+    --colorBackgroud: #F2F2F2;
 }
 
 * {
@@ -7,7 +8,7 @@
     padding: 0;
 }
 
-body {
+body, button, input {
     font-family: "Outfit", sans-serif;
 }
 
@@ -44,7 +45,7 @@ body {
     gap: 8px;
 }
 
-.btn {
+.btn_btn {
     width: 170px;
     height: 46px;
     font-size: 14px;
@@ -101,6 +102,17 @@ body {
     padding: 0 7px 10px 7px;
 }
 
+.section_allFilm{
+    background-color: var(--colorBackgroud);
+}
+
+.container_section{
+    width: 98%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+}
+
 @media (min-width: 768px) {
     .title_library {
         font-size: 34px;
@@ -110,7 +122,7 @@ body {
         font-size: 30px;
     }
 
-    .btn {
+    .btn_btn {
         width: 200px;
         font-size: 16px;
         gap: 20px;
@@ -153,7 +165,7 @@ body {
         gap: 50px;
     }
 
-    .btn {
+    .btn_btn {
         width: 236px;
         height: 56px;
         font-size: 20px;
@@ -180,4 +192,5 @@ body {
         font-size: 18px;
         padding: 0 140px 18px 140px;
     }
+
 }

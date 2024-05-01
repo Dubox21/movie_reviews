@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Biblioteca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./CSS/library.css">
+    <link rel="stylesheet" href="./CSS/carousel.css">
 </head>
 
 <body>
@@ -20,20 +21,31 @@
         <div class="container_library">
             <h2 class="title_library">Nuestra Biblioteca</h2>
             <div class="container_btn">
-                <button class="btn"><i class="fa-solid fa-photo-film" style="color: #000000;"></i> Todas</button>
-                <button class="btn"><i class="fa-regular fa-thumbs-up" style="color: #000000;"></i> Mejor Valorada</button>
-
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="search" class="search-input" placeholder="Que Buscas?">
+                <button class="btn_btn"><i class="fa-solid fa-photo-film" style="color: #000000;"></i> Todas</button>
+                <button class="btn_btn"><i class="fa-regular fa-thumbs-up" style="color: #000000;"></i> Mejor
+                    Valorada</button>
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="search" class="search-input" placeholder="Que Buscas?">
+                </div>
             </div>
-        </div>
-            <h3  class="subtitle_library">Todas las Peliculas</h3>
-            <p class="description_library">Descubre una amplia selección de películas populares de diferentes géneros y épocas. Desde clásicos
+            <h3 class="subtitle_library">Todas las Peliculas</h3>
+            <p class="description_library">Descubre una amplia selección de películas populares de diferentes géneros y
+                épocas. Desde clásicos
                 atemporales hasta los
                 últimos estrenos, nuestra biblioteca ofrece una experiencia cinematográfica única.</p>
         </div>
     </section>
+    <section class="section_allFilm">
+        <div class="container_section">ordenar
+        <div id="carouselContainer"></div>
+    </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/carousel.js"></script>
 </body>
 
 </html>
