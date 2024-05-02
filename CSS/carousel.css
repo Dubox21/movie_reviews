@@ -1,0 +1,146 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.container_img{
+    width: 230px;
+    height: 280px;
+}
+
+.container_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-fit: fill;
+    border: 2px groove #000;
+}
+
+.container_description{
+    width: 230px;
+    height: 280px;
+    margin-top: 16px;
+    font-size: 18px;
+    text-align: justify; 
+}
+
+.container_description h4 {
+    min-height: 2.9em; 
+}
+
+.film_title{
+    font-size: 16px;
+}
+
+.description-wrapper {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.container_description p{
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: left;
+    
+}
+
+.description-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número máximo de líneas a mostrar */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.description-text.expanded {
+    -webkit-line-clamp: unset; /* Muestra todas las líneas */
+    overflow: visible;
+}
+
+.btn_readMore{
+    background-color: transparent;
+    border: none;
+    color: var(--colorVioletDark);
+}
+
+.btn_film{
+    border-radius: 50px;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border: 1px solid #000;
+    background-color: var(--colorVioletDark);
+    color: white;
+    font-size: 12px;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    color: #f2e205;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+
+@media (min-width: 768px) {
+    .carousel-inner {
+        width: calc(50% - 10px); /* 2 slides por fila en tablet */
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container_img{
+        width: 289px;
+        height: 316px;
+    }
+    .carousel-inner {
+        width: calc(25% - 10px); /* 4 slides por fila en tablet */
+        margin: 0 18px;
+    }
+
+    .carousel-control-prev {
+        left: 0.5;
+    }
+    
+    .carousel-control-next {
+        right: 0.5;
+    }
+}
