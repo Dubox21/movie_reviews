@@ -1,6 +1,8 @@
-:root{
+:root {
     --colorVioletDark: #470459;
     --colorBackgroud: #F2F2F2;
+    --colorBlueLight: #7386BF;
+    --colorYellow: #f2e205;
 }
 
 * {
@@ -8,7 +10,9 @@
     padding: 0;
 }
 
-body, button, input {
+body,
+button,
+input {
     font-family: "Outfit", sans-serif;
 }
 
@@ -102,11 +106,11 @@ body, button, input {
     padding: 0 7px 10px 7px;
 }
 
-.section_allFilm{
+.section_allFilm {
     background-color: var(--colorBackgroud);
 }
 
-.container_section{
+.container_section {
     width: 98%;
     height: auto;
     background-color: white;
