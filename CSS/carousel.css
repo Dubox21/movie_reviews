@@ -3,7 +3,7 @@
     width: 100%;
     margin: 10px auto;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
     transition: all 0.5s ease;
     overflow: hidden;
     background-color: transparent;
@@ -47,8 +47,8 @@
 
 .container_description {
     width: 230px;
-    height: 280px;
-    margin-top: 16px;
+    height: auto;
+    margin: 16px 0;
     font-size: 18px;
     text-align: justify;
 }
