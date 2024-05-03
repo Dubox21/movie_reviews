@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+body{
+    background-color: var(--colorBackgroud);
+}
+
 body,
 button,
 input {
@@ -106,8 +110,9 @@ input {
     padding: 0 7px 10px 7px;
 }
 
-.section_allFilm {
-    background-color: var(--colorBackgroud);
+.section_allFilm, .section_top-rated {
+    width: 100%;
+    height: 100%;
 }
 
 .container_section {
@@ -115,6 +120,20 @@ input {
     height: auto;
     margin: auto;
 }
+
+.container_points {
+    width: 100%;
+    height: 72px;
+    background-color: white;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.container_top-rated__title .subtitle_library{
+    padding: 30px 35px;
+}
+
 
 @media (min-width: 768px) {
     .title_library {

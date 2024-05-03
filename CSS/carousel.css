@@ -106,34 +106,6 @@
     font-size: 12px;
 }
 
-.carousel .points {
-    width: 100%;
-    background-color: white;
-    margin: 1em 0 0;
-    padding: .4em;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel .point {
-    width: 15px;
-    height: 15px;
-    background-color: var(--colorBlueLight);
-    margin: 8px 8px 0;
-    border-radius: 20px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
-    transition: all 0.4s ease;
-    list-style: none;
-}
-
-.carousel .point.active {
-    background-color: var(--colorYellow);
-    transform: scale(1.5);
-    transition: all 0.4s ease;
-}
-
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
@@ -216,10 +188,10 @@
 
    .carousel .carousel-inner {
         display: grid;
-        grid-template-columns: repeat(4, 21%);
+        grid-template-columns: repeat(4, 18.8%);
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 40px;
     }
 
     .carousel-control-prev {
