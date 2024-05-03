@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById(containerId).innerHTML = data;
                 // Luego de cargar el carrusel, inicializamos su funcionalidad
                 initializeCarousel(containerId);
+
+                // Ocultar elementos según el carrusel
+                if (containerId === 'carouselContainer1') {
+                    const ratingStars = document.querySelector(`#${containerId} .rating-stars`);
+                    ratingStars.style.display = 'none';
+                }
             })
             .catch(error => console.error('Error al cargar el carrusel:', error));
     }
@@ -83,13 +89,11 @@ function initializeCarousel(containerId) {
     prevButton.addEventListener('click', function () {
         prevSlide();
         slideFromLeft();
-        updatePoints();
     });
 
     nextButton.addEventListener('click', function () {
         nextSlide();
         slideFromRight();
-        updatePoints()
     });
 
     // Definir animaciones
@@ -134,20 +138,18 @@ function initializeCarousel(containerId) {
         return slidesToShow;
     }
 
-    function updatePoints() {
-        const totalSlidesToShow = getSlidesToShow();
-        const activePointIndex = currentIndex / totalSlidesToShow;
-        const point = document.querySelectorAll('.point');
-        
-        // Iterar sobre cada punto y actualizar su estado
-        point.forEach((eachPoint, i) => {
-            if (i === activePointIndex) {
-                eachPoint.classList.add('active');
-            } else {
-                eachPoint.classList.remove('active');
-            }
-        });
+   function ranking(containerId) {
+    const carouselContainer = document.getElementById(containerId);
+    const ratingStars = carouselContainer.querySelector('.rating-stars');
+
+    if (containerId === 'carouselContainer2') {
+        ratingStars.style.display = 'block';
+    } else {
+        ratingStars.style.display = 'none';
     }
+}
+
+    ranking('carouselContainer2'); // Para el carrusel 2
 }
 
 function toggleDescription(button) {

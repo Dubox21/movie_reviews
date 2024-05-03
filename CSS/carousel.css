@@ -21,7 +21,7 @@
     padding-top: 20px;
 }
 
- .carousel-item {
+.carousel-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,6 +166,22 @@
     animation: slideFromLeft .5s forwards;
 }
 
+.carrusel-2 .rating-stars {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.carrusel-2 .star {
+    font-size: 30px;
+    color: var(--colorVioletDark)
+}
+
+/* Ocultar en el carrusel 1 */
+#carouselContainer1 .rating-stars,
+#carouselContainer1 .star {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .carousel-inner {
         gap: 70px;
@@ -186,7 +202,7 @@
         height: 316px;
     }
 
-   .carousel .carousel-inner {
+    .carousel .carousel-inner {
         display: grid;
         grid-template-columns: repeat(4, 18.8%);
         align-items: center;
