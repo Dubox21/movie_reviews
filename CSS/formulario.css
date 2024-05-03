@@ -1,0 +1,94 @@
+#formulario {
+    width: 70%; /* Ancho del formulario */
+    margin: auto; /* Esto centrará el formulario horizontalmente */
+    margin-top: 50px; /* Margen superior para separarlo del borde superior */
+    margin-bottom: 50px; /* Margen inferior para separarlo del borde inferior */
+    padding: 20px;
+}
+
+.form-control,
+.form-select,
+.form-check-label {
+    margin: 0 auto; /* Esto centrará los elementos del formulario horizontalmente */
+    text-align: left; /* Ajustar el texto alineado a la izquierda */
+    display: block; /* Asegurar que los elementos se muestren como bloques */
+    width: 70%; /* Ancho del elemento del formulario */
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    
+}
+
+section {
+    background-color: #c4c6c17b;
+    padding: 20px;
+}
+
+.fondo-form {
+    background-color: #c4c6c17b;
+    padding: 30px;
+}
+
+.subtitulo-formulario h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.subtitulo-formulario h4 {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.recuadro-form {
+    background-color: #c4c6c17b;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-control {
+    font-size: 1em;
+    padding: 10px;
+    border: 1px solid #be9a9a;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 70%;
+}
+
+/*Caracteristicas del motivo de la consulta*/
+.form-select {
+    font-size: 1em;
+    padding: 10px;
+    border: 1px solid #be9a9a;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 74%;
+}
+
+.form-check-label {
+    font-size: 1em;
+    margin-bottom: 5px;
+} 
+
+#botonEnvio {
+    background-color: #9311be;
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#botonEnvio:hover {
+    background-color: #7a09a7; 
+}

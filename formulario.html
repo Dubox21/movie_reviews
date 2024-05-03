@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="./CSS/formulario.css">
+</head>
+
+
+<body>
+    <section id="formulario" class="fondo-form">
+
+        <div class="subtitulo-formulario">
+            <h1><strong>Formulario de contacto</strong></h2>
+                <h4> Contanos tus inquietudes o si te gustaría agregar una reseña de pelicula</h4>
+
+        </div>
+        <div class="pos-form">
+            <section id="formulario">
+                <div class="recuadro-form">
+                    <form name="miformulario" method="get" action="procesar.php">
+                        <fieldset>
+                            <input type="text" class="form-control" placeholder="Nombre completo"
+                                aria-label="Nombre completo" required>
+
+                            <div class="col-md-4">
+                                <label for="inputOption" class="form-label"></label>
+                                <select id="inputOption" class="form-select">
+                                    <option selected>Seleccionar el motivo de la consulta</option>
+                                    <option value="1">Consultas</option>
+                                    <option value="2">Reclamos</option>
+                                    <option value="3">Sugerencias</option>
+                                    <option value="3">Problemas técnicos</option>
+                                    <option value="3">Otros</option>
+                                </select>
+                            </div>
+                            <h4>¿Como queres que te contactemos?</h4>
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">E-mail</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Celular</label>
+                            </div>
+
+                           <br> <input type="text" class="form-control" placeholder="Escriba aquí la opción elegida"
+                            aria-label="opción" required>
+
+
+                            <br><div class="form-floating">
+                                <textarea class="form-control" placeholder="Escribir aqui..." id="floatingTextarea2"
+                                    style="height: 150px"></textarea>
+                                
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupFile01">Seleccionar archivo</label>
+                                <input type="file" class="form-control" id="inputGroupFile01">
+                            </div>
+                        </fieldset>
+                    </form>
+                    <button id="botonEnvio" onclick="mostrarInfoConCheckeo()">Enviar</button>
+                    <p id="demo"></p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+
+    </div>
+    </section>
+</body>
