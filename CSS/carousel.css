@@ -166,12 +166,14 @@
     animation: slideFromLeft .5s forwards;
 }
 
-.carrusel-2 .rating-stars {
+.carrusel-2 .rating-stars,
+.carousel-reviews .rating-stars {
     width: 100%;
     margin: 20px 0;
 }
 
-.carrusel-2 .star {
+.carrusel-2 .star,
+.carousel-reviews .star {
     font-size: 30px;
     color: var(--colorVioletDark)
 }
