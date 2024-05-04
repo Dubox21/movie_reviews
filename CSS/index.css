@@ -83,6 +83,9 @@ body, button, input {
     text-align: center;
 }
 .images-section img {
-    width: 100px; /* Ajusta el tamaño de las imágenes según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 150px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: 150px; /* Mantiene la proporción de la imagen */
+    border-radius: 10px;
+    border: 1px solid black;
+
 }
