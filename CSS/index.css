@@ -1,8 +1,3 @@
-:root{
-    --colorVioletDark: #470459;
-    --colorBackgroud: #F2F2F2;
-}
-
 body, button, input {
     font-family: "Outfit", sans-serif;
 }
