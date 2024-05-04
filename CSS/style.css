@@ -1,0 +1,171 @@
+body {
+    margin: auto 0; 
+}
+
+/*BARRA DE NAVEGACION */
+
+.nav-bar {
+    margin-left:auto;
+}
+
+.main-bar {
+    display: flex;
+    list-style: none;
+    font-size: 0.8em;
+    margin: 0;
+    
+}
+
+
+#logo {
+    display: inline-flex;
+    order: 1;
+    align-self: center;
+    color:black;
+    white-space: nowrap;
+}
+
+li {
+    padding: 20px;
+    margin-left:auto;
+}
+
+
+a {
+    text-decoration:none;
+
+}
+
+
+
+/*ACERCA DE NOSOTROS + IMG */
+
+.contenido-img {
+    /*background-image: url(https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg);*/
+    background: url(https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg) no-repeat center fixed;
+    background-position:center;
+    width: 199vh;
+    height: 82vh;
+    background-size:cover;
+    display: flex;
+    margin: auto;
+    padding:0px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.Titulo-AcercadeNosotros{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #F2F2F2;
+  }
+
+  .Texto-AcercadeNosotros {
+    position: absolute;
+    top: 52%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #0c0b0c;
+    font-style: oblique;
+    font-weight: bold;
+   
+  }
+
+  #textoNosotros:hover {
+    background-color: #efedb6a0;
+    border-radius: 4px;
+
+  }
+  
+/*Para que sea RESPONSIVO */
+  @media screen and (max-width: 700px) {
+    .main-bar, .contenido-img, .Titulo-AcercadeNosotros,  .Texto-AcercadeNosotros {  
+        font-size: 0,5em; 
+        padding: 0;
+        flex-direction:row;
+    }
+}
+
+/*Seccion HISTORIA (fila)*/
+
+.contenidoHistoria{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.Titulo-contenidoHistoria{
+    padding: 30px;
+    margin: 30px;
+    color: #470459;
+    font-size:large;
+    text-align: center;
+
+}
+.texto-contenidoHistoria {
+    font-size: small;
+}
+
+
+
+/*Seccion MISION (fila)*/
+
+.contenidoMision {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.Titulo-contenidoMision {
+    padding: 30px;
+    margin: 30px;
+    color: #470459;
+    font-size:large;
+    text-align: center;
+}
+
+.texto-contenidoMision {
+    font-size: small;
+
+}
+
+/*Seccion VALORES (fila)*/
+
+.contenidoValores {
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+}
+
+
+.Titulo-contenidoValores {
+    padding: 30px;
+    margin: 30px;
+    color: #470459;
+    font-size:large;
+    text-align: center;
+}
+
+.texto-contenidoValores {
+    font-size: small;
+}
+
+/*Estilos para los textos*/
+
+h2:hover {
+    color:#8538a6;
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
