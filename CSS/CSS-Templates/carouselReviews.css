@@ -1,0 +1,131 @@
+.carousel-reviews {
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.carousel-reviews .carousel-inner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
+    transition: all 0.5s ease;
+    transform: translateX(0%);
+    padding-top: 20px;
+    min-height: 400px;
+}
+
+.carousel-reviews .carousel-item_reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex: 0 0 auto;
+    width: 210px;
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 0 20px;
+}
+
+.carousel-reviews .rating-stars {
+    margin: 0;
+}
+
+.description-text_reviews {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.container-profile {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.profile_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.profile_description p:first-child {
+    font-weight: 600;
+}
+
+.container_img__reviews {
+    width: 44px;
+    height: 44px;
+}
+
+.container_img__reviews img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.carousel-next.reviews,
+.carousel-prev.reviews {
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-next.reviews {
+    right: 12px;
+}
+
+.carousel-prev.reviews {
+    left: 12px;
+}
+
+.carousel-item_reviews {
+    display: none;
+}
+
+.carousel-item_reviews.active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .carousel-reviews .carousel-inner {
+        display: flex;
+        flex-wrap: nowrap; /* Evitar que las diapositivas se envuelvan */
+        overflow: hidden; /* Ocultar el contenido que se desborda */
+    }
+
+    .carousel-reviews .carousel-item_reviews {
+        width: calc(50% - 20px); /* Ancho del 50% menos el margen */
+        margin: 0 10px; /* Margen lateral para separar las diapositivas */
+    }
+
+    .carousel-reviews .carousel-item_reviews:not(:first-child) {
+        margin-left: -10px; /* Superposición de diapositivas anteriores */
+    }
+
+    .carousel-reviews .carousel-item_reviews:not(:last-child) {
+        margin-right: -10px; /* Superposición de diapositivas siguientes */
+    }
+
+    .carousel-next.reviews {
+        right: 110px;
+    }
+    
+    .carousel-prev.reviews {
+        left: 110px;
+    }
+}

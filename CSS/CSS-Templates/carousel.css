@@ -9,7 +9,7 @@
     background-color: transparent;
 }
 
-.carousel .carousel-inner {
+.carousel .carousel_inner {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -21,7 +21,7 @@
     padding-top: 20px;
 }
 
-.carousel-item {
+.carousel_item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,8 +106,8 @@
     font-size: 12px;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-prev,
+.carousel-next {
     position: absolute;
     top: 30%;
     transform: translateY(-50%);
@@ -119,19 +119,24 @@
 
 }
 
-.carousel-control-prev {
+.carousel-prev {
     left: 10px;
 }
 
-.carousel-control-next {
+.carousel-next {
     right: 10px;
 }
 
-.carousel-control-prev i,
-.carousel-control-next i {
+.carousel-prev i,
+.carousel-next i {
     color: #f2e205;
     border: 1px solid black;
     border-radius: 50%;
+}
+
+.carousel-prev:focus,
+.carousel-next:focus {
+    outline: none;
 }
 
 @keyframes slideFromLeft {
@@ -158,11 +163,13 @@
     }
 }
 
-.carousel-item.next {
+.carousel_item.next,
+.carousel-item_reviews.next {
     animation: slideFromRight .5s forwards;
 }
 
-.carousel-item.prev {
+.carousel_item.prev,
+.carousel-item_reviews.prev {
     animation: slideFromLeft .5s forwards;
 }
 
@@ -185,15 +192,15 @@
 }
 
 @media (min-width: 768px) {
-    .carousel-inner {
+    .carousel_inner {
         gap: 70px;
     }
 
-    .carousel-control-prev {
+    .carousel-prev {
         left: 20px;
     }
 
-    .carousel-control-next {
+    .carousel-next {
         right: 20px;
     }
 }
@@ -204,7 +211,7 @@
         height: 316px;
     }
 
-    .carousel .carousel-inner {
+    .carousel .carousel_inner {
         display: grid;
         grid-template-columns: repeat(4, 18.8%);
         align-items: center;
@@ -212,11 +219,11 @@
         gap: 40px;
     }
 
-    .carousel-control-prev {
+    .carousel-prev {
         left: 0.5;
     }
 
-    .carousel-control-next {
+    .carousel-next {
         right: 0.5;
     }
 

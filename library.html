@@ -14,8 +14,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha384-l0eXbS7r2nqk81r9fZVztJko+nFhpbjESsFQxGPaJ/0UtkHqDuvzpJv1uzQ3LbKP" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <link rel="stylesheet" href="./CSS/library.css">
-    <link rel="stylesheet" href="./CSS/carousel.css">
+    <link rel="stylesheet" href="./CSS/CSS-Templates/carousel.css">
+    <link rel="stylesheet" href="./CSS/CSS-Templates/carouselReviews.css">
 </head>
 
 <body>
@@ -61,63 +63,13 @@
         <div class="container_reviews__title">
             <h3 class="subtitle_library">Reseñas</h3>
         </div>
-        <div class="container_carousel__reviews">
-            <div class="carousel-reviews">
-                <div class="carousel-item_reviews">
-                    <div class="rating-stars">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                    <p class="description-text_reviews">"El Cazador de Monstruos" (2020) es una película épica llena de acción y
-                        emoción. ¡Los efectos visuales te dejarán boquiabierto y la trama te mantendrá al borde del
-                        asiento! ¡Definitivamente merece 5 estrellas! 🌟🌟🌟🌟🌟
-                    </p>
-                    <div class="container-profile">
-                        <div class="container_img__reviews">
-                            <img src="/img/profile_photo1.jpg" alt="foto de  perfil uno">
-                        </div>
-                        <div class="profile_description">
-                            <p>@Kenan56</p>
-                            <p>Kenan Beltran</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item_reviews">
-                    <div class="rating-stars">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                    <p class="description-text_reviews">"El Cazador de Monstruos" (2020) es una película épica llena de acción y
-                        emoción. ¡Los efectos visuales te dejarán boquiabierto y la trama te mantendrá al borde del
-                        asiento! ¡Definitivamente merece 5 estrellas! 🌟🌟🌟🌟🌟
-                    </p>
-                    <div class="container-profile">
-                        <div class="container_img__reviews">
-                            <img src="/img/profile_photo1.jpg" alt="foto de  perfil uno">
-                        </div>
-                        <div class="profile_description">
-                            <p>@Kenan56</p>
-                            <p>Kenan Beltran</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <button class="carousel-control-prev" aria-hidden="true"><i
-                    class="fa-solid fa-circle-chevron-left"></i></button>
-            <button class="carousel-control-next" aria-hidden="true"><i
-                    class="fa-solid fa-circle-chevron-right"></i></button> -->
+        <div class="container_carousel__reviews" id="carouselContainer_reviews"></div>
         </div>
     </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/scripts/carousel.js"></script>
+    <script src="/scripts/carouselReviews.js"></script>
 
 </body>
 
