@@ -18,16 +18,17 @@ body, button, input {
   }
   
   .welcome-image {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    max-width: none; /* Elimina la restricción de ancho máximo */
-    border-radius: 15px; /* Redondea las esquinas de la imagen */
-    height: 700px;
-    opacity: 0.9; /* Cambia la claridad de la imagen */
+    width: 100%;
+    max-width: none;
+    border-radius: 15px; 
+    height: 900px;
+    opacity: 0.9;
+    box-shadow: 0px 4px 5px #7386BF;
   }
   
 .text {
     position: absolute;
-    top: 22%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -42,6 +43,8 @@ body, button, input {
 .text p {
     margin: 0;
     font-size: 20px;
+    color: #F2F2F2;
+    margin-top: 40px;
 }
 
 #btn-1 {
@@ -53,11 +56,13 @@ body, button, input {
     margin-top: 20px;
     transition: background-color 0.3s;
     font-size: 18px;
+    box-shadow: 0px 1px 5px #7386BF;
 }
 
 #btn-1:hover {
-    background-color: #fefcfc; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    background-color: #fefcfc;
     color: #470459;
+
 }
 
 #btn-2 {
@@ -69,10 +74,11 @@ body, button, input {
     margin-top: 20px;
     transition: background-color 0.3s;
     font-size: 18px;
+    box-shadow: 0px 1px 5px #7386BF;
 }
 
 #btn-2:hover {
-    background-color: #fefcfc; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    background-color: #fefcfc;
     color: #470459;
 }
 
@@ -82,12 +88,13 @@ body, button, input {
 .container-tendencias {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
+    justify-content: center;
 }
 
 .news-and-trends-section {
-    max-width: 90%; /* Ajusta el ancho máximo */
-    text-align: center; /* Centra el contenido horizontalmente */
+    max-width: 90%;
+    text-align: center;
+    margin: 20px;
 }
 
 .news-and-trends-section h2 {
@@ -104,40 +111,37 @@ body, button, input {
 
 .news-and-trends-images-section {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos en línea con espacios iguales entre ellos */
+    justify-content: space-between;
     color: #555555;
+    margin: 20px;
+    margin-bottom: 40px;
 }
 
 .images-section {
     text-align: center;
 }
 .images-section img {
-    width: 220px; /* Ajusta el tamaño de las imágenes según sea necesario */
-    height: 220px; /* Mantiene la proporción de la imagen */
+    width: 220px;
+    height: 220px;
     border-radius: 10px;
     border: 3px solid #555555;
+    box-shadow: 0px 7px 5px #7386BF;
 }
-.card {
-    background-color: #fefcfc; /* Fondo blanco por defecto */
-    box-shadow: 5px 5px 15px #bfbfbf; /* Sombra uniforme alrededor de la tarjeta */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
-}
-
 
 /*SECCION VIDEO*/
 
 /* Contenedor principal */
 .container-video {
     display: flex;
-    margin-bottom: 10px; /* Espacio entre los contenedores */
+    margin-bottom: 10px;
     color: #000000;
+    box-shadow: 0px 1px 5px #7386BF;
 }
 
 /* Mitades */
 .half {
-    flex: 1; /* Cada mitad ocupa el mismo espacio */
-    padding: 20px; /* Espacio interior */
+    flex: 1;
+    padding: 20px;
 }
 
 /* Izquierda */
@@ -147,7 +151,7 @@ body, button, input {
 }
 
 .half.left h2 {
-    font-size: 30px; /* Cambia el tamaño de la fuente */
+    font-size: 30px;
     margin-left: 70px;
 }
 
@@ -158,7 +162,7 @@ body, button, input {
 }
 
 .half.right h2 {
-    font-size: 30px; /* Cambia el tamaño de la fuente */
+    font-size: 30px;
     margin-left: 70px;
 }
 
@@ -169,14 +173,14 @@ body, button, input {
     margin-bottom: 10px;
     color: #555555;
     background-color: #fefcfc;
-    box-shadow: 5px 5px 15px #bfbfbf;
+    box-shadow: 2px 2px 5px #7386BF;
     border-radius: 10px;
     padding: 20px;
 }
 
 /* Subtítulo de indicadores */
 .subtitulo-indicadores {
-    color: #470459;
+    color: #555555;
 }
 
 /* Indicadores numéricos y de porcentaje */
@@ -185,10 +189,17 @@ body, button, input {
     display: inline-block;
     justify-content: center; 
     align-items: center;
-    margin-right: 100px;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
-    color: #7386BF;
+    color:#470459;
+}
+
+.indicador-numerico {
+    margin-right: 30px; /* Agrega espacio a la derecha */
+}
+
+.porcentaje {
+    margin-left: 30px; /* Agrega espacio a la izquierda */
 }
 
 /* Contenedor de video */
@@ -198,4 +209,12 @@ body, button, input {
     display: flex;
     width: calc(100% - 40px);
     margin: 0 auto;
+}
+
+.top-block h3 {
+    color:#470459;
+}
+
+.bottom-block h3 {
+    color:#470459;
 }
