@@ -1,40 +1,68 @@
-.carousel-reviews {
-    position: relative;
+.carousel {
     width: 100%;
+    height: auto;
     margin: 10px auto;
     border-radius: 10px;
     box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
-    transition: all 0.5s ease;
-    overflow: hidden;
     background-color: transparent;
 }
 
-.carousel-reviews .carousel-inner {
+.carousel .carousel-inner {
     display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    padding: 15px 0;
     border-radius: 10px;
     box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
-    transition: all 0.5s ease;
-    transform: translateX(0%);
-    padding-top: 20px;
-    min-height: 400px;
 }
 
-.carousel-reviews .carousel-item_reviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    flex: 0 0 auto;
-    width: 210px;
+.carousel .carousel-item {
+    display: inline-block;
+    margin: 0 30px;
+    vertical-align: top;
+    white-space: normal;
+    position: relative;
+    transition: transform 0.5s ease;
+    /* transición suave para el deslizamiento */
+}
+
+.carousel .carousel-item.active {
+    left: 0;
+    transform: translateX(0);
+    /* Centrar la slide activa */
+}
+
+.carousel .carousel-item.prev {
+    left: -33.333%;
+    transform: translateX(-100%);
+    /* Desplazar la slide previa */
+}
+
+.carousel .carousel-item.next {
+    left: 33.333%;
+    transform: translateX(100%);
+    /* Desplazar la slide siguiente */
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.item {
+    width: 250px;
+    height: 370px;
+    margin: 0 5px;
     border: 2px solid black;
     border-radius: 16px;
-    padding: 20px;
-    margin: 0 20px;
+    padding: 15px;
 }
 
-.carousel-reviews .rating-stars {
+.carousel .rating-stars {
     margin: 0;
 }
 
@@ -57,6 +85,10 @@
     font-size: 12px;
 }
 
+.profile_description p {
+    margin: 0;
+}
+
 .profile_description p:first-child {
     font-weight: 600;
 }
@@ -74,58 +106,97 @@
     object-fit: cover;
 }
 
-.carousel-next.reviews,
-.carousel-prev.reviews {
-    position: absolute;
-    top: 50%;
-    z-index: 999;
-    transform: translateY(-50%);
-    background: transparent;
+.carousel-control-prev,
+.carousel-control-next {
+    background: none;
     border: none;
-    cursor: pointer;
+    opacity: 1;
+    font-size: 2rem;
+    width: auto;
 }
 
-.carousel-next.reviews {
-    right: 12px;
+.carousel-control-prev i,
+.carousel-control-next i {
+    color: #f2e205 !important;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
-.carousel-prev.reviews {
-    left: 12px;
+.carousel-control-next:focus,
+.carousel-control-prev:focus,
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
 }
 
-.carousel-item_reviews {
-    display: none;
+ .rating-stars {
+    width: 100%;
+    margin: 20px 0;
+}
+ .star{
+    font-size: 30px;
+    color: var(--colorVioletDark)
 }
 
-.carousel-item_reviews.active {
-    display: block;
+@media (min-width: 412px) {
+    .carousel .carousel-item {
+        margin: 0 15px;
+    }
+
+    .carousel-control-prev {
+        left: 40px;
+    }
+
+    .carousel-control-next {
+        right: 40px;
+    }
 }
 
 @media (min-width: 768px) {
-    .carousel-reviews .carousel-inner {
-        display: flex;
-        flex-wrap: nowrap; /* Evitar que las diapositivas se envuelvan */
-        overflow: hidden; /* Ocultar el contenido que se desborda */
+    .carousel .carousel-item {
+        margin: 0 30px;
     }
 
-    .carousel-reviews .carousel-item_reviews {
-        width: calc(50% - 20px); /* Ancho del 50% menos el margen */
-        margin: 0 10px; /* Margen lateral para separar las diapositivas */
+    .carousel-control-prev {
+        left: 200px;
     }
 
-    .carousel-reviews .carousel-item_reviews:not(:first-child) {
-        margin-left: -10px; /* Superposición de diapositivas anteriores */
+    .carousel-control-next {
+        right: 200px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .item {
+        width: 582px;
+        height: 404px;
+        margin: 0 70px;
+        padding: 30px;
     }
 
-    .carousel-reviews .carousel-item_reviews:not(:last-child) {
-        margin-right: -10px; /* Superposición de diapositivas siguientes */
+    .description-text_reviews {
+        font-size: 24px;
     }
 
-    .carousel-next.reviews {
-        right: 110px;
+    .container_img__reviews {
+        width: 64px;
+        height: 64px;
     }
-    
-    .carousel-prev.reviews {
-        left: 110px;
+
+    .profile_description {
+        font-size: 16px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        font-size: 48px;
+    }
+
+    .carousel-control-next {
+        right: 290px;
+    }
+
+    .carousel-control-prev {
+        left: 290px;
     }
 }
