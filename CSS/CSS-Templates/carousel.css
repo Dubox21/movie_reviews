@@ -1,4 +1,4 @@
-.carousel {
+.carousel_film {
     position: relative;
     width: 100%;
     margin: 10px auto;
@@ -9,7 +9,7 @@
     background-color: transparent;
 }
 
-.carousel .carousel_inner {
+.carousel_film .carousel_inner {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -50,7 +50,6 @@
     height: auto;
     margin: 16px 0;
     font-size: 18px;
-    text-align: justify;
 }
 
 .container_description h4 {
@@ -163,24 +162,20 @@
     }
 }
 
-.carousel_item.next,
-.carousel-item_reviews.next {
+.carousel_item.next {
     animation: slideFromRight .5s forwards;
 }
 
-.carousel_item.prev,
-.carousel-item_reviews.prev {
+.carousel_item.prev {
     animation: slideFromLeft .5s forwards;
 }
 
-.carrusel-2 .rating-stars,
-.carousel-reviews .rating-stars {
+.carrusel-2 .rating-stars {
     width: 100%;
     margin: 20px 0;
 }
 
-.carrusel-2 .star,
-.carousel-reviews .star {
+.carrusel-2 .star{
     font-size: 30px;
     color: var(--colorVioletDark)
 }
@@ -211,7 +206,7 @@
         height: 316px;
     }
 
-    .carousel .carousel_inner {
+    .carousel_film .carousel_inner {
         display: grid;
         grid-template-columns: repeat(4, 18.8%);
         align-items: center;

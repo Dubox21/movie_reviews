@@ -12,6 +12,7 @@
 
 body {
     background-color: var(--colorBackgroud);
+
 }
 
 body,
@@ -137,6 +138,11 @@ input {
     padding: 30px 35px;
 }
 
+.container_carousel_reviews{
+    width: 100%;
+    margin: 0;
+}
+
 @media (min-width: 768px) {
     .title_library {
         font-size: 34px;
@@ -172,6 +178,7 @@ input {
         font-size: 16px;
         padding: 0 14px 18px 14px;
     }
+
 }
 
 @media (min-width: 1024px) {
