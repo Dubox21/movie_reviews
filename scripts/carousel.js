@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initializeCarousel(containerId) {
     // Acceder al carrusel específico
-    const slides = document.querySelectorAll(`#${containerId} .carousel-item`);
+    const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
     const totalSlides = slides.length;
     let currentIndex = 0;
 
@@ -83,8 +83,8 @@ function initializeCarousel(containerId) {
 
     // Agregar listeners para los botones de control
     // Acceder a los botones de control dentro del contenedor específico
-    const prevButton = document.querySelector(`#${containerId} .carousel-control-prev`);
-    const nextButton = document.querySelector(`#${containerId} .carousel-control-next`);
+    const prevButton = document.querySelector(`#${containerId} .carousel-prev`);
+    const nextButton = document.querySelector(`#${containerId} .carousel-next`);
 
     prevButton.addEventListener('click', function () {
         prevSlide();
@@ -138,16 +138,16 @@ function initializeCarousel(containerId) {
         return slidesToShow;
     }
 
-   function ranking(containerId) {
-    const carouselContainer = document.getElementById(containerId);
-    const ratingStars = carouselContainer.querySelector('.rating-stars');
+    function ranking(containerId) {
+        const carouselContainer = document.getElementById(containerId);
+        const ratingStars = carouselContainer.querySelector('.rating-stars');
 
-    if (containerId === 'carouselContainer2') {
-        ratingStars.style.display = 'block';
-    } else {
-        ratingStars.style.display = 'none';
+        if (containerId === 'carouselContainer2') {
+            ratingStars.style.display = 'block';
+        } else {
+            ratingStars.style.display = 'none';
+        }
     }
-}
 
     ranking('carouselContainer2'); // Para el carrusel 2
 }
@@ -163,3 +163,5 @@ function toggleDescription(button) {
         button.innerHTML = '<i class="fa-solid fa-sort-up"></i>'; // Cambiar el ícono a flecha hacia arriba
     }
 }
+
+
