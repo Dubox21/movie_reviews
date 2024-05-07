@@ -1,91 +1,201 @@
 body, button, input {
     font-family: "Outfit", sans-serif;
+    background-color: #F2F2F2;
+}
+.main{
+    position: relative;
 }
 
-/* Estilos para la sección de bienvenida */
-.welcome-section {
-    display: flex;
-    justify-content: space-between;
+/* Estilos para la sección de bienvenida */  
+.container {
+    width: 100%; /* El contenedor ocupa todo el ancho de la página */
+  }
+  
+  .welcome {
+    width: 100%; /* El contenedor ocupa todo el ancho de la página */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .welcome-image {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    max-width: none; /* Elimina la restricción de ancho máximo */
+    border-radius: 15px; /* Redondea las esquinas de la imagen */
+    height: 700px;
+    opacity: 0.9; /* Cambia la claridad de la imagen */
+  }
+  
+.text {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #555555;
 }
-
-.left-content {
-    width: 50%;
-    margin-left: 70px;
-    text-align: left;
-}
-.left-content h1 {
-    line-height: 1.0;
+  
+.text h1{
+    margin: 0;
     font-size: 70px;
 }
-.left-content p {
+
+.text p {
+    margin: 0;
     font-size: 20px;
 }
 
-.left-content button {
-    margin-right: 25px;
-    border-radius: 10px;
+#btn-1 {
+    background-color: #470459;
+    color: #F2F2F2;
+    padding: 10px 40px;
+    border: 1px solid #555555;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    font-size: 18px;
 }
 
-.right-content {
-    width: 45%;
+#btn-1:hover {
+    background-color: #fefcfc; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    color: #470459;
+}
+
+#btn-2 {
+    background-color: #F2F2F2;
+    color: #555555;
+    padding: 10px 40px;
+    border: 1px solid #555555;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+#btn-2:hover {
+    background-color: #fefcfc; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    color: #470459;
+}
+
+
+/*TENDENDCIAS Y NOTICIAS*/
+
+.container-tendencias {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    max-height: 500px;
-    margin-bottom: 40px;
+    justify-content: center; /* Centra horizontalmente */
 }
 
-.right-content .right-content-img1{
-    position: relative;
-    transform: translateX(20%) translateY(5%);
-    z-index: 1;
-    border-radius: 10px;
-    width: 700px;
+.news-and-trends-section {
+    max-width: 90%; /* Ajusta el ancho máximo */
+    text-align: center; /* Centra el contenido horizontalmente */
 }
 
-.right-content .right-content-img2 {
-    position: relative;
-    transform: translateY(-170%);
-    width: 400px;
-    left: 440px;
-    z-index: 3;
-    border-radius: 10px;
-}
-.right-content .right-content-img3{
-    position: relative;
-    transform: translateY(-170%);
-    width: 600px;
-    z-index: 2;
-    border-radius: 10px;
-}
-
-.news-and-trends-section{
-   margin-top: 100px;
-   margin-bottom: 100px;
-}
-.news-and-trends-section h2{
-    text-align: center;
+.news-and-trends-section h2 {
     font-size: 40px;
+    text-decoration: underline;
+    color: #555555;
 }
 
-.news-and-trends-section p{
-    text-align: center;
-    font-size: 20px;
+.news-and-trends-section p {
+    font-size: 18px;
+    color: #555555;
+    padding: 0 7px 10px 7px;
 }
 
 .news-and-trends-images-section {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos en línea con espacios iguales entre ellos */
+    color: #555555;
 }
+
 .images-section {
     text-align: center;
 }
 .images-section img {
-    width: 150px; /* Ajusta el tamaño de las imágenes según sea necesario */
-    height: 150px; /* Mantiene la proporción de la imagen */
+    width: 220px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: 220px; /* Mantiene la proporción de la imagen */
     border-radius: 10px;
-    border: 1px solid black;
+    border: 3px solid #555555;
+}
+.card {
+    background-color: #fefcfc; /* Fondo blanco por defecto */
+    box-shadow: 5px 5px 15px #bfbfbf; /* Sombra uniforme alrededor de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+}
 
+
+/*SECCION VIDEO*/
+
+/* Contenedor principal */
+.container-video {
+    display: flex;
+    margin-bottom: 10px; /* Espacio entre los contenedores */
+    color: #000000;
+}
+
+/* Mitades */
+.half {
+    flex: 1; /* Cada mitad ocupa el mismo espacio */
+    padding: 20px; /* Espacio interior */
+}
+
+/* Izquierda */
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.half.left h2 {
+    font-size: 30px; /* Cambia el tamaño de la fuente */
+    margin-left: 70px;
+}
+
+/* Derecha */
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+.half.right h2 {
+    font-size: 30px; /* Cambia el tamaño de la fuente */
+    margin-left: 70px;
+}
+
+/* Bloques superiores e inferiores */
+.top-block, .bottom-block {
+    margin-top: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #555555;
+    background-color: #fefcfc;
+    box-shadow: 5px 5px 15px #bfbfbf;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Subtítulo de indicadores */
+.subtitulo-indicadores {
+    color: #470459;
+}
+
+/* Indicadores numéricos y de porcentaje */
+.indicador-numerico, .porcentaje {
+    text-align: center;
+    display: inline-block;
+    justify-content: center; 
+    align-items: center;
+    margin-right: 100px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #7386BF;
+}
+
+/* Contenedor de video */
+.video-container {
+    border-radius: 15px;
+    justify-content: center;
+    display: flex;
+    width: calc(100% - 40px);
+    margin: 0 auto;
 }
