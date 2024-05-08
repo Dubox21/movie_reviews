@@ -10,8 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha384-l0eXbS7r2nqk81r9fZVztJko+nFhpbjESsFQxGPaJ/0UtkHqDuvzpJv1uzQ3LbKP" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -20,13 +19,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/globales.css">
     <link rel="stylesheet" href="./CSS/library.css">
     <link rel="stylesheet" href="./CSS/CSS-Templates/carousel.css">
     <link rel="stylesheet" href="./CSS/CSS-Templates/carouselReviews.css">
+    <link rel="stylesheet" href=".\CSS\style.css">
 </head>
 
 <body>
+    <header><!--es un DIV-->
+        <nav class="nav-bar"><!--BARRA DE NAVEGACION-->
+            <div id="logo">
+                <img src="" alt="img-logo">
+            </div>
+            <div>
+                <div><!--links de BARRA DE NAVEGACION-->
+                    <ul class="main-bar">
+                        <li><a href="">Home</a></li>
+                        <li><a href="/Acerca-de-nosotros.html">Acerca de nosotros</a></li>
+                        <li><a class="activa" href="/library.html">Biblioteca</a></li>
+                        <li><a href="">Contacto</a></li>
+                </div>
+                <div class="split"><!--Boton Log-in de BARRA DE NAVEGACION-->
+                    <button class="btn login">Log in</button>
+                </div>
+                </ul>
+            </div>
+
+        </nav>
+
+    </header>
     <section class="section_header">
+        <!-- <div class="container_background">
+            <img src=".//images-fondo/Biblioteca.jpg" alt="">
+        </div> -->
         <div class="container_library">
             <h2 class="title_library">Nuestra Biblioteca</h2>
             <div class="container_btn">
@@ -38,14 +64,16 @@
                     <input type="search" class="search-input" placeholder="Que Buscas?">
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section_allFilm">
+        <div class="container_allFilm__title">
             <h3 class="subtitle_library">Todas las Peliculas</h3>
             <p class="description_library">Descubre una amplia selección de películas populares de diferentes géneros y
                 épocas. Desde clásicos
                 atemporales hasta los
                 últimos estrenos, nuestra biblioteca ofrece una experiencia cinematográfica única.</p>
         </div>
-    </section>
-    <section class="section_allFilm">
         <div class="container_section">ordenar
             <div class="carouselContainer carrusel-1" id="carouselContainer1"></div>
             <div class="container_points">
@@ -73,16 +101,20 @@
     </section>
 
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-        <script src="/scripts/carousel.js"></script>
+    <script src="/scripts/carousel.js"></script>
     <script src="/scripts/carouselReviews.js"></script>
 </body>
+
+<div class="footer">
+    <footer>Footer en construccion</footer>
+</div>
 
 
 </html>

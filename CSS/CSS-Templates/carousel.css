@@ -131,6 +131,7 @@
     color: #f2e205;
     border: 1px solid black;
     border-radius: 50%;
+    font-size: 48px;
 }
 
 .carousel-prev:focus,
