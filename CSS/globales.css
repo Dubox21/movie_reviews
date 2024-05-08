@@ -1,3 +1,10 @@
+:root {
+    --colorVioletDark: #470459;
+    --colorBackgroud: #F2F2F2;
+    --colorBlueLight: #7386BF;
+    --colorYellow: #f2e205;
+    --colorGrey: #343434;
+}
 
 
 header {
@@ -6,4 +13,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000; 
+}
+
+p{
+    margin: 0;
 }
