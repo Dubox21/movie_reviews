@@ -1,10 +1,3 @@
-:root {
-    --colorVioletDark: #470459;
-    --colorBackgroud: #F2F2F2;
-    --colorBlueLight: #7386BF;
-    --colorYellow: #f2e205;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -43,11 +36,12 @@ input {
     height: 100%;
     background-color: rgba(71, 4, 89, 0.33);
     z-index: 1;
-    mix-blend-mode: multiply; /* Aplica un modo de mezcla que no afecta el color de los elementos superpuestos */
+    mix-blend-mode: multiply;
+    /* Aplica un modo de mezcla que no afecta el color de los elementos superpuestos */
     border-radius: 6px;
 }
 
-.container_library{
+.container_library {
     height: 644px;
 }
 
@@ -157,14 +151,85 @@ input {
     border-radius: 10px;
 }
 
- .subtitle_library {
+.subtitle_library {
     padding: 30px 35px;
 }
 
-.container_carousel_reviews{
+.container_carousel_reviews {
     width: 100%;
     margin: 0;
 }
+
+.container_dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 72px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
+}
+
+.container_dropdown p {
+    font-size: 18px;
+    color: var(--colorGrey);
+    -webkit-text-stroke: 1px #414753; /* Para navegadores webkit (Safari, Chrome) */
+    text-stroke: 1px #414753;
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #f9f9f9;
+    border: none;
+    outline: none;
+    color: var(--colorYellow);
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dropbtn i {
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    margin-top: 5px;
+    left: -145px;
+    outline: 2px solid #414753; /* Borde con contorno */
+    box-shadow: 0 0 0 2px #414753;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 13px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--colorYellow);
+}
+
+.show {
+    display: block;
+}
+
 
 @media (min-width: 768px) {
     .title_library {
@@ -245,6 +310,14 @@ input {
     .description_library {
         font-size: 18px;
         padding: 0 140px 18px 140px;
+    }
+
+    .container_dropdown p {
+        font-size: 20px;
+    }
+
+    .dropbtn i {
+        font-size: 20px;
     }
 
 }
