@@ -115,7 +115,6 @@
     cursor: pointer;
     font-size: 2rem;
     color: white;
-
 }
 
 .carousel-prev {
@@ -131,7 +130,6 @@
     color: #f2e205;
     border: 1px solid black;
     border-radius: 50%;
-    font-size: 48px;
 }
 
 .carousel-prev:focus,
@@ -176,7 +174,7 @@
     margin: 20px 0;
 }
 
-.carrusel-2 .star{
+.carrusel-2 .star {
     font-size: 30px;
     color: var(--colorVioletDark)
 }
@@ -213,6 +211,11 @@
         align-items: center;
         justify-content: center;
         gap: 40px;
+    }
+
+    .carousel-prev i,
+    .carousel-next i {
+        font-size: 48px;
     }
 
     .carousel-prev {
