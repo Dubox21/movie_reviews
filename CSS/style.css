@@ -65,7 +65,7 @@ a {
     align-content: end;
     cursor: pointer;
     margin-block-end: auto;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
 .login:hover {
