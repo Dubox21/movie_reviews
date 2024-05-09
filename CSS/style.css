@@ -211,7 +211,8 @@ h2:hover {
 }
 
 
-.footer {
+.footer,
+.social-buttons {
     padding: 20px;
     text-align: center;
     background: #ddd;

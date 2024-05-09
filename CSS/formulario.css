@@ -1,14 +1,10 @@
-#formulario {
+ #formulario {
     width: 70%;
-    /* Ancho del formulario */
     margin: auto;
-    /* Centra el formulario horizontalmente */
     margin-top: 50px;
-    /* Margen superior para separarlo del borde superior */
     margin-bottom: 50px;
-    /* Margen inferior para separarlo del borde inferior */
-    padding: 20px;
-}
+    padding: none;
+} 
 
 .form-control,
 .form-select,
@@ -29,11 +25,13 @@ body {
     background-position: center; 
   }
   
+  /*Donde se ubica el formulario*/
   section {
     background-color: #c4c6c17b;
-    padding: 20px;
+    padding: none;
   }
   
+  /*Donde se ubica el titulo y subtitulo del formulario*/
   .fondo-form { 
     background-color: #c4c6c17b;
     padding: 30px;
@@ -47,7 +45,7 @@ body {
   .subtitulo-formulario h1,
   .subtitulo-formulario h4 {
 /*     background-color: #7386BF; */
-    padding: 5px;
+    padding: none;
     border-radius: 5px;
     display: inline-block;
     width: 80%;
