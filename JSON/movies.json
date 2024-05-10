@@ -1,0 +1,226 @@
+[
+    {
+        "id": 1,
+        "tags": "comedy",
+        "img": "img/donde_estan_las_rubias.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "¿Y donde estan las rubias? (2004)",
+        "description": "Dos agentes del FBI en desgracia van encubiertos en un esfuerzo por proteger a unas herederas de hoteles, las hermanas Wilson, de un complot de secuestro."
+    },
+    {
+        "id": 2,
+        "tags": "comedy",
+        "img": "img/escuela_de_rock.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Escuela de Rock (2003)",
+        "description": "Tras ser expulsado de un grupo de rock, Dewey Finn trabaja como profesor substituto en una estricta escuela privada, e intenta convertirla en un grupo de rock."
+    },
+    {
+        "id": 3,
+        "tags": "comedy",
+        "img": "img/ghostbusters.png",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "title": "Ghostbusters: Apocalipsis Fantasma (2024)",
+        "description": "Cuando el descubrimiento de un artefacto antiguo libera una fuerza maligna, los nuevos y viejos Ghostbusters unen sus fuerzas para proteger su hogar y salvar al mundo de una segunda era de hielo."
+    },
+    {
+        "id": 4,
+        "tags": "comedy",
+        "img": "img/no_se_si_cortarme_las_venas.png",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "title": "No Sé Si Cortarme Las Venas O Dejármelas Largas (2013)",
+        "description": "La historia toma lugar con la llegada de un nuevo personaje en sus vidas, el ex – jugador de futbol llamado Felix."
+    },
+    {
+        "id": 5,
+        "tags": "comedy",
+        "img": "img/paddington_2.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Paddington 2 (2017)",
+        "description": "Completamente integrado a la sociedad, el oso Paddington (Ben Whishaw) vive feliz con los Brown, gozando de la simpatía y respeto de la comunidad de Windsor Gardens."
+    },
+    {
+        "id": 6,
+        "tags": "comedy",
+        "img": "img/pared_con_pared.png",
+        "stars": "&#9733;&#9733;&#9734;&#9734;&#9734;",
+        "title": "Pared Con Pared (2024)",
+        "description": "La película española «Pared con pared» es una nueva versión de la comedia romántica francesa «Tras la pared» o Un peu, beaucoup, aveuglément."
+    },
+    {
+        "id": 7,
+        "tags": "comedy",
+        "img": "img/pitch_perfect.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Pitch Perfect (2012)",
+        "description": "La estudiante universitaria Beca (Anna Kendrick) sabe que no quiere ser parte de una camarilla, pero ahí es exactamente donde se encuentra después de llegar a su nueva escuela."
+    },
+    {
+        "id": 8,
+        "tags": "comedy",
+        "img": "img/rockos.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Rocko's Modern Life: Static Cling (2019)",
+        "description": "Después de estar en el espacio durante unos 20 años, Rocko y sus amigos intentan adaptarse a una vida aún más moderna en O-Town."
+    },
+    {
+        "id": 9,
+        "tags": "comedy",
+        "img": "img/yo_era_famoso.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Yo era famoso (2022)",
+        "description": "Una exestrella de una banda de chicos obtiene una segunda oportunidad cuando se une a un talentoso baterista. Estreno exclusivo de Netflix."
+    },
+    {
+        "id": 10,
+        "tags": "recent_popular_movies",
+        "img": "img/frida.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Frida (2024)",
+        "description": "Un viaje íntimamente crudo y mágico a través de la vida, la mente y el corazón de la icónica artista Frida Kahlo."
+    },
+    {
+        "id": 11,
+        "tags": "recent_popular_movies",
+        "img": "img/la_primera_profecia.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "La Primera Profecía (2024)",
+        "description": "Cuando una joven estadounidense es enviada a Roma para comenzar una vida de servicio a la Iglesia, descubre una oscuridad que la lleva a cuestionar su propia fe y devela una conspiración aterradora que espera provocar el nacimiento de la encarnación del mal."
+    },
+    {
+        "id": 12,
+        "tags": "recent_popular_movies",
+        "img": "img/el_cazador_de_mounstro.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "El Cazador de Monstruos (2020)",
+        "description": "Un guerrero recorre grandes extensiones a caballo, persiguiendo al monstruo que asesinó a su hija."
+    },
+    {
+        "id": 13,
+        "tags": "recent_popular_movies",
+        "img": "img/sobreviviendo_a_mis_15.png",
+        "stars": "&#9733;&#9734;&#9734;&#9734;&#9734;",
+        "title": "Sobreviviendo Mis XV (2023)",
+        "description": "¡Los XV, una edad mágica!… excepto cuando tu familia te quiere meter en un vestido ampón y ponerte a bailar vals frente a todo el mundo, que es justo lo que le pasa a Danae muy poco después de cambiarse a una escuela privada muy fresa."
+    },
+    {
+        "id": 14,
+        "tags": "recent_popular_movies",
+        "img": "img/soy_tu_fan.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Soy Tu Fan: La Película (2022)",
+        "description": "En el año 2012, Charly abandona a Nicolás minutos antes de casarse y se muda de país."
+    },
+    {
+        "id": 15,
+        "tags": "recent_popular_movies",
+        "img": "img/recursos_humanos.png",
+        "stars": "&#9733;&#9733;&#9734;&#9734;&#9734;",
+        "title": "Recursos Humanos (2023)",
+        "description": "Gabriel Lynch (Pedro de Tavira), un sombrío supervisor de la división de impresiones acaba de solicitar el puesto de gerente."
+    },
+    {
+        "id": 16,
+        "tags": "recent_popular_movies",
+        "img": "img/barbie.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Barbie (2023)",
+        "description": "Vivir en Barbie Land es ser un ser perfecto en un lugar perfecto. A menos que tengas una crisis existencial total. O eres un Ken."
+    },
+    {
+        "id": 17,
+        "tags": "recent_popular_movies",
+        "img": "img/oppenheimer.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Oppenheimer (2023)",
+        "description": "Durante la Segunda Guerra Mundial, el teniente general Leslie Groves Jr. nombra al físico J. Robert Oppenheimer para trabajar en el ultrasecreto Proyecto Manhattan."
+    },
+    {
+        "id": 18,
+        "tags": "clasic",
+        "img": "img/lo_que_el_viento_se_llevo.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Lo que el viento se llevó (1939)",
+        "description": "Ella suspira por el amor de Ashley (Leslie Howard), pero él está prometido con su prima, la dulce y bondadosa Melanie (Olivia de Havilland)."
+    },
+    {
+        "id": 19,
+        "tags": "clasic",
+        "img": "img/el_padrino.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "El Padrino: parte III (1990)",
+        "description": "A pesar del reconfortante recibimiento de sus predecesoras, este filme ha sido el más controversial, dejando divididos a los críticos y fanáticos con sus respectivasopiniones."
+    },
+    {
+        "id": 20,
+        "tags": "clasic",
+        "img": "img/el_exorcista.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "El Exorcista (1973)",
+        "description": "Adaptación de la novela de William Peter Blatty que se inspiró en un exorcismo real ocurrido en Washington en 1949."
+    },
+    {
+        "id": 21,
+        "tags": "clasic",
+        "img": "img/rocky.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Rocky (1976)",
+        "description": "El boxeador Rocky Balboa, obtiene una gran oportunidad para luchar contra el ''Campeón Pesado'', Apollo Creed, en un combate en el que se esfuerza por llegar hasta el final por amor propio."
+    },
+    {
+        "id": 22,
+        "tags": "clasic",
+        "img": "img/grease.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "title": "Grease (1978)",
+        "description": "Verano de 1959. Sandy (Olivia Newton John) y Danny (John Travolta) han pasado un romántico y maravilloso verano juntos, pero, cuando las vacaciones se acaban, sus caminos se separan. Inesperadamente, vuelven a verse en el instituto Rydell, pero la actitud de Danny ya no es la misma: ya no es el chico encantador y atento que encandiló a Sandy; ahora es engreído e insensible."
+    },
+    {
+        "id": 23,
+        "tags": "clasic",
+        "img": "img/taxi_driver.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Taxi Driver (1976)",
+        "description": "n veterano de la guerra de Vietnam mentalmente inestable trabaja como taxista nocturno en la ciudad de Nueva York, donde la decadencia percibida y sordidez alimenta su impulso para la acción violenta, tratando de salvar a una prostituta preadolescente en el proceso."
+    },
+    {
+        "id": 24,
+        "tags": "clasic",
+        "img": "img/misery.png",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "title": "Misery (1990)",
+        "description": "Un escritor llamado Paul Sheldon (James Caan) lleva años malgastando su talento con unas románticas historias, de gran éxito comercial, cuya protagonista es una mujer llamada Misery."
+    },
+    {
+        "id": 25,
+        "tags": "clasic",
+        "img": "img/dia_de_independencia.png",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "title": "Día de la Independencia (1996)",
+        "description": "Una raza extraterrestre llega a la Tierra con el objetivo de invadir y destruir. Peleando contra tecnología superior, la mejor arma de la raza humana será su fuerza de voluntad."
+    },
+    {
+        "id": 26,
+        "tags": "horror",
+        "img": "img/alicia.png",
+        "stars": "&#9733;&#9733;&#9734;&#9734;&#9734;",
+        "title": "Alicia en el País de Las Pesadillas (2023)",
+        "description": "Alicia en el País del Terror, es una inquietante versión del clásico cuento de Lewis Carroll, que transporta al espectador a un mundo retorcido y oscuro."
+    },
+    {
+        "id": 27,
+        "tags": "horror",
+        "img": "img/la_monja.png",
+        "stars": "&#9733;&#9733;&#9734;&#9734;&#9734;",
+        "title": "La Monja II (2023)",
+        "description": "En 1956 en Francia, un sacerdote es asesinado y parece que un mal se está extendiendo. La hermana Irene una vez más se encuentra cara a cara con una fuerza demoníaca."
+    },
+    {
+        "id": 28,
+        "tags": "horror",
+        "img": "img/megan.png",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "title": "M3gan (2022)",
+        "description": "M3GAN es una maravilla de la inteligencia artificial, una muñeca realista programada para ser la mejor compañera de los niños y la mayor aliada de los padres."
+    }
+]
