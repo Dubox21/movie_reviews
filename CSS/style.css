@@ -1,17 +1,24 @@
-
 /*BARRA DE NAVEGACION */
-
 .nav-bar {
-margin: auto;
-width: 100%;
+    margin: auto;
+    width: 100%;
+
 }
 
 .main-bar {
     list-style: none;
-    font-size: 0.8em;
+    font-size: 0.9em;
     float: left;
-    margin:auto;
+    margin: auto;
     padding-left: 25%;
+    box-shadow: 2px 2px 5px #8538a6;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    margin-right: 3px;
+    width: 60%;
+
+
+
 }
 
 
@@ -19,7 +26,7 @@ width: 100%;
     display: inline-flex;
     order: 1;
     align-self: center;
-    color:black;
+    color: black;
     white-space: nowrap;
     float: left;
 }
@@ -30,32 +37,37 @@ li {
     float: left;
     bottom: 18px;
     position: relative;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Outfit", sans-serif;
     cursor: pointer;
 
 }
 
 li a.activa {
-   color:#470459;
-   border-bottom: 2px solid #470459;
-   font-weight: bold;
-   
+    color: #470459;
+    border-bottom: 2px solid #470459;
+    font-weight: bold;
+
+
 
 }
 
 
 a {
-    text-decoration:none;
+    text-decoration: none;
     display: inline-block;
     padding: 8px;
     color: #8538a6;
 
 }
 
+/*Efecto para cambiar el tamanio de los link del nav-bar */
+a.ex2:hover, a.ex2:active, a.activa:hover {font-size: 115%;}
+
+
 .login {
     border-color: #470459;
     color: #fcfcfc;
-    background-color:#470459;
+    background-color: #470459;
     border-radius: 15px;
     padding: 6px 30px;
     margin: 10px;
@@ -69,13 +81,13 @@ a {
 }
 
 .login:hover {
-    background-color:#8538a6;
+    background-color: #8538a6;
     color: #f2cb57;
     font-weight: bold;
 }
 
 .split {
-    float:inline-end;
+    float: inline-end;
     margin-bottom: 8px;
     text-align: center;
     top: 5px;
@@ -100,116 +112,98 @@ img {
     position: relative;
     opacity: 0.85;
 
-  }
+}
 
 
 .Titulo-AcercadeNosotros {
-    white-space: nowrap; 
+    white-space: nowrap;
     color: white;
     font-size: 60px;
     position: absolute;
     top: 12%;
     left: 20%;
-  }
+    text-shadow: 3px 3px 6px rgb(16, 5, 5);
+}
 
-  .Texto-AcercadeNosotros {
-        position: absolute;
-        bottom: centre;
-        top: 40%;
-        text-align: center;
-        color:#fcfcfc;
-        width: 100%;
-        height: 0;
-        font-weight: bold;
-      }
-   
+.Texto-AcercadeNosotros {
+    position: absolute;
+    bottom: centre;
+    top: 40%;
+    text-align: center;
+    color: #fcfcfc;
+    width: 100%;
+    height: 0;
+    font-weight: bold;
+}
 
-  #textoNosotros:hover {
+.Titulo-AcercadeNosotros,
+.Texto-AcercadeNosotros {
+    font-family: "Outfit", sans-serif;
+}
+
+#textoNosotros:hover {
     background-color: #f7e8f6a0;
     border-radius: 4px;
 
-  }
-  
+}
+
 /*Para que sea RESPONSIVO */
-  @media screen and (max-width: 700px) {
-    .main-bar, .conteinerportada .contenido-img, .Titulo-AcercadeNosotros,  .Texto-AcercadeNosotros img {  
-        font-size: 0,5em; 
+@media screen and (max-width: 700px) {
+
+    .main-bar,
+    .conteinerportada .contenido-img,
+    .Titulo-AcercadeNosotros,
+    .Texto-AcercadeNosotros img {
+        font-size: 0, 5em;
         padding: 0;
-        flex-direction:row;
+        flex-direction: row;
     }
 }
 
-/*Seccion HISTORIA (fila)*/
+/*Secciones: HISTORIA + VALORES + MISION (fila)*/
 
-.contenidoHistoria{
-    display: flex;
-    justify-content:center;
-    align-items:center;
-
-}
-
-.Titulo-contenidoHistoria{
-    padding: 30px;
-    margin: 30px;
-    color: #470459;
-    font-size:large;
-    text-align: center;
-
-}
-.texto-contenidoHistoria {
-    font-size: small;
-}
-
-
-
-/*Seccion MISION (fila)*/
-
-.contenidoMision {
-    display: flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.Titulo-contenidoMision {
-    padding: 30px;
-    margin: 30px;
-    color: #470459;
-    font-size:large;
-    text-align: center;
-}
-
-.texto-contenidoMision {
-    font-size: small;
-
-}
-
-/*Seccion VALORES (fila)*/
-
+.contenidoHistoria,
+.contenidoMision,
 .contenidoValores {
     display: flex;
-    justify-content:center; 
+    justify-content: center;
     align-items: center;
+    font-family: "Outfit", sans-serif;
 }
 
-
+.Titulo-contenidoHistoria,
+.Titulo-contenidoMision,
 .Titulo-contenidoValores {
     padding: 30px;
     margin: 30px;
     color: #470459;
-    font-size:large;
+    font-size: large;
     text-align: center;
 }
 
+.texto-contenidoHistoria,
+.texto-contenidoMision,
 .texto-contenidoValores {
     font-size: small;
+    font-family: out;
+    box-shadow: 2px 2px 5px #615667;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 35px;
+    padding: 20px;
+    font-family: "Outfit", sans-serif;
 }
+
+
 
 /*Estilos para los textos*/
 
 h2:hover {
-    color:#8538a6;
+    color: #8538a6;
 }
 
+
+/*PIE DE PAGINA*/
 
 .footer {
     padding: 20px;
