@@ -50,9 +50,6 @@
 
     </header>
     <section class="section_header">
-        <!-- <div class="container_background">
-            <img src=".//images-fondo/Biblioteca.jpg" alt="">
-        </div> -->
         <div class="container_library">
             <h2 class="title_library">Nuestra Biblioteca</h2>
             <div class="container_btn">
@@ -74,7 +71,21 @@
                 atemporales hasta los
                 últimos estrenos, nuestra biblioteca ofrece una experiencia cinematográfica única.</p>
         </div>
-        <div class="container_section">ordenar
+        <div class="container_section">
+            <div class="container_dropdown">
+                <p>Ordenar por:</p>
+                <div class="dropdown">
+                    <button id="dropdownButton" class="dropbtn">
+                        <i class="fa-solid fa-circle-chevron-down"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#" data-tags="recent_popular_movies">+ Populares recientes</a>
+                        <a href="#" data-tags="clasic">Clasicas</a>
+                        <a href="#" data-tags="comedy">Comedias</a>
+                        <a href="#" data-tags="horror">Terror</a>
+                    </div>
+                </div>
+            </div>
             <div class="carouselContainer carrusel-1" id="carouselContainer1"></div>
             <div class="container_points">
             </div>
@@ -86,7 +97,21 @@
                 valoradas. Desde clásicos atemporales hasta las más recientes obras maestras, sumérgete en una
                 experiencia cinematográfica inigualable con nuestras recomendaciones de alta calidad.</p>
         </div>
-        <div class="container_section">ordenar
+        <div class="container_section">
+            <div class="container_dropdown">
+                <p>Ordernar por:</p>
+                <div class="dropdown">
+                    <button id="dropdownButton2" class="dropbtn">
+                        <i class="fa-solid fa-circle-chevron-down"></i>
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="#" data-tags="recent_popular_movies">+ Populares recientes</a>
+                        <a href="#" data-tags="clasic">Clasicas</a>
+                        <a href="#" data-tags="comedy">Comedias</a>
+                        <a href="#" data-tags="horror">Terror</a>
+                    </div>
+                </div>
+            </div>
             <div class="carouselContainer carrusel-2" id="carouselContainer2"></div>
             <div class="container_points">
             </div>
@@ -101,7 +126,7 @@
     </section>
 
 
-
+    <script src="/scripts/dropdown.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
