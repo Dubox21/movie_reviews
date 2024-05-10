@@ -1,4 +1,4 @@
-/*BARRA DE NAVEGACION */
+/*BARRA DE NAVEGACION
 .nav-bar {
     margin: auto;
     width: 100%;
@@ -60,7 +60,7 @@ a {
 
 }
 
-/*Efecto para cambiar el tamanio de los link del nav-bar */
+Efecto para cambiar el tamanio de los link del nav-bar 
 a.ex2:hover, a.ex2:active, a.activa:hover {font-size: 115%;}
 
 
@@ -94,9 +94,87 @@ a.ex2:hover, a.ex2:active, a.activa:hover {font-size: 115%;}
     justify-content: center;
 
 
+}*/
+
+.cuerpo {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    padding: 80px 0px;
+
+}
+
+/*BARRA DE NAVEGACION 2*/
+
+.header {
+    background-color:#ebe8ebf3;
+    position: fixed;
+    height: 80px; /*puede no estar*/
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.navBar {
+    display: flex; /*para que el contenido se alinie*/
+    justify-content:space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
+
+}
+
+.nav-link {
+    color: #8538a6;
+    text-decoration: none;
+}
+
+.logo2 {
+    padding: 0 20px;
+    line-height: 80px; /*para centrarlo (debe ser igual al del cuerpo)*/
 }
 
 
+.nav-menu {
+    display: flex; /*para que los elementos queden dispersos horizontal*/
+    margin-right: 40px;
+    list-style: none;
+
+}
+
+.nav-menu-item {
+    margin: 0 20px; /*para separar cada link*/
+    line-height: 50px;
+    width: max-content; /*para que no corte el contenido*/
+
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.nav-menu-link:hover {
+    background-color:#8538a6;
+    color: #f2e205;
+
+}
+
+/*BARRA DE NAV PARA CELULARES*/
+.nav-toggle {
+    color: #470459;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 60px;
+    
+    display: none; /*para que ocultarlo*/
+
+}
+
+@media (max-width: 768px){}
 
 /*ACERCA DE NOSOTROS + IMG */
 
@@ -147,7 +225,7 @@ img {
 
 }
 
-/*Para que sea RESPONSIVO */
+/*Para que sea RESPONSIVO 
 @media screen and (max-width: 700px) {
 
     .main-bar,
@@ -158,7 +236,7 @@ img {
         padding: 0;
         flex-direction: row;
     }
-}
+}*/
 
 /*Secciones: HISTORIA + VALORES + MISION (fila)*/
 
