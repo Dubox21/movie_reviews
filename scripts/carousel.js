@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Estructura del slide
                 slide.innerHTML = `
                     <div class="container_img">
-                        <img src="${image}" alt="${filmTitle}">
+                        <img src="${image}" alt="${filmTitle}" loading="lazy">
                     </div>
                     <div class="rating-stars">
                         <span class="star">${stars}</span>
