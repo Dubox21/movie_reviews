@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <link rel="preload" href="../CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="preload" href="../CSS/globales.css" as="style">
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="preload" href="../CSS/style.css" as="style">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preload" href="../CSS/CSS-Templates/movie.css" as="style">
+    <link rel="stylesheet" href="../CSS/CSS-Templates/movie.css">
+</head>
+
+<body>
+    <header><!--es un DIV-->
+        <nav class="nav-bar"><!--BARRA DE NAVEGACION-->
+            <div id="logo">
+                <img src="" alt="img-logo">
+            </div>
+            <div>
+                <div><!--links de BARRA DE NAVEGACION-->
+                    <ul class="main-bar">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/Acerca-de-nosotros.html">Acerca de nosotros</a></li>
+                        <li><a class="activa" href="/library.html">Biblioteca</a></li>
+                        <li><a href="/formulario.html">Contacto</a></li>
+                </div>
+                <div class="split"><!--Boton Log-in de BARRA DE NAVEGACION-->
+                    <button class="btn login">Log in</button>
+                </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container_main">
+        <section>
+            <div class="rating-stars">
+                <span class="star">${stars}</span>
+            </div>
+            <div class="container_img">
+                <img src="../img/Img_donde_estan_las_rubias.png" alt="">
+            </div>
+        </section>
+    </main>
+
+    <section class="container_description-movie">
+        <h3>Y donde estan las rubias</h3>
+        <div class="container_creditsDistributions">
+            <h4 class="title-movie">Créditos y reparto</h4>
+            <div class="container_flex">
+                <p class="title_Credits">Directores:</p>
+                <p class="credits">Keenen Ivory Wayans</p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Guión:</p>
+                <div class="container_directors">
+                    <p class="credits">Keenen Ivory Wayans </p>
+                    <p class="credits">Shawn Wayans</p>
+                    <p class="credits">Marlon Wayans</p>
+                    <p class="credits">Andrew McElfresh</p>
+                    <p class="credits">Michael Anthony Snowden</p>
+                    <p class="credits">Xavier Cook</p>
+                </div>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Género:</p>
+                <p class="credits">Comedia, Drama</p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">País:</p>
+                <p class="credits">Estados Unidos</p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Idioma:</p>
+                <p class="credits">Inglés</p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Duración:</p>
+                <p class="credits">109 min.</p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Estreno:</p>
+                <p class="credits">01 de Oct 2004</p>
+            </div>
+        </div>
+        <div class="container_description-movie">
+            <p>"¿Y dónde están las rubias?" es una comedia del año 2004 dirigida por Keenen Ivory Wayans. La trama sigue a
+                dos agentes del FBI, interpretados por Shawn Wayans y Marlon Wayans, que se encuentran en una situación
+                difícil y son asignados a una misión encubierta. Deben proteger a unas herederas de hoteles, las hermanas
+                Wilson, interpretadas por Brittany Daniel y Jessica Cauffiel, de un complot de secuestro. La película está
+                llena de humor absurdo, situaciones cómicas y parodias de otras películas y programas de televisión.</p>
+            <p> En resumen, "¿Y dónde están las rubias?" es una película divertida que ofrece una combinación de comedia
+                física y humor satírico.</p>
+        </div>
+    </section>
+    <section class="container_trailer-qualification">
+        <h4 class="title-movie">Trailer</h4>
+        <div class="container_trailer">
+            <iframe src="https://www.youtube.com/embed/aeVkbNka9HM?si=T6j5xkaQB-5ttBZI" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+        <div class="container_qualification">
+            <div class="container_qualification-flex">
+                <h5>Calificacion</h5>
+                <div class="qualification">
+                    <p>5.3</p>
+                </div>
+            </div>
+            <div class="container_qualification-flex">
+                <h5>Le Gusto</h5>
+                <div class="qualification">
+                    <p>95%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="footer">
+        <footer>Footer en construccion</footer>
+    </div>
+
+
+    <script>
+        fetch('../JSON/movies.json')
+            .then(response => response.json())
+            .then(data => {
+                // Obtener el título del primer objeto en la matriz
+                const primerTitulo = data[0].titleHead;
+
+                // Establecer el título de la página
+                document.title = primerTitulo;
+            })
+            .catch(error => {
+                console.error('Error al cargar los datos:', error);
+            });
+    </script>
+</body>
+
+</html>

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <i class="fa-solid fa-sort-down"></i>
                             </button>
                         </div>
-                        <button class="btn_film">Ver</button>
+                        <a href="../Templates/movie.html" class="btn_film">Ver</a>
                     </div>
                 `;
         
