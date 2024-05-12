@@ -9,38 +9,38 @@ document.addEventListener('DOMContentLoaded', function () {
     function loadCarousel(containerId) {
         Promise.all([
             fetch('../Templates/carousel.html').then(response => response.text()),
-            fetch('/JSON/movies.json').then(response => response.json())
+            fetch('../JSON/movies.json').then(response => response.json())
         ])
-        .then(([carouselHTML, jsonData]) => {
+            .then(([carouselHTML, jsonData]) => {
 
-            // Insertar el contenido del carrusel en el contenedor específico
-            document.getElementById(containerId).innerHTML = carouselHTML;
-        
-            // Obtener el contenedor del carrusel
-            const container = document.getElementById(containerId);
-        
-            // Obtener el contenedor de slides dentro del carrusel
-            const slidesContainer = container.querySelector('.carousel_inner');
-        
-            // Obtener el primer slide (elemento de película)
-            const templateSlide = slidesContainer.querySelector('.carousel_item.movie');
-        
-            // Iterar sobre los datos de las películas y clonar el template para cada una
-            jsonData.forEach(movie => {
-                const tags = movie.tags;
-                const image = movie.img;
-                const stars = movie.stars;
-                const filmTitle = movie.title;
-                const filmDescription = movie.description;
-        
-                // Crear un nuevo elemento de slide
-                const slide = document.createElement('div');
-                slide.classList.add('carousel_item', 'movie');
-                // Asignar los tags al atributo dataset
-                slide.dataset.tags = tags;
-        
-                // Estructura del slide
-                slide.innerHTML = `
+                // Insertar el contenido del carrusel en el contenedor específico
+                document.getElementById(containerId).innerHTML = carouselHTML;
+
+                // Obtener el contenedor del carrusel
+                const container = document.getElementById(containerId);
+
+                // Obtener el contenedor de slides dentro del carrusel
+                const slidesContainer = container.querySelector('.carousel_inner');
+
+                // Obtener el primer slide (elemento de película)
+                const templateSlide = slidesContainer.querySelector('.carousel_item.movie');
+
+                // Iterar sobre los datos de las películas y clonar el template para cada una
+                jsonData.forEach(movie => {
+                    const tags = movie.tags;
+                    const image = movie.img;
+                    const stars = movie.stars;
+                    const filmTitle = movie.title;
+                    const filmDescription = movie.description;
+
+                    // Crear un nuevo elemento de slide
+                    const slide = document.createElement('div');
+                    slide.classList.add('carousel_item', 'movie');
+                    // Asignar los tags al atributo dataset
+                    slide.dataset.tags = tags;
+
+                    // Estructura del slide
+                    slide.innerHTML = `
                     <div class="container_img">
                         <img src="${image}" alt="${filmTitle}" loading="lazy">
                     </div>
@@ -55,24 +55,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <i class="fa-solid fa-sort-down"></i>
                             </button>
                         </div>
-                        <a href="../Templates/movie.html" class="btn_film">Ver</a>
+                        <a href="../Templates/movie.html?title=${encodeURIComponent(filmTitle)}" class="btn_film">Ver</a>
                     </div>
                 `;
-        
-                // Agregar el nuevo slide al contenedor de slides
-                slidesContainer.appendChild(slide);
+
+                    // Agregar el nuevo slide al contenedor de slides
+                    slidesContainer.appendChild(slide);
+                });
+
+                // Ocultar elementos según el carrusel
+                if (containerId === 'carouselContainer1') {
+                    const ratingStars = document.querySelector(`#${containerId} .rating-stars`);
+                    ratingStars.style.display = 'none';
+                }
+
+                // Luego de cargar el carrusel, inicializamos su funcionalidad
+                initializeCarousel(containerId, jsonData);
             });
-        
-            // Ocultar elementos según el carrusel
-            if (containerId === 'carouselContainer1') {
-                const ratingStars = document.querySelector(`#${containerId} .rating-stars`);
-                ratingStars.style.display = 'none';
-            }
-        
-            // Luego de cargar el carrusel, inicializamos su funcionalidad
-            initializeCarousel(containerId, jsonData);
-        })
-    }        
+    }
 });
 
 function initializeCarousel(containerId, jsonData) {
@@ -188,26 +188,6 @@ function initializeCarousel(containerId, jsonData) {
             slidesToShow = 2; // En tabletas, mostrar 2 slides
         }
         return slidesToShow;
-    }
-
-    function ranking(containerId) {
-        const carouselContainer = document.getElementById(containerId);
-        if (!carouselContainer) {
-            console.error(`El contenedor con ID '${containerId}' no se encontró en el DOM.`);
-            return; // Salir de la función si el contenedor no se encuentra
-        }
-    
-        const ratingStars = carouselContainer.querySelector('.rating-stars');
-        if (!ratingStars) {
-            console.error(`No se encontró el elemento con la clase 'rating-stars' dentro del contenedor con ID '${containerId}'.`);
-            return; // Salir de la función si el elemento no se encuentra
-        }
-    
-        if (containerId === 'carouselContainer2') {
-            ratingStars.style.display = 'block';
-        } else {
-            ratingStars.style.display = 'none';
-        }
     }
 }
 
