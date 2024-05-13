@@ -1,11 +1,27 @@
 :root {
     --colorVioletDark: #470459;
+    --colorVioletLight: #8538A6;
     --colorBackgroud: #F2F2F2;
     --colorBlueLight: #7386BF;
     --colorYellow: #f2e205;
     --colorGrey: #343434;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--colorBackgroud);
+    padding: 0 10px;
+}
+
+body,
+button,
+input {
+    font-family: "Outfit", sans-serif;
+}
 
 header {
     position: absolute;
@@ -17,4 +33,8 @@ header {
 
 p{
     margin: 0;
+}
+
+button{
+    cursor: pointer;
 }
