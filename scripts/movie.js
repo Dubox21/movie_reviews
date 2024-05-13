@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Crear un section
                 const main = document.createElement('section');
+                main.classList.add('section_main');
 
                 // Estructura de main
                 main.innerHTML = `

@@ -4,6 +4,20 @@
     margin-top: 90px;
 }
 
+.section_main{
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
+}
+
+.rating-stars {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.star {
+    font-size: 30px;
+    color: var(--colorVioletDark)
+}
+
 .container_main .container_img,
 .container_trailer {
     width: 340px;
@@ -25,6 +39,7 @@
 
 .container_description-movie h3 {
     font-size: 30px;
+    margin: 30px 0;
     text-align: center;
 }
 
