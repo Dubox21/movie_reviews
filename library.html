@@ -63,11 +63,18 @@
                 <div class="container_btn">
                     <button id="btn-all" class="btn_btn"><i class="fa-solid fa-photo-film" style="color: #000000;"></i>
                         Todas</button>
-                    <button id="btn-liked" class="btn_btn"><i class="fa-regular fa-thumbs-up" style="color: #000000;"></i> Mejor
+                    <button id="btn-liked" class="btn_btn"><i class="fa-regular fa-thumbs-up"
+                            style="color: #000000;"></i> Mejor
                         Valorada</button>
                     <div class="search-container">
                         <i class="fas fa-search search-icon"></i>
-                        <input type="search" class="search-input" placeholder="Que Buscas?">
+                        <div class="search_inputResults">
+                            <input id="searchInput" type="search" class="search-input" placeholder="Que Buscas?">
+                            <div id="searchResults"></div>
+                            <div id="noResultsMessage" class="no-results-message">
+                                <p>No hay resultados</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

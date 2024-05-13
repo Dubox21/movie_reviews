@@ -108,6 +108,14 @@
     justify-content: center;
 }
 
+.search_inputResults {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
 /* Estilos para el input de búsqueda */
 .search-input {
     width: 170px;
@@ -137,6 +145,68 @@
     color: #000;
     font-size: 18px;
     cursor: pointer;
+}
+
+#searchResults {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Coloca el contenedor de resultados justo debajo del input */
+    width: calc(100% - 20px);
+    /* Ajusta el ancho para evitar desbordamiento horizontal */
+    max-height: 200px;
+    /* Limita la altura máxima del contenedor de resultados */
+    overflow-y: auto;
+    /* Agrega un scroll vertical si los resultados exceden la altura máxima */
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Asegura que el contenedor de resultados esté por encima de otros elementos */
+    display: none;
+}
+
+#searchResults a {
+    display: block; /* Hacer que los elementos a ocupen todo el ancho del contenedor */
+    padding: 10px; /* Agregar un relleno alrededor del enlace para mejorar la apariencia */
+    margin: 0; /* Eliminar el margen predeterminado */
+}
+
+#searchResults a:hover{
+    background-color: var(--colorYellow);
+}
+
+#searchResults::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+    height: 5px; /* Altura de la barra de desplazamiento */
+}
+
+/* Estilo para el área de la barra de desplazamiento */
+#searchResults::-webkit-scrollbar-thumb {
+    background-color: var(--colorBlueLight); /* Color de fondo de la barra de desplazamiento */
+    border-radius: 10px; /* Radio de borde de la barra de desplazamiento */
+}
+
+.search-result {
+    cursor: pointer;
+    color: inherit;
+    /* Heredar el color del texto del elemento padre */
+    text-decoration: none;
+    /* Eliminar la subrayado predeterminado */
+}
+
+#noResultsMessage {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Coloca el contenedor de resultados justo debajo del input */
+    width: calc(100% - 20px);
+    /* Ajusta el ancho para evitar desbordamiento horizontal */
+    max-height: 200px;
+    /* Limita la altura máxima del contenedor de resultados */
+    z-index: 1000;
+    /* Asegura que el contenedor de resultados esté por encima de otros elementos */
+    display: none;
+    text-align: center;
 }
 
 .description_library {
@@ -324,7 +394,7 @@
     }
 
     .search-icon {
-        left: 15px;
+        left: 25px;
     }
 
     .description_library {
