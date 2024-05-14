@@ -5,77 +5,101 @@ document.addEventListener('DOMContentLoaded', function () {
         loadCarousel('carouselContainer2');
 
     });
-    // Función para cargar el contenido del carrusel
+        // Función para cargar el contenido del carrusel
     function loadCarousel(containerId) {
-        Promise.all([
-            fetch('../Templates/carousel.html').then(response => response.text()),
-            fetch('../JSON/movies.json').then(response => response.json())
-        ])
-            .then(([carouselHTML, jsonData]) => {
-
-                // Insertar el contenido del carrusel en el contenedor específico
-                document.getElementById(containerId).innerHTML = carouselHTML;
-
-                // Obtener el contenedor del carrusel
-                const container = document.getElementById(containerId);
-
-                // Obtener el contenedor de slides dentro del carrusel
-                const slidesContainer = container.querySelector('.carousel_inner');
-
-                // Obtener el primer slide (elemento de película)
-                const templateSlide = slidesContainer.querySelector('.carousel_item.movie');
-
+        fetch('../JSON/movies.json')
+            .then(response => response.json())
+            .then(jsonData => {
+                // Crear el contenedor principal del carrusel
+                const carouselContainer = document.createElement('div');
+                carouselContainer.id = 'carousel_container';
+                carouselContainer.classList.add('carousel_film');
+    
+                // Crear el contenedor de slides dentro del carrusel
+                const slidesContainer = document.createElement('div');
+                slidesContainer.classList.add('carousel_inner');
+    
+                // Agregar el contenedor de slides al contenedor principal del carrusel
+                carouselContainer.appendChild(slidesContainer);
+    
+                // Insertar el contenedor del carrusel en el contenedor específico
+                document.getElementById(containerId).appendChild(carouselContainer);
+    
                 // Iterar sobre los datos de las películas y clonar el template para cada una
                 jsonData.forEach(movie => {
                     const tags = movie.tags;
                     const image = movie.img;
-                    const stars = movie.stars;
+                    const stars = movie.stars; //Caracteres Unicode de estrellas
+                    const quantityStars = movie.quantityStars; // Número de estrellas
                     const filmTitle = movie.title;
                     const filmDescription = movie.description;
-
+    
+                    // Filtrar películas solo para el carrusel 2 (si corresponde)
+                    if (containerId === 'carouselContainer2' && quantityStars !== '5') {
+                        return; // Salir del bucle para omitir películas que no tienen la cantidad de estrellas deseada
+                    }
+    
                     // Crear un nuevo elemento de slide
                     const slide = document.createElement('div');
                     slide.classList.add('carousel_item', 'movie');
                     // Asignar los tags al atributo dataset
                     slide.dataset.tags = tags;
-
+                    slide.dataset.quantityStars = quantityStars;
+    
                     // Estructura del slide
                     slide.innerHTML = `
-                    <div class="container_img">
-                        <img src="${image}" alt="${filmTitle}" loading="lazy">
-                    </div>
-                    <div class="rating-stars">
-                        <span class="star">${stars}</span>
-                    </div>
-                    <div class="container_description">
-                        <h4 class="film_title">${filmTitle}</h4>
-                        <div class="description-wrapper">
-                            <p class="description-text">${filmDescription}</p>
-                            <button class="btn_readMore" onclick="toggleDescription(this)">
-                                <i class="fa-solid fa-sort-down"></i>
-                            </button>
+                        <div class="container_img">
+                            <img src="${image}" alt="${filmTitle}" loading="lazy">
                         </div>
-                        <a href="../Templates/movie.html?title=${encodeURIComponent(filmTitle)}" class="btn_film">Ver</a>
-                    </div>
-                `;
-
+                        <div class="rating-stars">
+                            <span class="star">${stars}</span>
+                        </div>
+                        <div class="container_description">
+                            <h4 class="film_title">${filmTitle}</h4>
+                            <div class="description-wrapper">
+                                <p class="description-text">${filmDescription}</p>
+                                <button class="btn_readMore" onclick="toggleDescription(this)">
+                                    <i class="fa-solid fa-sort-down"></i>
+                                </button>
+                            </div>
+                            <a href="../Templates/movie.html?title=${encodeURIComponent(filmTitle)}" class="btn_film">Ver</a>
+                        </div>
+                    `;
                     // Agregar el nuevo slide al contenedor de slides
                     slidesContainer.appendChild(slide);
                 });
-
+    
+                // Agregar botones de navegación al carrusel
+                const prevButton = document.createElement('button');
+                prevButton.classList.add('carousel-prev');
+                prevButton.setAttribute('aria-hidden', 'true');
+                prevButton.innerHTML = '<i class="fa-solid fa-circle-chevron-left"></i>';
+    
+                const nextButton = document.createElement('button');
+                nextButton.classList.add('carousel-next');
+                nextButton.setAttribute('aria-hidden', 'true');
+                nextButton.innerHTML = '<i class="fa-solid fa-circle-chevron-right"></i>';
+    
+                // Agregar botones de navegación al contenedor principal del carrusel
+                carouselContainer.appendChild(prevButton);
+                carouselContainer.appendChild(nextButton);
+    
                 // Ocultar elementos según el carrusel
                 if (containerId === 'carouselContainer1') {
                     const ratingStars = document.querySelector(`#${containerId} .rating-stars`);
                     ratingStars.style.display = 'none';
                 }
-
+    
                 // Luego de cargar el carrusel, inicializamos su funcionalidad
-                initializeCarousel(containerId, jsonData);
+                initializeCarousel(containerId);
             });
     }
+    
 });
 
-function initializeCarousel(containerId, jsonData) {
+
+
+function initializeCarousel(containerId) {
     // Acceder al carrusel específico
     const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
     const totalSlides = slides.length;
@@ -203,4 +227,26 @@ function toggleDescription(button) {
     }
 }
 
+function filterMoviesByStars(selectedStars) {
+
+            // Obtener todas las películas del carrusel 2
+            const allMovies = document.querySelectorAll('.carrusel-2 .carousel_item');
+
+            // Iterar sobre todas las películas
+            allMovies.forEach(movie => {
+                // Obtener el número de estrellas de la película
+                const movieStars = parseInt(movie.dataset.quantityStars);
+
+                // Verificar si el número de estrellas coincide con el seleccionado
+                if (movieStars !== selectedStars) {
+                    // Ocultar la película que no coincide
+                    movie.style.display = 'none';
+                } else {
+                    // Mostrar la película que coincide
+                    movie.style.display = 'block';
+                }
+            });
+            // Redirigir al usuario al archivo carouselFilter.html
+            window.location.href = '../Templates/carouselFilter.html';
+}
 

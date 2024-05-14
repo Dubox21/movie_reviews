@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <link rel="preload" href="/CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="preload" href="./CSS/globales.css" as="style">
+    <link rel="stylesheet" href="./CSS/globales.css">
+    <link rel="preload" href="./CSS/library.css" as="style">
+    <link rel="stylesheet" href="./CSS/library.css">
+    <link rel="preload" href="./CSS/CSS-Templates/carousel.css" as="style">
+    <link rel="stylesheet" href="./CSS/CSS-Templates/carousel.css">
+    <link rel="preload" href="./CSS/CSS-Templates/carouselReviews.css" as="style">
+    <link rel="stylesheet" href="./CSS/CSS-Templates/carouselReviews.css">
+    <link rel="preload" href="./CSS/style.css" as="style">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <header><!--es un DIV-->
+        <nav class="nav-bar"><!--BARRA DE NAVEGACION-->
+            <div id="logo">
+                <img src="" alt="img-logo">
+            </div>
+            <div>
+                <div><!--links de BARRA DE NAVEGACION-->
+                    <ul class="main-bar">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/Acerca-de-nosotros.html">Acerca de nosotros</a></li>
+                        <li><a class="activa" href="/library.html">Biblioteca</a></li>
+                        <li><a href="/formulario.html">Contacto</a></li>
+                </div>
+                <div class="split"><!--Boton Log-in de BARRA DE NAVEGACION-->
+                    <button class="btn login">Log in</button>
+                </div>
+                </ul>
+            </div>
+
+        </nav>
+
+    </header>
+    <div id="loader"></div> <!--Muestra un loader cuando no termino de cargar la pagina-->
+    <main>
+        <section class="section_header">
+            <div class="container_library">
+                <h2 class="title_library">Nuestra Biblioteca</h2>
+                <div class="container_btn">
+                    <button id="btn-all" class="btn_btn"><i class="fa-solid fa-photo-film" style="color: #000000;"></i>
+                        Todas</button>
+                    <button id="btn-liked" class="btn_btn"><i class="fa-regular fa-thumbs-up"
+                            style="color: #000000;"></i> Mejor
+                        Valorada</button>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <div class="search_inputResults">
+                            <input id="searchInput" type="search" class="search-input" placeholder="Que Buscas?">
+                            <div id="searchResults"></div>
+                            <div id="noResultsMessage" class="no-results-message">
+                                <p>No hay resultados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="filteredMoviesContainer"></div>
+
+
+
+
+</body>
+
+</html>
