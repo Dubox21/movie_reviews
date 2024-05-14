@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function () {
-
         loadCarousel('carouselContainer1');
         loadCarousel('carouselContainer2');
-
     });
-        // Función para cargar el contenido del carrusel
+
+    // Función para cargar el contenido del carrusel
     function loadCarousel(containerId) {
         fetch('../JSON/movies.json')
             .then(response => response.json())
@@ -34,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     const filmTitle = movie.title;
                     const filmDescription = movie.description;
     
-                    // Filtrar películas solo para el carrusel 2 (si corresponde)
-                    if (containerId === 'carouselContainer2' && quantityStars !== '5') {
-                        return; // Salir del bucle para omitir películas que no tienen la cantidad de estrellas deseada
-                    }
+                    // // Filtrar películas solo para el carrusel 2 (si corresponde)
+                    // if (containerId === 'carouselContainer2' && quantityStars !== '5') {
+                    //     return; // Salir del bucle para omitir películas que no tienen la cantidad de estrellas deseada
+                    // }
     
                     // Crear un nuevo elemento de slide
                     const slide = document.createElement('div');
@@ -95,158 +94,161 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
     
-});
-
-
-
-function initializeCarousel(containerId) {
-    // Acceder al carrusel específico
-    const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
-    const totalSlides = slides.length;
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        let slidesToShow = 1; // Por defecto, mostrar un slide
-
-        if (window.innerWidth >= 1024) {
-            slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
-        } else if (window.innerWidth >= 768) {
-            slidesToShow = 2; // En tabletas, mostrar 2 slides
-        }
-
-        // Calcular el índice máximo permitido
-        const maxIndex = Math.max(0, totalSlides - slidesToShow);
-
-        // Si el índice es mayor que el máximo permitido, establecerlo en el máximo
-        if (index > maxIndex) {
-            index = maxIndex;
-        }
-
-        slides.forEach((slide, i) => {
-            if (i >= index && i < index + slidesToShow) {
-                slide.style.display = 'block';
-            } else {
-                slide.style.display = 'none';
+    function initializeCarousel(containerId) {
+        // Acceder al carrusel específico
+        const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+            let slidesToShow = 1; // Por defecto, mostrar un slide
+    
+            if (window.innerWidth >= 1024) {
+                slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
+            } else if (window.innerWidth >= 768) {
+                slidesToShow = 2; // En tabletas, mostrar 2 slides
             }
-        });
-    }
-
-    // Llamar a la función showSlide() al cargar la página
-    showSlide(currentIndex);
-
-    // Función para avanzar al siguiente slide
-    function nextSlide() {
-        if (window.innerWidth >= 1024) {
-            currentIndex = (currentIndex + 4) % totalSlides;
-        } else if (window.innerWidth >= 768) {
-            currentIndex = (currentIndex + 2) % totalSlides;
-        } else {
-            currentIndex = (currentIndex + 1) % totalSlides;
-        }
-        showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-        if (window.innerWidth >= 1024) {
-            currentIndex = (currentIndex - 4 + totalSlides) % totalSlides;
-        } else if (window.innerWidth >= 768) {
-            currentIndex = (currentIndex + 2) % totalSlides;
-        } else {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        }
-        showSlide(currentIndex);
-    }
-
-    // Agregar listeners para los botones de control
-    // Acceder a los botones de control dentro del contenedor específico
-    const prevButton = document.querySelector(`#${containerId} .carousel-prev`);
-    const nextButton = document.querySelector(`#${containerId} .carousel-next`);
-
-    prevButton.addEventListener('click', function () {
-        prevSlide();
-        slideFromLeft();
-    });
-
-    nextButton.addEventListener('click', function () {
-        nextSlide();
-        slideFromRight();
-    });
-
-    // Definir animaciones
-    function slideFromLeft() {
-        const currentSlideIndex = currentIndex;
-        const slidesToShow = getSlidesToShow();
-
-        for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
-            const index = i % totalSlides;
-            const currentSlide = slides[index];
-            currentSlide.classList.remove('active');
-            currentSlide.classList.add('prev');
-            setTimeout(function () {
-                currentSlide.classList.remove('prev');
-            }, 500); // La misma duración que la animación
-        }
-    }
-
-    function slideFromRight() {
-        const currentSlideIndex = currentIndex;
-        const slidesToShow = getSlidesToShow();
-
-        for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
-            const index = i % totalSlides;
-            const currentSlide = slides[index];
-            currentSlide.classList.remove('active');
-            currentSlide.classList.add('next');
-            setTimeout(function () {
-                currentSlide.classList.remove('next');
-            }, 500); // La misma duración que la animación
-        }
-    }
-
-    function getSlidesToShow() {
-        let slidesToShow = 1; // Por defecto, mostrar un slide
-
-        if (window.innerWidth >= 1024) {
-            slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
-        } else if (window.innerWidth >= 768) {
-            slidesToShow = 2; // En tabletas, mostrar 2 slides
-        }
-        return slidesToShow;
-    }
-}
-
-function toggleDescription(button) {
-    var description = button.parentElement.querySelector('.description-text'); // El párrafo dentro del mismo contenedor
-
-    if (description.classList.contains('expanded')) {
-        description.classList.remove('expanded');
-        button.innerHTML = '<i class="fa-solid fa-sort-down"></i>'; // Cambiar el ícono a flecha hacia abajo
-    } else {
-        description.classList.add('expanded');
-        button.innerHTML = '<i class="fa-solid fa-sort-up"></i>'; // Cambiar el ícono a flecha hacia arriba
-    }
-}
-
-function filterMoviesByStars(selectedStars) {
-
-            // Obtener todas las películas del carrusel 2
-            const allMovies = document.querySelectorAll('.carrusel-2 .carousel_item');
-
-            // Iterar sobre todas las películas
-            allMovies.forEach(movie => {
-                // Obtener el número de estrellas de la película
-                const movieStars = parseInt(movie.dataset.quantityStars);
-
-                // Verificar si el número de estrellas coincide con el seleccionado
-                if (movieStars !== selectedStars) {
-                    // Ocultar la película que no coincide
-                    movie.style.display = 'none';
+    
+            // Calcular el índice máximo permitido
+            const maxIndex = Math.max(0, totalSlides - slidesToShow);
+    
+            // Si el índice es mayor que el máximo permitido, establecerlo en el máximo
+            if (index > maxIndex) {
+                index = maxIndex;
+            }
+    
+            slides.forEach((slide, i) => {
+                if (i >= index && i < index + slidesToShow) {
+                    slide.style.display = 'block';
                 } else {
-                    // Mostrar la película que coincide
-                    movie.style.display = 'block';
+                    slide.style.display = 'none';
                 }
             });
-            // Redirigir al usuario al archivo carouselFilter.html
-            window.location.href = '../Templates/carouselFilter.html';
-}
-
+        }
+    
+        // Llamar a la función showSlide() al cargar la página
+        showSlide(currentIndex);
+    
+        // Función para avanzar al siguiente slide
+        function nextSlide() {
+            if (window.innerWidth >= 1024) {
+                currentIndex = (currentIndex + 4) % totalSlides;
+            } else if (window.innerWidth >= 768) {
+                currentIndex = (currentIndex + 2) % totalSlides;
+            } else {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            }
+            showSlide(currentIndex);
+        }
+    
+        function prevSlide() {
+            if (window.innerWidth >= 1024) {
+                currentIndex = (currentIndex - 4 + totalSlides) % totalSlides;
+            } else if (window.innerWidth >= 768) {
+                currentIndex = (currentIndex + 2) % totalSlides;
+            } else {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            }
+            showSlide(currentIndex);
+        }
+    
+        // Agregar listeners para los botones de control
+        // Acceder a los botones de control dentro del contenedor específico
+        const prevButton = document.querySelector(`#${containerId} .carousel-prev`);
+        const nextButton = document.querySelector(`#${containerId} .carousel-next`);
+    
+        prevButton.addEventListener('click', function () {
+            prevSlide();
+            slideFromLeft();
+        });
+    
+        nextButton.addEventListener('click', function () {
+            nextSlide();
+            slideFromRight();
+        });
+    
+        // Definir animaciones
+        function slideFromLeft() {
+            const currentSlideIndex = currentIndex;
+            const slidesToShow = getSlidesToShow();
+    
+            for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
+                const index = i % totalSlides;
+                const currentSlide = slides[index];
+                currentSlide.classList.remove('active');
+                currentSlide.classList.add('prev');
+                setTimeout(function () {
+                    currentSlide.classList.remove('prev');
+                }, 500); // La misma duración que la animación
+            }
+        }
+    
+        function slideFromRight() {
+            const currentSlideIndex = currentIndex;
+            const slidesToShow = getSlidesToShow();
+    
+            for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
+                const index = i % totalSlides;
+                const currentSlide = slides[index];
+                currentSlide.classList.remove('active');
+                currentSlide.classList.add('next');
+                setTimeout(function () {
+                    currentSlide.classList.remove('next');
+                }, 500); // La misma duración que la animación
+            }
+        }
+    
+        function getSlidesToShow() {
+            let slidesToShow = 1; // Por defecto, mostrar un slide
+    
+            if (window.innerWidth >= 1024) {
+                slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
+            } else if (window.innerWidth >= 768) {
+                slidesToShow = 2; // En tabletas, mostrar 2 slides
+            }
+            return slidesToShow;
+        }
+    }
+    
+    function toggleDescription(button) {
+        var description = button.parentElement.querySelector('.description-text'); // El párrafo dentro del mismo contenedor
+    
+        if (description.classList.contains('expanded')) {
+            description.classList.remove('expanded');
+            button.innerHTML = '<i class="fa-solid fa-sort-down"></i>'; // Cambiar el ícono a flecha hacia abajo
+        } else {
+            description.classList.add('expanded');
+            button.innerHTML = '<i class="fa-solid fa-sort-up"></i>'; // Cambiar el ícono a flecha hacia arriba
+        }
+    }
+    
+    // Agregar event listeners a los enlaces del dropdown para filtrar las películas
+    const dropdownLinks = document.querySelectorAll('#myDropdown2 a');
+    
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+    
+            const quantityStars = parseInt(this.getAttribute('data-stars')); // Obtener la cantidad de estrellas del atributo data-stars
+            const containerId = 'carouselContainer2'; // Id del contenedor del carrusel que quieres filtrar
+    
+            // Filtrar las películas basadas en la cantidad de estrellas seleccionada
+            filterMoviesByStars(containerId, quantityStars);
+        });
+    });
+    
+    // Función para filtrar películas por cantidad de estrellas
+    function filterMoviesByStars(containerId, stars) {
+        // Ocultar todas las películas del carrusel
+        const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+    
+        // Mostrar solo las películas que coincidan con la cantidad de estrellas seleccionada
+        const filteredSlides = document.querySelectorAll(`#${containerId} .carousel_item[data-quantity-stars="${stars}"]`);
+        filteredSlides.forEach(slide => {
+            slide.style.display = 'block';
+        });
+    }
+});
