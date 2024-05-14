@@ -1,29 +1,81 @@
 document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function () {
+
         loadCarousel('carouselContainer1');
         loadCarousel('carouselContainer2');
+
     });
     // Función para cargar el contenido del carrusel
     function loadCarousel(containerId) {
-        fetch('../Templates/carousel.html')
-            .then(response => response.text())
-            .then(data => {
+        Promise.all([
+            fetch('../Templates/carousel.html').then(response => response.text()),
+            fetch('../JSON/movies.json').then(response => response.json())
+        ])
+            .then(([carouselHTML, jsonData]) => {
+
                 // Insertar el contenido del carrusel en el contenedor específico
-                document.getElementById(containerId).innerHTML = data;
-                // Luego de cargar el carrusel, inicializamos su funcionalidad
-                initializeCarousel(containerId);
+                document.getElementById(containerId).innerHTML = carouselHTML;
+
+                // Obtener el contenedor del carrusel
+                const container = document.getElementById(containerId);
+
+                // Obtener el contenedor de slides dentro del carrusel
+                const slidesContainer = container.querySelector('.carousel_inner');
+
+                // Obtener el primer slide (elemento de película)
+                const templateSlide = slidesContainer.querySelector('.carousel_item.movie');
+
+                // Iterar sobre los datos de las películas y clonar el template para cada una
+                jsonData.forEach(movie => {
+                    const tags = movie.tags;
+                    const image = movie.img;
+                    const stars = movie.stars;
+                    const filmTitle = movie.title;
+                    const filmDescription = movie.description;
+
+                    // Crear un nuevo elemento de slide
+                    const slide = document.createElement('div');
+                    slide.classList.add('carousel_item', 'movie');
+                    // Asignar los tags al atributo dataset
+                    slide.dataset.tags = tags;
+
+                    // Estructura del slide
+                    slide.innerHTML = `
+                    <div class="container_img">
+                        <img src="${image}" alt="${filmTitle}" loading="lazy">
+                    </div>
+                    <div class="rating-stars">
+                        <span class="star">${stars}</span>
+                    </div>
+                    <div class="container_description">
+                        <h4 class="film_title">${filmTitle}</h4>
+                        <div class="description-wrapper">
+                            <p class="description-text">${filmDescription}</p>
+                            <button class="btn_readMore" onclick="toggleDescription(this)">
+                                <i class="fa-solid fa-sort-down"></i>
+                            </button>
+                        </div>
+                        <a href="../Templates/movie.html?title=${encodeURIComponent(filmTitle)}" class="btn_film">Ver</a>
+                    </div>
+                `;
+
+                    // Agregar el nuevo slide al contenedor de slides
+                    slidesContainer.appendChild(slide);
+                });
 
                 // Ocultar elementos según el carrusel
                 if (containerId === 'carouselContainer1') {
                     const ratingStars = document.querySelector(`#${containerId} .rating-stars`);
                     ratingStars.style.display = 'none';
                 }
-            })
-            .catch(error => console.error('Error al cargar el carrusel:', error));
+
+                // Luego de cargar el carrusel, inicializamos su funcionalidad
+                initializeCarousel(containerId, jsonData);
+            });
     }
 });
 
-function initializeCarousel(containerId) {
+function initializeCarousel(containerId, jsonData) {
     // Acceder al carrusel específico
     const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
     const totalSlides = slides.length;
@@ -137,19 +189,6 @@ function initializeCarousel(containerId) {
         }
         return slidesToShow;
     }
-
-    function ranking(containerId) {
-        const carouselContainer = document.getElementById(containerId);
-        const ratingStars = carouselContainer.querySelector('.rating-stars');
-
-        if (containerId === 'carouselContainer2') {
-            ratingStars.style.display = 'block';
-        } else {
-            ratingStars.style.display = 'none';
-        }
-    }
-
-    ranking('carouselContainer2'); // Para el carrusel 2
 }
 
 function toggleDescription(button) {

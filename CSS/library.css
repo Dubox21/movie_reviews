@@ -1,20 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
+#loader {
+    /* estilos para el loader*/
+    border: 16px solid #f3f3f3;
+    /* Gris */
+    border-top: 16px solid #3498db;
+    /* Azul */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-body {
-    background-color: var(--colorBackgroud);
-    padding: 0 10px;
-}
+@keyframes spin {
 
-body,
-button,
-input {
-    font-family: "Outfit", sans-serif;
+    /* animación para el loader*/
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .section_header {
+    /* estilos para la sección Main de la biblioteca */
     position: relative;
     width: 100%;
     height: auto;
@@ -28,6 +42,7 @@ input {
 }
 
 .section_header::after {
+    /* estilos para el pseudo-elemento del Main de la biblioteca */
     content: '';
     position: absolute;
     top: 0;
@@ -39,12 +54,14 @@ input {
     mix-blend-mode: multiply;
     /* Aplica un modo de mezcla que no afecta el color de los elementos superpuestos */
     border-radius: 6px;
+    pointer-events: none;
+    /* Esto permite que los eventos del puntero pasen a través del pseudo-elemento */
 }
 
 .container_library {
+    /* ancho fijo para el main*/
     height: 644px;
 }
-
 
 .title_library,
 .subtitle_library {
@@ -91,6 +108,14 @@ input {
     justify-content: center;
 }
 
+.search_inputResults {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
 /* Estilos para el input de búsqueda */
 .search-input {
     width: 170px;
@@ -122,6 +147,68 @@ input {
     cursor: pointer;
 }
 
+#searchResults {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Coloca el contenedor de resultados justo debajo del input */
+    width: calc(100% - 20px);
+    /* Ajusta el ancho para evitar desbordamiento horizontal */
+    max-height: 200px;
+    /* Limita la altura máxima del contenedor de resultados */
+    overflow-y: auto;
+    /* Agrega un scroll vertical si los resultados exceden la altura máxima */
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Asegura que el contenedor de resultados esté por encima de otros elementos */
+    display: none;
+}
+
+#searchResults a {
+    display: block; /* Hacer que los elementos a ocupen todo el ancho del contenedor */
+    padding: 10px; /* Agregar un relleno alrededor del enlace para mejorar la apariencia */
+    margin: 0; /* Eliminar el margen predeterminado */
+}
+
+#searchResults a:hover{
+    background-color: var(--colorYellow);
+}
+
+#searchResults::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+    height: 5px; /* Altura de la barra de desplazamiento */
+}
+
+/* Estilo para el área de la barra de desplazamiento */
+#searchResults::-webkit-scrollbar-thumb {
+    background-color: var(--colorBlueLight); /* Color de fondo de la barra de desplazamiento */
+    border-radius: 10px; /* Radio de borde de la barra de desplazamiento */
+}
+
+.search-result {
+    cursor: pointer;
+    color: inherit;
+    /* Heredar el color del texto del elemento padre */
+    text-decoration: none;
+    /* Eliminar la subrayado predeterminado */
+}
+
+#noResultsMessage {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Coloca el contenedor de resultados justo debajo del input */
+    width: calc(100% - 20px);
+    /* Ajusta el ancho para evitar desbordamiento horizontal */
+    max-height: 200px;
+    /* Limita la altura máxima del contenedor de resultados */
+    z-index: 1000;
+    /* Asegura que el contenedor de resultados esté por encima de otros elementos */
+    display: none;
+    text-align: center;
+}
+
 .description_library {
     font-size: 14px;
     text-align: center;
@@ -137,7 +224,7 @@ input {
 
 .container_section,
 .section_reviews {
-    width: 98%;
+    width: 100%;
     height: auto;
     margin: auto;
 }
@@ -176,7 +263,8 @@ input {
 .container_dropdown p {
     font-size: 18px;
     color: var(--colorGrey);
-    -webkit-text-stroke: 1px #414753; /* Para navegadores webkit (Safari, Chrome) */
+    -webkit-text-stroke: 1px #414753;
+    /* Para navegadores webkit (Safari, Chrome) */
     text-stroke: 1px #414753;
     text-decoration: underline;
 }
@@ -211,7 +299,8 @@ input {
     z-index: 999;
     margin-top: 5px;
     left: -145px;
-    outline: 2px solid #414753; /* Borde con contorno */
+    outline: 2px solid #414753;
+    /* Borde con contorno */
     box-shadow: 0 0 0 2px #414753;
 }
 
@@ -227,6 +316,7 @@ input {
 }
 
 .show {
+    /* Toggle (activa/desactiva) la clase "show" en el desplegable */
     display: block;
 }
 
@@ -304,7 +394,7 @@ input {
     }
 
     .search-icon {
-        left: 15px;
+        left: 25px;
     }
 
     .description_library {

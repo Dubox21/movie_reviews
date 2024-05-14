@@ -103,6 +103,7 @@
     background-color: var(--colorVioletDark);
     color: white;
     font-size: 12px;
+    text-align: center;
 }
 
 .carousel-prev,
