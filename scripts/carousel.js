@@ -210,18 +210,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-    function toggleDescription(button) {
-        var description = button.parentElement.querySelector('.description-text'); // El párrafo dentro del mismo contenedor
-    
-        if (description.classList.contains('expanded')) {
-            description.classList.remove('expanded');
-            button.innerHTML = '<i class="fa-solid fa-sort-down"></i>'; // Cambiar el ícono a flecha hacia abajo
-        } else {
-            description.classList.add('expanded');
-            button.innerHTML = '<i class="fa-solid fa-sort-up"></i>'; // Cambiar el ícono a flecha hacia arriba
-        }
-    }
-    
     // Agregar event listeners a los enlaces del dropdown para filtrar las películas
     const dropdownLinks = document.querySelectorAll('#myDropdown2 a');
     
@@ -250,5 +238,24 @@ document.addEventListener('DOMContentLoaded', function () {
         filteredSlides.forEach(slide => {
             slide.style.display = 'block';
         });
+    
+        // Ocultar las flechas de navegación del carrusel
+        const prevButton = document.querySelector(`#${containerId} .carousel-prev`);
+        const nextButton = document.querySelector(`#${containerId} .carousel-next`);
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
     }
+    
 });
+
+function toggleDescription(button) {
+    var description = button.parentElement.querySelector('.description-text'); // El párrafo dentro del mismo contenedor
+
+    if (description.classList.contains('expanded')) {
+        description.classList.remove('expanded');
+        button.innerHTML = '<i class="fa-solid fa-sort-down"></i>'; // Cambiar el ícono a flecha hacia abajo
+    } else {
+        description.classList.add('expanded');
+        button.innerHTML = '<i class="fa-solid fa-sort-up"></i>'; // Cambiar el ícono a flecha hacia arriba
+    }
+}
