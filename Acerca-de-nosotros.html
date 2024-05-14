@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script defer src="indexNos.js"></script>
+    <!-- defer es para diferir la ejecucion de js hasta cargar completamente el dom-->
 </head>
 
 <body class="cuerpo">
@@ -36,24 +38,25 @@
 
         <nav class="navBar">
             <a href="#" class="logo2">Logo2</a>
-            <button class="nav-toggle">
+            <img src="" alt="">
+            <button class="nav-toggle" aria-label="Abrir menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu nav-menu_visible">
                 <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Home</a></li>
-                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Acerca de Nosotros</a></li>
+                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link nav-menu-link_active">Acerca de
+                        Nosotros</a></li>
                 <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Biblioteca</a></li>
                 <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Contacto</a></li>
             </ul>
-            <a href="#" class="contact"><button class="btn login">Log in</button></a>
         </nav>
 
     </header>
 
     <main>
-        <section><!--ACERCA DE NOSOTROS (fila)-->
+        <!--<section>ACERCA DE NOSOTROS (fila)
             <div class="conteinerportada">
-                <div class="contenido-img">
+                <div class="conteiner-img">
                     <img src="./images-fondo/Acerca-de-nos-Proyector 2.2.jpg" alt="">
                 </div>
                 <div class="Titulo-AcercadeNosotros">
@@ -72,78 +75,185 @@
             </div>
         </section>
 
+      
 
-        <section><!--HISTORIA (fila)-->
-            <div class="contenidoHistoria"><!--COLUMNA-->
-                <div class="Titulo-contenidoHistoria">
-                    <i style='font-size:24px' ; class='fas'>&#xf500;</i>
-                    <h2>Nuestra historia</h2>
+            <section> -- HISTORIA (fila)
+                <div class="contenidoHistoria">--COLUMNA
+                    <div class="Titulo-contenidoHistoria">
+                        <i style='font-size:24px' ; class='fas'>&#xf500;</i>
+                        <h2>Nuestra historia</h2>
+                    </div>
+                    <div class="texto-contenidoHistoria">--COLUMNA
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab
+                            facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem
+                            ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Iste
+                            esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem
+                            ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Iste esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,maxime ducimus
+                            exercitationem
+                            ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Isteesse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem.</p>
+                    </div>
                 </div>
-                <div class="texto-contenidoHistoria"><!--COLUMNA-->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab
-                        facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem
-                        ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Iste
-                        esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem
-                        ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Iste esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,maxime ducimus
-                        exercitationem
-                        ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Isteesse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem.</p>
+            </section>
+
+            <section>--MISION (fila)
+                <div class="contenidoMision">--COLUMNA
+                    <div class="Titulo-contenidoMision">
+                        <i style='font-size:26px' class='fas'>&#xf4be;</i>
+                        <h2>Nuestra mision</h2>
+                    </div>
+                    <div class="texto-contenidoMision">--COLUMNA
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
+                            adipisicing elit. Iste esse corporis sunt ab facere repudiandae fuga itaque soluta earum
+                            suscipit est asperiores eveniet,Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Iste
+                            esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,</p>
+                    </div>
                 </div>
-            </div>
+
+            </section>
+
+            <section>--VALORES (fila)
+
+                <div class="contenidoValores">--COLUMNA
+                    <div class="Titulo-contenidoValores">
+                        <i style='font-size:24px' ; class='fas'> &#xf118;</i>
+                        <h2>Nuestros valores</h2>
+                    </div>
+
+                    <div class="texto-contenidoValores">--COLUMNA
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem
+                            ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit.
+                            Iste esse corporis sunt ab facere
+                            repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                            exercitationem
+                            ipsam mollitia ratione reprehenderit!</p>
+                    </div>
+                </div>
+
+
+            </section>-->
+        <section>
+
+            <div class="conteinerGral">
+                <img src="./images-fondo/Acerca-de-nos-Proyector 2.2.jpg" alt="" class="image2">
+                <div class="superposicion">
+                    <div class="Texto-AcercadeNosotros">
+                        <p id="textoNosotros">Somos un grupo de personas 
+                            <br> uniendo nuestros intereses <br> en el desarrollo web y <br> las peliculas, para crear esto. <br>Esperamos que lo disfruten tanto como nosotros!!
+                        </p> <br>
+                      <p id="text">Leer mas abajo</p>
+                    </div>
         </section>
+        <section>
+            <div class="conteinerTextosGral">
+                <section> <!-- HISTORIA (fila)-->
+                    <div class="contenidoHistoria"><!--COLUMNA-->
+                        <div class="Titulo-contenidoHistoria">
+                            <i style='font-size:24px' ; class='fas'>&#xf500;</i>
+                            <h2>Nuestra historia</h2>
+                        </div>
+                        <div class="texto-contenidoHistoria"><!--COLUMNA-->
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab
+                                facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem
+                                ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
+                                adipisicing
+                                elit.
+                                Iste
+                                esse corporis sunt ab facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem
+                                ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
+                                adipisicing
+                                elit.
+                                Iste esse corporis sunt ab facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,maxime ducimus
+                                exercitationem
+                                ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
+                                adipisicing
+                                elit.
+                                Isteesse corporis sunt ab facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem.</p>
+                        </div>
+                    </div>
+                </section>
 
-        <section><!--MISION (fila)-->
-            <div class="contenidoMision"><!--COLUMNA-->
-                <div class="Titulo-contenidoMision">
-                    <i style='font-size:26px' class='fas'>&#xf4be;</i>
-                    <h2>Nuestra mision</h2>
-                </div>
-                <div class="texto-contenidoMision"><!--COLUMNA-->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
-                        adipisicing elit. Iste esse corporis sunt ab facere repudiandae fuga itaque soluta earum
-                        suscipit est asperiores eveniet,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
-                        esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,</p>
-                </div>
-            </div>
+                <section><!--MISION (fila)-->
+                    <div class="contenidoMision"><!--COLUMNA-->
+                        <div class="Titulo-contenidoMision">
+                            <i style='font-size:26px' class='fas'>&#xf4be;</i>
+                            <h2>Nuestra mision</h2>
+                        </div>
+                        <div class="texto-contenidoMision"><!--COLUMNA-->
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab
+                                facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet
+                                consectetur
+                                adipisicing elit. Iste esse corporis sunt ab facere repudiandae fuga itaque soluta
+                                earum
+                                suscipit est asperiores eveniet,Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.
+                                Iste
+                                esse corporis sunt ab facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet,</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section><!--VALORES (fila)-->
+
+                    <div class="contenidoValores"><!--COLUMNA-->
+                        <div class="Titulo-contenidoValores">
+                            <i style='font-size:24px' ; class='fas'> &#xf118;</i>
+                            <h2>Nuestros valores</h2>
+                        </div>
+
+                        <div class="texto-contenidoValores"><!--COLUMNA-->
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab
+                                facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem
+                                ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur
+                                adipisicing
+                                elit.
+                                Iste esse corporis sunt ab facere
+                                repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
+                                exercitationem
+                                ipsam mollitia ratione reprehenderit!</p>
+                        </div>
+                    </div>
 
 
+                </section>
         </section>
-
-        <section><!--VALORES (fila)-->
-
-            <div class="contenidoValores"><!--COLUMNA-->
-                <div class="Titulo-contenidoValores">
-                    <i style='font-size:24px' ; class='fas'> &#xf118;</i>
-                    <h2>Nuestros valores</h2>
-                </div>
-
-                <div class="texto-contenidoValores"><!--COLUMNA-->
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem
-                        ipsam mollitia ratione reprehenderit!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Iste esse corporis sunt ab facere
-                        repudiandae fuga itaque soluta earum suscipit est asperiores eveniet, maxime ducimus
-                        exercitationem
-                        ipsam mollitia ratione reprehenderit!</p>
-                </div>
-            </div>
+        </div>
+        </div>
 
 
-        </section>
-
+        </div>
 
     </main>
 
