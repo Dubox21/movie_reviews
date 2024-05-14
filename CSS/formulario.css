@@ -1,10 +1,29 @@
  #formulario {
     width: 70%;
-    margin: auto;
+    margin: 50px auto;
     margin-top: 50px;
     margin-bottom: 50px;
     padding: none;
 } 
+
+
+#formulario ol li {
+  margin-bottom: 0px; 
+  padding-left: 0px; 
+  list-style: none;
+  counter-increment: step-counter;
+  position: relative;
+  width: 100%; 
+}
+
+#formulario ol li::before {
+  content: counter(step-counter) ".";
+  position: absolute;
+  left: 10px; 
+  top: 0;
+  font-weight: bold;
+}
+
 
 .form-control,
 .form-select,
