@@ -2,11 +2,9 @@
     position: relative;
     width: 100%;
     margin: 10px auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
-    transition: all 0.5s ease;
     overflow: hidden;
-    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
 }
 
 .carousel_film .carousel_inner {
@@ -14,11 +12,10 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
-    transition: all 0.5s ease;
-    transform: translateX(0%);
-    padding-top: 20px;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 .carousel_item {
@@ -26,7 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 0 0 auto;
     width: 230px;
 }
 
@@ -46,7 +42,6 @@
 }
 
 .container_description {
-    width: 230px;
     height: auto;
     margin: 16px 0;
     font-size: 18px;
@@ -101,9 +96,18 @@
     margin-top: 15px;
     border: 1px solid #000;
     background-color: var(--colorVioletDark);
+    text-align: center;
+}
+
+.btn_film a{
     color: white;
     font-size: 12px;
-    text-align: center;
+}
+
+.carousel_navigation {
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .carousel-prev,
@@ -133,41 +137,11 @@
     border-radius: 50%;
 }
 
-.carousel-prev:focus,
-.carousel-next:focus {
-    outline: none;
-}
-
-@keyframes slideFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.carousel_item.next {
-    animation: slideFromRight .5s forwards;
-}
-
-.carousel_item.prev {
-    animation: slideFromLeft .5s forwards;
+.carousel-prev.disabled,
+.carousel-next.disabled {
+    opacity: 0.5; /* Cambia la opacidad cuando las flechas están desactivadas */
+    pointer-events: none; /* Evita que las flechas desactivadas sean clicables */
+    cursor: default; /* Cambia el cursor a predeterminado cuando las flechas están desactivadas */
 }
 
 .carrusel-2 .rating-stars {
@@ -207,11 +181,12 @@
     }
 
     .carousel_film .carousel_inner {
-        display: grid;
-        grid-template-columns: repeat(4, 18.8%);
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+
+    .carousel_item {
+width: 289px;
     }
 
     .carousel-prev i,
@@ -219,17 +194,12 @@
         font-size: 48px;
     }
 
-    .carousel-prev {
-        left: 0.5;
-    }
-
-    .carousel-next {
-        right: 0.5;
-    }
-
     .btn_film {
         width: 136px;
         height: 40px;
+    }
+
+    .btn_film a{
         font-size: 14px;
     }
 }
