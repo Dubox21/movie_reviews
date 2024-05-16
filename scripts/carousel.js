@@ -1,20 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function () {
-        const category = 'all';
-        loadCarousel('carouselContainer1', category);
-        loadCarousel('carouselContainer2', category);
+        const category1 = 'all';
+        const category2 = 'all';
+        loadCarousel('carouselContainer1', category1);
+        loadCarousel('carouselContainer2', category2);
     });
 
-    // Agregar evento de clic a los enlaces dentro del dropdown-content
-    const dropdownLinks = document.querySelectorAll('#myDropdown a');
-    dropdownLinks.forEach(link => {
+    // Agregar evento de clic a los enlaces dentro del dropdown-content 1
+    const dropdownLinks1 = document.querySelectorAll('#myDropdown a');
+    dropdownLinks1.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
             const category = this.dataset.category; // Obtener el valor del atributo data-category
-            loadCarousel('carouselContainer1', category); // Volver a cargar el carrusel con la nueva categoría
-            loadCarousel('carouselContainer2', category);
+            loadCarousel('carouselContainer1', category); // Volver a cargar el carrusel 1 con la nueva categoría
         });
     });
+
+    // Agregar evento de clic a los enlaces dentro del dropdown-content 2
+    const dropdownLinks2 = document.querySelectorAll('#myDropdown2 a');
+    dropdownLinks2.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+            const category = this.dataset.category; // Obtener el valor del atributo data-category
+            loadCarousel('carouselContainer2', category); // Volver a cargar el carrusel 2 con la nueva categoría
+        });
+    });
+
+
     // Función para cargar el contenido del carrusel
     function loadCarousel(containerId, category) {
         Promise.all([
@@ -92,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeCarousel(containerId) {
         // Acceder al carrusel específico
         const container = document.getElementById(containerId);
-        const slides = document.querySelectorAll('.carousel_item');
+        const slides = container.querySelectorAll('.carousel_item');
         const totalSlides = slides.length;
         let currentIndex = 0;
 
@@ -105,9 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (window.innerWidth >= 768) {
                 slidesToShow = 2; // En tabletas, mostrar 2 slides
             }
-
-            // Obtener el contenedor específico del carrusel
-            const container = document.getElementById(containerId);
 
             // Obtener el contenedor de slides dentro del carrusel
             const slidesContainer = container.querySelector('.carousel_inner');
