@@ -8,7 +8,8 @@ window.addEventListener('load', function () {
 
 //Funcion para posicionarse en el carrusel de todas las peliculas
 document.getElementById('btn-all').addEventListener('click', function () {
-    const allMovies = document.getElementById('all-movies').offsetTop;
+    const headerHeight = document.querySelector('.header').offsetHeight; // Obtener la altura del encabezado
+    const allMovies = document.getElementById('all-movies').offsetTop - headerHeight; // Ajustar la posición
 
     // Desplazarse a la posición del elemento h3
     window.scrollTo({
@@ -19,7 +20,8 @@ document.getElementById('btn-all').addEventListener('click', function () {
 
 //Funcion para posicionarse en el carrusel de mejores valoradas
 document.getElementById('btn-liked').addEventListener('click', function () {
-    const topRated = document.getElementById('top-rated').offsetTop;
+    const headerHeight = document.querySelector('.header').offsetHeight; // Obtener la altura del encabezado
+    const topRated = document.getElementById('top-rated').offsetTop   - headerHeight; // Ajustar la posición
 
     // Desplazarse a la posición del elemento h3
     window.scrollTo({

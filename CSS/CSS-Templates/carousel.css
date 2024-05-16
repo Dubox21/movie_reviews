@@ -89,6 +89,10 @@
     cursor: pointer;
 }
 
+.btn_readMore:hover{
+    color: var(--colorVioletLight);
+}
+
 .btn_film {
     border-radius: 50px;
     width: 100px;
@@ -104,10 +108,13 @@
     font-size: 12px;
 }
 
+.btn_film:hover{
+    transform: scale(1.1);
+}
+
 .carousel_navigation {
     display: flex;
     justify-content: space-between;
-
 }
 
 .carousel-prev,
@@ -120,6 +127,11 @@
     cursor: pointer;
     font-size: 2rem;
     color: white;
+}
+
+.carousel-prev i:hover,
+.carousel-next i:hover {
+    color: var(--colorVioletDark);
 }
 
 .carousel-prev {

@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
     // Función para cargar el contenido del carrusel
     function loadCarousel(containerId, category) {
         Promise.all([
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Estructura del slide
                         slide.innerHTML = `
                         <div class="container_img">
-                            <img src="${image}" alt="${filmTitle}" loading="lazy">
+                            <img src="../${image}" alt="${filmTitle}" loading="lazy">
                         </div>
                         <div class="rating-stars">
                             <span class="star">${stars}</span>
@@ -154,8 +153,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Desactivar la flecha de la derecha si se llega al último slide
             container.querySelector('.carousel-next').disabled = index >= maxIndex;
             container.querySelector('.carousel-next').classList.toggle('disabled', index >= maxIndex);
-
-
         }
 
         // Llamar a la función showSlide() al cargar la página
@@ -242,8 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return slidesToShow;
         }
     }
-
-
 });
 
 // Función para alternar la descripción de la película
