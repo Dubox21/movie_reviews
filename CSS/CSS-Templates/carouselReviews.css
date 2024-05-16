@@ -122,12 +122,10 @@
     border-radius: 50%;
 }
 
-.carousel-control-next:focus,
-.carousel-control-prev:focus,
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-}
+.carousel-control-prev  i:hover,
+.carousel-control-next i:hover {
+    color: var(--colorVioletDark) !important;
+} 
 
  .rating-stars {
     width: 100%;

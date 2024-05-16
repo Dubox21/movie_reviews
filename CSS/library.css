@@ -33,7 +33,7 @@
     width: 100%;
     height: auto;
     /* background-image: url("../img/background_library.png"); */
-    background-image: url("../images-fondo/Biblioteca.jpg");
+    background-image: url("../img/images-fondo/Biblioteca.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -98,6 +98,11 @@
     background-color: transparent;
     border: 1px solid #000;
     box-shadow: none;
+}
+
+.btn_btn:hover {
+    background-color: var(--colorYellow);
+    mix-blend-mode: normal; /* Restablece el efecto de mezcla */
 }
 
 /* Estilos para el contenedor del input */
@@ -282,6 +287,10 @@
     font-size: 16px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+.dropbtn:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .dropbtn i {
