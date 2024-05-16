@@ -10,7 +10,7 @@
 
 .rating-stars {
     width: 100%;
-    margin: 20px 0;
+    padding: 0 4%;
 }
 
 .star {
@@ -171,6 +171,10 @@
 }
 
 @media (min-width: 1024px) {
+.rating-stars{
+    padding: 0 12%;
+}
+
     .container_main .container_img,
     .container_trailer {
         width: 1200px;
