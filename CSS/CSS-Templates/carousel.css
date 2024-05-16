@@ -99,7 +99,7 @@
     text-align: center;
 }
 
-.btn_film a{
+.btn_film a {
     color: white;
     font-size: 12px;
 }
@@ -139,9 +139,56 @@
 
 .carousel-prev.disabled,
 .carousel-next.disabled {
-    opacity: 0.5; /* Cambia la opacidad cuando las flechas están desactivadas */
-    pointer-events: none; /* Evita que las flechas desactivadas sean clicables */
-    cursor: default; /* Cambia el cursor a predeterminado cuando las flechas están desactivadas */
+    opacity: 0.5;
+    /* Cambia la opacidad cuando las flechas están desactivadas */
+    pointer-events: none;
+    /* Evita que las flechas desactivadas sean clicables */
+    cursor: default;
+    /* Cambia el cursor a predeterminado cuando las flechas están desactivadas */
+}
+
+.carousel-prev i,
+.carousel-next i {
+    color: #f2e205;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.carousel-prev:focus,
+.carousel-next:focus {
+    outline: none;
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.carousel_item.next {
+    animation: slideFromRight .5s forwards;
+}
+
+.carousel_item.prev {
+    animation: slideFromLeft .5s forwards;
 }
 
 .carrusel-2 .rating-stars {
@@ -186,7 +233,7 @@
     }
 
     .carousel_item {
-width: 289px;
+        width: 289px;
     }
 
     .carousel-prev i,
@@ -199,7 +246,7 @@ width: 289px;
         height: 40px;
     }
 
-    .btn_film a{
+    .btn_film a {
         font-size: 14px;
     }
 }

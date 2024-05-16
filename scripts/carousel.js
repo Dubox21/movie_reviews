@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function () {
-        loadCarousel('carouselContainer1');
-        loadCarousel('carouselContainer2');
+        const category = 'all';
+        loadCarousel('carouselContainer1', category);
+        loadCarousel('carouselContainer2', category);
     });
 
+    // Agregar evento de clic a los enlaces dentro del dropdown-content
+    const dropdownLinks = document.querySelectorAll('#myDropdown a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+            const category = this.dataset.category; // Obtener el valor del atributo data-category
+            loadCarousel('carouselContainer1', category); // Volver a cargar el carrusel con la nueva categoría
+            loadCarousel('carouselContainer2', category);
+        });
+    });
     // Función para cargar el contenido del carrusel
-    function loadCarousel(containerId) {
+    function loadCarousel(containerId, category) {
         Promise.all([
             fetch('../Templates/carousel.html').then(response => response.text()),
             fetch('../JSON/movies.json').then(response => response.json())
@@ -30,15 +41,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     const filmTitle = movie.title;
                     const filmDescription = movie.description;
 
-                    // Crear un nuevo elemento de slide
-                    const slide = document.createElement('div');
-                    slide.classList.add('carousel_item', ...tags.split(' '));
-                    // Asignar los tags al atributo dataset
-                    slide.dataset.tags = tags;
-                    slide.dataset.quantityStars = quantityStars;
+                    // Verificar si la película tiene el tag correspondiente a la categoría seleccionada
+                    if (category === 'all' || tags.includes(category)) {
+                        // Crear un nuevo elemento de slide
+                        const slide = document.createElement('div');
+                        slide.classList.add('carousel_item', ...tags);
+                        // Asignar los tags al atributo dataset
+                        slide.dataset.tags = tags;
+                        slide.dataset.quantityStars = quantityStars;
 
-                    // Estructura del slide
-                    slide.innerHTML = `
+                        // Estructura del slide
+                        slide.innerHTML = `
                         <div class="container_img">
                             <img src="${image}" alt="${filmTitle}" loading="lazy">
                         </div>
@@ -57,10 +70,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             <a href="../Templates/movie.html?title=${encodeURIComponent(filmTitle)}">VER</a>
                             </div>
                         </div>
-                    `;
-                    // Agregar el nuevo slide al contenedor de slides solo si no se ha superado la cantidad total de slides
-                    if (slidesContainer.children.length < jsonData.length) {
-                        slidesContainer.appendChild(slide);
+                       `;
+                        // Agregar el nuevo slide al contenedor de slides solo si no se ha superado la cantidad total de slides
+                        if (slidesContainer.children.length < jsonData.length) {
+                            slidesContainer.appendChild(slide);
+                        }
                     }
                 });
 
@@ -77,30 +91,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initializeCarousel(containerId) {
         // Acceder al carrusel específico
-        const slides = document.querySelectorAll(`#${containerId} .carousel_item`);
+        const container = document.getElementById(containerId);
+        const slides = document.querySelectorAll('.carousel_item');
         const totalSlides = slides.length;
         let currentIndex = 0;
 
-        const container = document.getElementById(containerId);
-
         // Función para mostrar el slide actual
-        function showSlide(index) {
+        function showSlide(index, category) {
             let slidesToShow = 1; // Por defecto, mostrar un slide
-        
+
             if (window.innerWidth >= 1024) {
                 slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
             } else if (window.innerWidth >= 768) {
                 slidesToShow = 2; // En tabletas, mostrar 2 slides
             }
-        
+
+            // Obtener el contenedor específico del carrusel
+            const container = document.getElementById(containerId);
+
+            // Obtener el contenedor de slides dentro del carrusel
+            const slidesContainer = container.querySelector('.carousel_inner');
+
+            // Obtener el total de slides
+            const totalSlides = slidesContainer.children.length;
+
+            // Filtrar el total de slides si se aplica una categoría
+            let filteredTotalSlides = totalSlides;
+            if (category !== 'all') {
+                filteredTotalSlides = Array.from(slidesContainer.children).filter(slide => slide.classList.contains(category)).length;
+            }
+
             // Calcular el índice máximo permitido
             const maxIndex = Math.max(0, totalSlides - slidesToShow);
-        
+
             // Si el índice es mayor que el máximo permitido, establecerlo en el máximo
             if (index > maxIndex) {
                 index = maxIndex;
             }
-        
+
             // Ocultar o mostrar los slides según corresponda
             slides.forEach((slide, i) => {
                 if (i >= index && i < index + slidesToShow) {
@@ -109,25 +137,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     slide.style.display = 'none';
                 }
             });
-        
+
             // Desactivar la flecha de la izquierda si se llega al primer slide
-            container.querySelector(`#${containerId} .carousel-prev`).disabled = index === 0;
-            // Agregar la clase 'disabled' si la flecha está desactivada
-            if (index === 0) {
-                container.querySelector(`#${containerId} .carousel-prev`).classList.add('disabled');
-            } else {
-                container.querySelector(`#${containerId} .carousel-prev`).classList.remove('disabled');
-            }
-        
+            container.querySelector('.carousel-prev').disabled = index === 0;
+            container.querySelector('.carousel-prev').classList.toggle('disabled', index === 0);
+
             // Desactivar la flecha de la derecha si se llega al último slide
-            container.querySelector(`#${containerId} .carousel-next`).disabled = index === totalSlides - slidesToShow;
-            // Agregar la clase 'disabled' si la flecha está desactivada
-            if (index === totalSlides - slidesToShow) {
-                container.querySelector(`#${containerId} .carousel-next`).classList.add('disabled');
-            } else {
-                container.querySelector(`#${containerId} .carousel-next`).classList.remove('disabled');
-            }
-        }        
+            container.querySelector('.carousel-next').disabled = index >= maxIndex;
+            container.querySelector('.carousel-next').classList.toggle('disabled', index >= maxIndex);
+
+
+        }
 
         // Llamar a la función showSlide() al cargar la página
         showSlide(currentIndex);
@@ -163,12 +183,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
         prevButton.addEventListener('click', function () {
             prevSlide();
+            slideFromLeft();
         });
 
         nextButton.addEventListener('click', function () {
             nextSlide();
+            slideFromRight();
         });
+
+        // Definir animaciones
+        function slideFromLeft() {
+            const currentSlideIndex = currentIndex;
+            const slidesToShow = getSlidesToShow();
+
+            for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
+                const index = i % totalSlides;
+                const currentSlide = slides[index];
+                currentSlide.classList.remove('active');
+                currentSlide.classList.add('prev');
+                setTimeout(function () {
+                    currentSlide.classList.remove('prev');
+                }, 500); // La misma duración que la animación
+            }
+        }
+
+        function slideFromRight() {
+            const currentSlideIndex = currentIndex;
+            const slidesToShow = getSlidesToShow();
+
+            for (let i = currentSlideIndex; i < currentSlideIndex + slidesToShow; i++) {
+                const index = i % totalSlides;
+                const currentSlide = slides[index];
+                currentSlide.classList.remove('active');
+                currentSlide.classList.add('next');
+                setTimeout(function () {
+                    currentSlide.classList.remove('next');
+                }, 500); // La misma duración que la animación
+            }
+        }
+
+        function getSlidesToShow() {
+            let slidesToShow = 1; // Por defecto, mostrar un slide
+
+            if (window.innerWidth >= 1024) {
+                slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
+            } else if (window.innerWidth >= 768) {
+                slidesToShow = 2; // En tabletas, mostrar 2 slides
+            }
+            return slidesToShow;
+        }
     }
+
+
 });
 
 // Función para alternar la descripción de la película
