@@ -4,7 +4,7 @@ const btn = document.getElementById("btn-1");
 // Agregar un event listener para escuchar el clic en el botón
 btn.addEventListener("click", function() {
     // Redirigir a la página "libreria.html"
-    window.location.href = "library.html";
+    window.location.href = "pages/library.html";
 });
 
 

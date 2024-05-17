@@ -323,7 +323,7 @@ body, button, input {
      }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 530px) {
 
     html, body {
         margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
