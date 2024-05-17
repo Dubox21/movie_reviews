@@ -3,7 +3,7 @@ body, button, input {
     background-color: #F2F2F2;
 }
 
-/* Estilos para la sección de bienvenida */  
+/*SECCION BIENVENIDA */  
 .container {
     width: 100%;
   }
@@ -80,7 +80,7 @@ body, button, input {
 }
 
 
-/*TENDENDCIAS Y NOTICIAS*/
+/*TENDENCIAS Y NOTICIAS*/
 
 .container-tendencias {
     width: 100%;
@@ -116,7 +116,9 @@ body, button, input {
 
 .images-section {
     text-align: center;
+    padding: 40px;
 }
+
 .images-section img {
     width: 220px;
     height: 220px;
@@ -124,6 +126,8 @@ body, button, input {
     border: 3px solid #555555;
     box-shadow: 0px 7px 5px #7386BF;
 }
+
+
 
 /*SECCION VIDEO*/
 
@@ -141,27 +145,30 @@ body, button, input {
     padding: 20px;
 }
 
-/* Izquierda */
-.left {
-    display: flex;
-    flex-direction: column;
-}
-
-.half.left h2 {
-    font-size: 30px;
-    margin-left: 70px;
-}
-
 /* Derecha */
 .right {
     display: flex;
     flex-direction: column;
 }
 
-.half.right h2 {
+/* Izquierda Superior */
+.left-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Derecha Superior */
+.half.right-1 h2 {
     font-size: 30px;
     margin-left: 70px;
 }
+
+/*Izquierda Inferior */
+.half.left-2 h2 {
+    font-size: 30px;
+    margin-left: 70px;
+}
+
 
 /* Bloques superiores e inferiores */
 .top-block, .bottom-block {
@@ -256,20 +263,36 @@ body, button, input {
     .images-section p {
         font-size: 14px;
     }
-
-
-
     .container-video {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .half {
+        padding: 10px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 10px;
-        color: #000000;
-        box-shadow: 0px 1px 5px #7386BF;
+        align-items: center;
+    }
+
+    .half.left-1 {
+        order: 2;
+    }
+
+    .half.left-2 h2 {
+        margin: 0;
+    }
+
+    /* Estilos para la mitad derecha */
+    .half.right {
+        margin-top: 10px;
+        order: 1;
+    }
+
+    .half.right-1 h2 {
+        margin: 0;
     }
     
-    .half {
-        padding: 20px;
-    }
     
     .left,
     .right {
@@ -282,13 +305,9 @@ body, button, input {
     }
     
     .video-container {
-        border-radius: 15px;
-        justify-content: center;
-        display: flex;
-        width: calc(100% - 40px);
-        margin: 0 auto;
+        width: 50%;
+        margin-top: 10px;
     }
-    
     .top-block h3 {
         color:#470459;
     }
@@ -296,20 +315,30 @@ body, button, input {
     .bottom-block h3 {
         color:#470459;
     }
+     /* Estilos para los bloques superiores e inferiores */
+     .top-block,
+     .bottom-block {
+         margin: 10px;
+         padding: 15px;
+     }
 }
 
-/* Estilos generales para dispositivos móviles */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 530px) {
 
-    .html{
-        max-width: none;
+    html, body {
+        margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+        padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+        width: 100%; /* Asegura que el cuerpo ocupe todo el ancho disponible */
+        overflow-x: hidden; /* Evita el desplazamiento horizontal */
+        justify-content: center; /* Centra el contenido horizontalmente */
     }
+
     .container {
         width: 100%;
+        height: auto;
       }
 
-    .welcome-image {
-        width: 100%;
+      .welcome-image {
         height: 100%;
         max-width: none;
     }
@@ -340,6 +369,11 @@ body, button, input {
         margin-bottom: 20px;
     }
 
+    .news-and-trends-images-section {
+        flex-direction: column; /* Cambia la dirección de la disposición a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
     .news-and-trends-section h2 {
         font-size: 35px;
     }
@@ -357,30 +391,35 @@ body, button, input {
         font-size: 14px;
     }
 
-    .images-section {
-        margin-bottom: 20px;
-    }
-
     /* Estilos para el contenedor principal */
     .container-video {
         flex-direction: column;
         align-items: center;
     }
-
     /* Estilos para las mitades */
     .half {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    .half.left-1 {
+        order: 2;
+    }
+
+    .half.left h2 {
+        margin: 0;
+    }
     /* Estilos para la mitad derecha */
     .half.right {
         margin-top: 10px;
+        order: 1;
     }
 
-    .half.right h2{
-        text-align: center;
+    .half.right h2 {
+        margin: 0;
     }
-
     /* Estilos para el contenedor de video */
     .video-container {
         width: 50%;
@@ -390,7 +429,7 @@ body, button, input {
     /* Estilos para los bloques superiores e inferiores */
     .top-block,
     .bottom-block {
-        margin: 10px 0;
+        margin: 10px;
         padding: 15px;
     }
 }
