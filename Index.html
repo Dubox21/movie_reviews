@@ -16,7 +16,7 @@
 </head>
 
 <body>
-        <br></br>
+        <br>
         <div class="container">
             <div class="welcome">
               <img class="welcome-image" src="images-fondo/Bienvenidos.jpg" alt="Imagen 1">
@@ -42,29 +42,32 @@
                 <div class="images-section">
                     <img src="img/escuela_de_rock.png" alt="Imagen 1">
                     <h3>Escuela de Rock (2003)</h3>
-                    <p>Descripción 1</p>
+                    <p>Tras ser expulsado de un grupo de rock, Dewey Finn trabaja como profesor substituto en una estricta escuela privada, e intenta convertirla en un grupo de rock.</p>
                 </div>
                 <div class="images-section">
                     <img src="/img/donde_estan_las_rubias.png" alt="Imagen 2">
                     <h3>¿Y donde estan las rubias? (2004)</h3>
-                    <p>Descripción 2</p>
+                    <p>Dos agentes del FBI en desgracia van encubiertos en un esfuerzo por proteger a unas herederas de hoteles, las hermanas Wilson, de un complot de secuestro.</p>
                 </div>
                 <div class="images-section">
                     <img src="img/ghostbusters.png" alt="Imagen 3">
                     <h3>Ghostbusters: Apocalipsis Fantasma (2024)</h3>
-                    <p>Descripción 3</p>
+                    <p>Cuando el descubrimiento de un artefacto antiguo libera una fuerza
+                        maligna, los nuevos y viejos Ghostbusters unen sus fuerzas para proteger su hogar y salvar al
+                        mundo de una segunda era de hielo.</p>
                 </div>
                 <div class="images-section">
                     <img src="img/paddington_2.png" alt="Imagen 4">
                     <h3>Paddington 2 (2017)</h3>
-                    <p>Descripción 4</p>
+                    <p>Completamente integrado a la sociedad, el oso Paddington (Ben Whishaw)
+                        vive feliz con los Brown, gozando de la simpatía y respeto de la comunidad de Windsor Gardens.</p>
                 </div>
             </div>
         </div>       
 
         <!-- CONTENEDOR DE VIDEO 1 -->
         <div class="container-video">
-            <div class="half left">
+            <div class="half left-1">
                 <div class="top-block">
                     <h3>Fascinante, tierna y entretenida</h3>
                     <p>Paddington 2 ha roto el estigma de las segundas partes para dar una lección de lo que toda secuela nació para ser, lo cual consiste en extender el placer y la magia de su predecesora al mismo tiempo que diseña una historia propia y potencial. Aquí no hay pierde y los críticos de cine coinciden en que no habrá nadie que se resista al encanto de Paddington 2, a su buena mano al momento de llevarnos de la acción, al misterio, al musical y al slapstick sin perder el timing ni el objetivo de lo que cuenta, ni por la forma que tiene de hacer un repaso por todos los estilos de comedia, su detallada puesta en escena o por su bella fotografía y que en conjunto hacen de esta película un deleite encantador</p>
@@ -74,15 +77,15 @@
                     <p class="subtitulo-indicadores">Paddington 2 equilibra de manera perfecta el enternecedor aspecto familiar y una divertida aventura para todas las edades.</p>
                     <div class="indicador-numerico">
                         <p>Criticas</p>
-                        <p>1200</p>
+                        <p id="contador">0</p>
                     </div>
                     <div class="porcentaje">
                         <p>Les gustó</p>
-                        <p>92%</p>
+                        <p id="porcentaje">0</p>
                     </div>
                 </div>
             </div>
-            <div class="half right">
+            <div class="half right-1">
                 <h2>Paddington</h2>
                 <div class="video-container">
                     <iframe width="800" height="400" src="https://www.youtube.com/embed/sw7RElt-SvE?autoplay=1&mute=1&controls=0&loop=1" title="PADDINGTON 2 - Full US Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -92,13 +95,13 @@
 
         <!-- CONTENEDOR DE VIDEO 2 -->
         <div class="container-video">
-            <div class="half left">
+            <div class="half left-2">
                 <h2>Ghostbusters</h2>
                 <div class="video-container">
                     <iframe width="800" height="400" src="https://www.youtube.com/embed/6-TqjCpvlr4?autoplay=1&mute=1&controls=0&loop=1" title="Ghostbusters: Apocalipsis Fantasma | Tráiler Oficial - (Sony Pictures) HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="half right">
+            <div class="half right-2">
                 <div class="top-block">
                     <h3>La película nos devuelve a la familia Spengler a donde todo empezó</h3>
                     <p>El elenco original intenta apuntalar algo viejo para que siga funcionando lo suficientemente bien, mientras que el nuevo elenco respalda al personaje principal emergente mientras ella hace algo inventivo con las viejas herramientas de los Cazafantasmas. Lamentablemente, unir estos dos elementos solo da como resultado una secuela algo ambiciosa pero desordenada y, en última instancia, insatisfactoria, a pesar de contener algunas risas decentes y un par de secuencias realmente emocionantes.</p>
@@ -108,16 +111,17 @@
                     <p class="subtitulo-indicadores">Apocalipsis Fantasma carece de un enfoque claro, tratando de mezclar nostalgia, humor y corazón sin destacar en ninguno. Termina con momentos encantadores perdidos en trama simplista.</p>
                     <div class="indicador-numerico">
                         <p>Criticas</p>
-                        <p>1100</p>
+                        <p id="contador2">0</p>
                     </div>
                     <div class="porcentaje">
                         <p>Les gustó</p>
-                        <p>33%</p>
+                        <p id="porcentaje2">0</p>
                     </div>
                 </div>
             </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
