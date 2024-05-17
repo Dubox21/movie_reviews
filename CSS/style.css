@@ -1,85 +1,166 @@
-
-/*BARRA DE NAVEGACION */
-
-.nav-bar {
-margin: auto;
-width: 100%;
-}
-
-.main-bar {
-    list-style: none;
-    font-size: 0.8em;
-    float: left;
-    margin:auto;
-    padding-left: 25%;
-}
-
-
-#logo {
-    display: inline-flex;
-    order: 1;
-    align-self: center;
-    color:black;
-    white-space: nowrap;
-    float: left;
-}
-
-li {
-    padding: 5px;
-    margin: 20px;
-    float: left;
-    bottom: 18px;
-    position: relative;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
-
-}
-
-li a.activa {
-   color:#470459;
-   border-bottom: 2px solid #470459;
-   font-weight: bold;
-   
-
-}
-
-
-a {
-    text-decoration:none;
-    display: inline-block;
-    padding: 8px;
-    color: #8538a6;
-
-}
-
-.login {
-    border-color: #470459;
-    color: #fcfcfc;
-    background-color:#470459;
-    border-radius: 15px;
-    padding: 6px 30px;
-    margin: 10px;
-    opacity: 0.6;
-    transition: 0.4s;
-    opacity: 1;
-    align-content: end;
-    cursor: pointer;
-    margin-block-end: auto;
+.cuerpo {
+    margin: 0;
+    box-sizing: border-box;
     font-family: "Outfit", sans-serif;
+    padding: 80px 0px;
+
 }
 
-.login:hover {
-    background-color:#8538a6;
-    color: #f2cb57;
-    font-weight: bold;
+/*BARRA DE NAVEGACION*/
+
+.header {
+    background-color: #81449f;
+    box-shadow: 0 4px 5px var(--colorVioletDark);
+    position: fixed;
+    height: 80px;
+    /*puede no estar*/
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
-.split {
-    float:inline-end;
-    margin-bottom: 8px;
-    text-align: center;
-    top: 5px;
-    justify-content: center;
+.navBar {
+    display: flex;
+    /*para que el contenido se alinie*/
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
+
+}
+
+.nav-link {
+    color: #fcfcfc;
+    text-decoration: none;
+}
+
+.logo2 {
+    padding: 0 20px;
+    line-height: 80px;
+    color: #ebe0ee;
+    /*para centrarlo (debe ser igual al del cuerpo)*/
+}
+
+
+.nav-menu {
+    display: flex;
+    /*para que los elementos queden dispersos horizontal*/
+    margin-right: 40px;
+    list-style: none;
+
+}
+
+.nav-menu-item {
+    margin: 0 20px;
+    /*para separar cada link*/
+    line-height: 50px;
+    width: max-content;
+    /*para que no corte el contenido*/
+
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    color: #ffef11;
+    /*background-color: #995ab4;*/
+
+    /*background:#5c197b;*/
+
+
+}
+
+/*BARRA DE NAVEGACION PARA CELULARES*/
+.nav-toggle {
+    color: #ebe0ee;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+    /*para ocultarlo*/
+
+
+}
+
+/*Cuando la pantalla sea < 768px se le van a aplicar estos estilos*/
+@media (max-width: 768px) {
+
+    .cuerpo {
+        padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+
+    .logo2 {
+        padding: 0 20px;
+        line-height: 60px;
+        color: #ebe0ee;
+
+    }
+
+    .nav-link {
+        color: #eee7f0;
+        font-weight: bolder;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        /*para que los elementos queden verticalmente*/
+        align-items: center;
+        margin: 0;
+        list-style: none;
+        background-color: #5b2973;
+        position: fixed;
+        /*para que la posicion dependa del tamanio de la ventana*/
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        /*60px por el logo*/
+        overflow-y: auto;
+        /*para agregar scroll si se necesita*/
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        font-size: 11px;
+        line-height: 70px;
+
+    }
+
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #ffef11;
+    }
+
+    .nav-toggle {
+        display: block;
+        /*para que aparezca el menu hamburguesa*/
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    /*para que aparezca el menu hamburguesa*/
 
 
 }
@@ -87,6 +168,7 @@ a {
 
 
 /*ACERCA DE NOSOTROS + IMG */
+
 
 img {
     background-size: cover;
@@ -99,120 +181,147 @@ img {
     border-radius: 8px;
     position: relative;
     opacity: 0.85;
+    padding: 4px;
 
-  }
+}
 
 
-.Titulo-AcercadeNosotros {
-    white-space: nowrap; 
-    color: white;
-    font-size: 60px;
+
+/*Secciones: HISTORIA + VALORES + MISION (fila)*/
+
+
+.conteinerGral {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.image2 {
+    background-size: cover;
+
+    width: 100%;
+    height: auto;
+    object-fit: 10% 20%;
+    object-position: 80% 100%;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    opacity: 0.8;
+    padding: 4px;
+}
+
+.superposicion {
     position: absolute;
-    top: 12%;
-    left: 20%;
-  }
-
-  .Texto-AcercadeNosotros {
-        position: absolute;
-        bottom: centre;
-        top: 40%;
-        text-align: center;
-        color:#fcfcfc;
-        width: 100%;
-        height: 0;
-        font-weight: bold;
-      }
-   
-
-  #textoNosotros:hover {
-    background-color: #f7e8f6a0;
-    border-radius: 4px;
-
-  }
-  
-/*Para que sea RESPONSIVO */
-  @media screen and (max-width: 700px) {
-    .main-bar, .conteinerportada .contenido-img, .Titulo-AcercadeNosotros,  .Texto-AcercadeNosotros img {  
-        font-size: 0,5em; 
-        padding: 0;
-        flex-direction:row;
-    }
-}
-
-/*Seccion HISTORIA (fila)*/
-
-.contenidoHistoria{
-    display: flex;
-    justify-content:center;
-    align-items:center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+    transition: .8s ease;
+    /*background-color: #c8c0c8;*/
+    background-color: #0b0b0b;
 
 }
 
-.Titulo-contenidoHistoria{
-    padding: 30px;
-    margin: 30px;
-    color: #470459;
-    font-size:large;
-    text-align: center;
-
-}
-.texto-contenidoHistoria {
-    font-size: small;
+.conteinerGral:hover .superposicion {
+    opacity: 0.9;
 }
 
+.Texto-AcercadeNosotros {
+    font-size: 30px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 
 
-/*Seccion MISION (fila)*/
-
-.contenidoMision {
-    display: flex;
-    justify-content:center;
-    align-items:center;
+}
+#textoNosotros {
+    color: #fffdfd;
+    text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
+    font-family: "Outfit", sans-serif;
+    font-weight: bolder;
+    text-align: left;
 }
 
-.Titulo-contenidoMision {
-    padding: 30px;
-    margin: 30px;
-    color: #470459;
-    font-size:large;
-    text-align: center;
-}
-
-.texto-contenidoMision {
-    font-size: small;
+#text {
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #fffdfd;
+    text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
 
 }
 
-/*Seccion VALORES (fila)*/
+.conteinerTextosGral {
+    margin-bottom: 6px;
+    margin-top: 8px;
+    padding: 8px;
+    top: 80%;
+    left: 80%;
+    
 
+}
+
+.contenidoHistoria,
+.contenidoMision,
 .contenidoValores {
     display: flex;
-    justify-content:center; 
+    justify-content: center;
     align-items: center;
+    font-family: "Outfit", sans-serif;
+    box-shadow: 0px 1px 5px var(--colorBlueLight);
+    border-radius: 8px;
+
 }
+ 
 
-
+.Titulo-contenidoHistoria,
+.Titulo-contenidoMision,
 .Titulo-contenidoValores {
     padding: 30px;
     margin: 30px;
-    color: #470459;
-    font-size:large;
+    color: var(--colorVioletDark);
+    font-size: large;
     text-align: center;
 }
 
+.texto-contenidoHistoria,
+.texto-contenidoMision,
 .texto-contenidoValores {
-    font-size: small;
+    font-size: medium;
+    font-family: "Outfit", sans-serif;
+    color:var(--colorVioletDark);
+    font-weight: bolder;
+    
+
+    
 }
+
+
 
 /*Estilos para los textos*/
 
 h2:hover {
-    color:#8538a6;
+    color: #8538a6;
 }
 
+p:hover {
+    color: var(--colorVioletDark);
+}
+
+
+
+
+
+
+
+/*PIE DE PAGINA*/
 
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
-}
+    background: #ddd;}

@@ -2,11 +2,9 @@
     position: relative;
     width: 100%;
     margin: 10px auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px transparent;
-    transition: all 0.5s ease;
     overflow: hidden;
-    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
 }
 
 .carousel_film .carousel_inner {
@@ -14,11 +12,10 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #bfbfbf, -5px -5px 15px #ffffff;
-    transition: all 0.5s ease;
-    transform: translateX(0%);
-    padding-top: 20px;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 .carousel_item {
@@ -26,7 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 0 0 auto;
     width: 230px;
 }
 
@@ -46,7 +42,6 @@
 }
 
 .container_description {
-    width: 230px;
     height: auto;
     margin: 16px 0;
     font-size: 18px;
@@ -94,6 +89,10 @@
     cursor: pointer;
 }
 
+.btn_readMore:hover{
+    color: var(--colorVioletLight);
+}
+
 .btn_film {
     border-radius: 50px;
     width: 100px;
@@ -101,8 +100,21 @@
     margin-top: 15px;
     border: 1px solid #000;
     background-color: var(--colorVioletDark);
+    text-align: center;
+}
+
+.btn_film a {
     color: white;
     font-size: 12px;
+}
+
+.btn_film:hover{
+    transform: scale(1.1);
+}
+
+.carousel_navigation {
+    display: flex;
+    justify-content: space-between;
 }
 
 .carousel-prev,
@@ -117,12 +129,34 @@
     color: white;
 }
 
+.carousel-prev i:hover,
+.carousel-next i:hover {
+    color: var(--colorVioletDark);
+}
+
 .carousel-prev {
     left: 10px;
 }
 
 .carousel-next {
     right: 10px;
+}
+
+.carousel-prev i,
+.carousel-next i {
+    color: #f2e205;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.carousel-prev.disabled,
+.carousel-next.disabled {
+    opacity: 0.5;
+    /* Cambia la opacidad cuando las flechas están desactivadas */
+    pointer-events: none;
+    /* Evita que las flechas desactivadas sean clicables */
+    cursor: default;
+    /* Cambia el cursor a predeterminado cuando las flechas están desactivadas */
 }
 
 .carousel-prev i,
@@ -206,11 +240,12 @@
     }
 
     .carousel_film .carousel_inner {
-        display: grid;
-        grid-template-columns: repeat(4, 18.8%);
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+
+    .carousel_item {
+        width: 289px;
     }
 
     .carousel-prev i,
@@ -218,17 +253,12 @@
         font-size: 48px;
     }
 
-    .carousel-prev {
-        left: 0.5;
-    }
-
-    .carousel-next {
-        right: 0.5;
-    }
-
     .btn_film {
         width: 136px;
         height: 40px;
+    }
+
+    .btn_film a {
         font-size: 14px;
     }
 }
