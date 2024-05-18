@@ -36,7 +36,6 @@
 }
 
 body {
-    font-family: sans-serif;
     background-color: #F2F2F2;
     background-image: url("../img/pochoclo.jpg");
     background-size: cover;
@@ -46,9 +45,11 @@ body {
   
   /*Donde se ubica el formulario*/
   section {
-    background-color: #c4c6c17b;
+    background-color: #7386BF;
     padding: none;
+
   }
+
   
   /*Donde se ubica el titulo y subtitulo del formulario*/
   .fondo-form { 

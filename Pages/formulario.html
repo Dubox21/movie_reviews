@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/formulario.css">
     <link rel="stylesheet" href="../CSS/globales.css">
@@ -12,29 +19,25 @@
 
 
 <body>
-    <header><!--es un DIV-->
-        <nav class="nav-bar"><!--BARRA DE NAVEGACION-->
-            <div id="logo">
-                <img src="" alt="img-logo">
-            </div>
-            <div>
-                <div><!--links de BARRA DE NAVEGACION-->
-                <ul class="main-bar">
-                    <li><a href="">Home</a></li>
-                    <li><a href="/Acerca-de-nosotros.html">Acerca de nosotros</a></li>
-                    <li><a class="activa" href="/library.html">Biblioteca</a></li>
-                    <li><a href="/formulario.html">Contacto</a></li>
-                </div>
-                <div class="split"><!--Boton Log-in de BARRA DE NAVEGACION-->
-                    <button class="btn login">Log in</button>
-                </div>
-                </ul>
-            </div>
-
+    <header class="header"><!--es un DIV-->
+        <nav class="navBar">
+            <a href="#" class="logo2">Logo2</a>
+            <img src="" alt="">
+            <button class="nav-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu nav-menu_visible">
+                <li class="nav-menu-item"><a href="/" class="nav-menu-link nav-link">Home</a></li>
+                <li class="nav-menu-item"><a href="Acerca-de-nosotros.html" class="nav-menu-link nav-link">Acerca de
+                        Nosotros</a></li>
+                <li class="nav-menu-item"><a href="library.html"
+                        class="nav-menu-link nav-link">Biblioteca</a>
+                </li>
+                <li class="nav-menu-item"><a href="formulario.html" class="nav-menu-link nav-link nav-menu-link_active">Contacto</a></li>
+            </ul>
         </nav>
-
     </header>
-
+   
     <section id="formulario" class="fondo-form">
         <div class="subtitulo-formulario">
             <h1><strong>Formulario de contacto</strong></h1><br>
