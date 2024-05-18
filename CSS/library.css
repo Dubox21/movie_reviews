@@ -269,8 +269,6 @@
     font-size: 18px;
     color: var(--colorGrey);
     -webkit-text-stroke: 1px #414753;
-    /* Para navegadores webkit (Safari, Chrome) */
-    text-stroke: 1px #414753;
     text-decoration: underline;
 }
 
