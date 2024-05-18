@@ -1,8 +1,3 @@
-body, button, input {
-    font-family: "Outfit", sans-serif;
-    background-color: #F2F2F2;
-}
-
 /*SECCION BIENVENIDA */  
 .container {
     width: 100%;
@@ -15,12 +10,15 @@ body, button, input {
   }
   
   .welcome-image {
+    margin-top: 90px;
     width: 100%;
     max-width: none;
     border-radius: 15px; 
     height: 900px;
     opacity: 0.9;
-    box-shadow: 0px 4px 5px #7386BF;
+    box-shadow: 0px 4px 5px var(--colorBlueLight);
+    border: none;
+    padding: 0;
   }
   
 .text {
@@ -40,30 +38,30 @@ body, button, input {
 .text p {
     margin: 0;
     font-size: 20px;
-    color: #F2F2F2;
+    color: var(--colorBackgroud);
     margin-top: 40px;
 }
 
 #btn-1 {
-    background-color: #470459;
-    color: #F2F2F2;
+    background-color: var(--colorVioletDark);
+    color: var(--colorBackgroud);
     padding: 10px 40px;
     border: 1px solid #555555;
     border-radius: 20px;
     margin-top: 20px;
     transition: background-color 0.3s;
     font-size: 18px;
-    box-shadow: 0px 1px 5px #7386BF;
+    box-shadow: 0px 1px 5px var(--colorBlueLight);
 }
 
 #btn-1:hover {
     background-color: #fefcfc;
-    color: #470459;
+    color: var(--colorVioletDark);
 
 }
 
 #btn-2 {
-    background-color: #F2F2F2;
+    background-color: var(--colorBackgroud);
     color: #555555;
     padding: 10px 40px;
     border: 1px solid #555555;
@@ -71,12 +69,12 @@ body, button, input {
     margin-top: 20px;
     transition: background-color 0.3s;
     font-size: 18px;
-    box-shadow: 0px 1px 5px #7386BF;
+    box-shadow: 0px 1px 5px var(--colorBlueLight);
 }
 
 #btn-2:hover {
     background-color: #fefcfc;
-    color: #470459;
+    color: var(--colorVioletDark);
 }
 
 
@@ -124,7 +122,17 @@ body, button, input {
     height: 220px;
     border-radius: 10px;
     border: 3px solid #555555;
-    box-shadow: 0px 7px 5px #7386BF;
+    box-shadow: 0px 7px 5px var(--colorBlueLight);
+    padding: 0;
+}
+
+.images-section h3 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.images-section p {
+    font-size: 14px;
 }
 
 
@@ -136,7 +144,7 @@ body, button, input {
     display: flex;
     margin-bottom: 10px;
     color: #000000;
-    box-shadow: 0px 1px 5px #7386BF;
+    box-shadow: 0px 1px 5px var(--colorBlueLight);
 }
 
 /* Mitades */
@@ -177,7 +185,7 @@ body, button, input {
     margin-bottom: 10px;
     color: #555555;
     background-color: #fefcfc;
-    box-shadow: 2px 2px 5px #7386BF;
+    box-shadow: 2px 2px 5px var(--colorBlueLight);
     border-radius: 10px;
     padding: 20px;
 }
@@ -193,9 +201,9 @@ body, button, input {
     display: inline-block;
     justify-content: center; 
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
-    color:#470459;
+    color:var(--colorVioletDark);
 }
 
 .indicador-numerico {
@@ -216,11 +224,19 @@ body, button, input {
 }
 
 .top-block h3 {
-    color:#470459;
+    color:var(--colorVioletDark);
+}
+.top-block p {
+    font-size: 14px;
+    margin-top: 4px;
 }
 
 .bottom-block h3 {
-    color:#470459;
+    color:var(--colorVioletDark);
+}
+.bottom-block p.subtitulo-indicadores {
+    font-size: 14px;
+    margin: 4px;
 }
 
 
@@ -309,11 +325,13 @@ body, button, input {
         margin-top: 10px;
     }
     .top-block h3 {
-        color:#470459;
+        font-size: 16px;
+        color:var(--colorVioletDark);
     }
     
     .bottom-block h3 {
-        color:#470459;
+        font-size: 16px;
+        color:var(--colorVioletDark);
     }
      /* Estilos para los bloques superiores e inferiores */
      .top-block,
