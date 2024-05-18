@@ -4,7 +4,6 @@
     margin: 50px auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: none;
 } 
 
 
@@ -47,7 +46,6 @@ body {
   /*Donde se ubica el formulario*/
   section {
     background-color: #7386BF;
-    padding: none;
 
   }
 
@@ -66,7 +64,6 @@ body {
   .subtitulo-formulario h1,
   .subtitulo-formulario h4 {
 /*     background-color: #7386BF; */
-    padding: none;
     border-radius: 5px;
     display: inline-block;
     width: 80%;
