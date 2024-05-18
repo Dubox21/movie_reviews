@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-    $(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
         const category1 = 'all';
         const category2 = 'all';
         loadCarousel('carouselContainer1', category1);
         loadCarousel('carouselContainer2', category2);
-    });
 
     // Agregar evento de clic a los enlaces dentro del dropdown-content 1
     const dropdownLinks1 = document.querySelectorAll('#myDropdown a');
