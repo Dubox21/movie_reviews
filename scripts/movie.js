@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const percentage = selectedMovie.percentage;
 
                 // Crear un section
-                const main = document.createElement('section');
+                const main = document.createElement('div');
                 main.classList.add('section_main');
 
                 // Estructura de main
