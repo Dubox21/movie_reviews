@@ -268,9 +268,12 @@
 .container_dropdown p {
     font-size: 18px;
     color: var(--colorGrey);
-    -webkit-text-stroke: 1px #414753;
-    /* Para navegadores webkit (Safari, Chrome) */
-    text-stroke: 1px #414753;
+    -webkit-text-stroke: 1px #414753; /* Para navegadores webkit (Safari, Chrome) */
+    text-shadow: 
+        -1px -1px 0 #414753, 
+        1px -1px 0 #414753, 
+        -1px 1px 0 #414753, 
+        1px 1px 0 #414753; /* Alternativa para otros navegadores */
     text-decoration: underline;
 }
 
