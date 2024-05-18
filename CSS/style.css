@@ -27,6 +27,7 @@
     max-width: 992px;
     margin: 0 auto;
 
+
 }
 
 .nav-link {
@@ -68,9 +69,6 @@
 .nav-menu-link:hover,
 .nav-menu-link_active {
     color: #ffef11;
-    /*background-color: #995ab4;*/
-
-    /*background:#5c197b;*/
 
 
 }
@@ -139,7 +137,7 @@
     }
 
     .nav-menu-item {
-        font-size: 11px;
+        font-size: 14px;
         line-height: 70px;
 
     }
@@ -161,7 +159,35 @@
     }
 
     /*para que aparezca el menu hamburguesa*/
+    .Texto-AcercadeNosotros {
+        font-size: 2px;
+        position: fixed;
+        /*transform: translate(-25%, -25%);
+        -ms-transform: translate(-25%, -25%);*/
+        left: 0;
+        top: 20px;
+        width: 80%;
+        padding: 10px 0;
+        color: #F2F2F2;
+    }
 
+    #textoNosotros {
+        color: #fffdfd;
+        text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
+        font-family: "Outfit", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    #text {
+        font-family: "Outfit", sans-serif;
+        font-size: 15px;
+        font-weight: bolder;
+        color: #fffdfd;
+        text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
+    
+    }
+    
 
 }
 
@@ -170,44 +196,23 @@
 /*ACERCA DE NOSOTROS + IMG */
 
 
-img {
-    background-size: cover;
-    display: flex;
-    width: 100%;
-    height: auto;
-    object-fit: 10% 20%;
-    object-position: 80% 100%;
-    margin: auto;
-    border-radius: 8px;
-    position: relative;
-    opacity: 0.85;
-    padding: 4px;
-
-}
-
-
-
-/*Secciones: HISTORIA + VALORES + MISION (fila)*/
-
-
 .conteinerGral {
     position: relative;
     width: 100%;
     margin: auto;
+
 }
 
 .image2 {
-    background-size: cover;
-
+    display: flex;
     width: 100%;
-    height: auto;
-    object-fit: 10% 20%;
-    object-position: 80% 100%;
-    margin: auto;
-    border-radius: 10px;
+    border-radius: 18px;
     position: relative;
     opacity: 0.8;
-    padding: 4px;
+    max-width: none;
+    height: 900px;
+    box-shadow: 0px 4px 5px #7386BF;
+    margin: 0 auto;
 }
 
 .superposicion {
@@ -220,13 +225,14 @@ img {
     width: 100%;
     opacity: 0.1;
     transition: .8s ease;
-    /*background-color: #c8c0c8;*/
     background-color: #0b0b0b;
+    border-radius: 8px;
 
 }
 
 .conteinerGral:hover .superposicion {
     opacity: 0.9;
+
 }
 
 .Texto-AcercadeNosotros {
@@ -236,15 +242,14 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-
-
 }
+
 #textoNosotros {
     color: #fffdfd;
     text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
     font-family: "Outfit", sans-serif;
     font-weight: bolder;
-    text-align: left;
+    text-align: center;
 }
 
 #text {
@@ -256,64 +261,141 @@ img {
 
 }
 
-.conteinerTextosGral {
-    margin-bottom: 6px;
-    margin-top: 8px;
-    padding: 8px;
-    top: 80%;
-    left: 80%;
-    
 
-}
 
-.contenidoHistoria,
-.contenidoMision,
-.contenidoValores {
+/*Secciones: HISTORIA + VALORES + MISION (fila)*/
+
+#seccioncard {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: "Outfit", sans-serif;
-    box-shadow: 0px 1px 5px var(--colorBlueLight);
-    border-radius: 8px;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F2F2F2;
+    box-shadow: 2px 2px 5px #7386BF;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;  
+    border-radius: 8px;  
+
 
 }
- 
 
-.Titulo-contenidoHistoria,
-.Titulo-contenidoMision,
-.Titulo-contenidoValores {
-    padding: 30px;
-    margin: 30px;
-    color: var(--colorVioletDark);
-    font-size: large;
+.cardAbout {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    margin: 25px;
+    font-family: "Outfit", sans-serif;
+
+}
+
+.cardAbout .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.cardAbout .front {
+    transform: perspective(600px) rotateY(0deg); 
+    box-shadow: 0 5px 10px #000;
+}
+
+
+
+.cardAbout .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cardAbout .front h2 {
+    position: absolute;
+    line-height: center;
     text-align: center;
+    margin: 30px;
+    padding: 60px;
+    width: 100px;
+    height: 80px;
+    letter-spacing: 2px;
+    font-size: 35px;
+    font: bold;
+    color: #f3f3f3;
+    text-shadow: 1px 1px 2px rgb(98, 89, 89), 0 0 25px rgb(72, 13, 150), 0 0 5px #000000;
 }
 
-.texto-contenidoHistoria,
-.texto-contenidoMision,
-.texto-contenidoValores {
-    font-size: medium;
-    font-family: "Outfit", sans-serif;
-    color:var(--colorVioletDark);
-    font-weight: bolder;
-    
+.cardAbout .front .fas {
 
-    
+    position: absolute;
+    line-height: center;
+    text-align:center;
+    padding: 90px;
+    bottom: 35px;
+    margin: 25px;
+    width: 100px;
+    height: 30px;
+    color: #f3f3f3;
+    text-shadow: 1px 1px 2px rgb(98, 89, 89), 0 0 25px rgb(72, 13, 150), 0 0 5px #000000;
+    -webkit-text-stroke: 2px #66596e;
+}
+
+.cardAbout .back {
+    transform: perspective(600px) rotateY(180deg);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    color: #fefcfc;
+    background: rgb(29, 22, 40); 
+   
+
+    box-shadow: 0 5px 10px #000;
+
 }
 
 
-
-/*Estilos para los textos*/
-
-h2:hover {
-    color: #8538a6;
+.cardAbout .back .linkHistoria {
+    border-top: solid 1px #f3f3f3;
+    height: 40px;
+    line-height: 45px;
 }
 
-p:hover {
-    color: var(--colorVioletDark);
+.cardAbout .back .linkHistoria a {
+    color: #f3f3f3;
 }
 
 
+.cardAbout .back h2 {
+    font-size: 25px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+.cardAbout:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+
+}
+
+.cardAbout:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
 
 
 
