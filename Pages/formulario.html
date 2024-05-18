@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+    <script defer src="/scripts/indexNos.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/formulario.css">
+    <link rel="stylesheet" href="../CSS/globales.css">
+
+</head>
+
+
+<body>
+    <header class="header"><!--es un DIV-->
+        <nav class="navBar">
+            <a href="#" class="logo2">Logo2</a>
+            <img src="" alt="">
+            <button class="nav-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu nav-menu_visible">
+                <li class="nav-menu-item"><a href="/" class="nav-menu-link nav-link">Home</a></li>
+                <li class="nav-menu-item"><a href="Acerca-de-nosotros.html" class="nav-menu-link nav-link">Acerca de
+                        Nosotros</a></li>
+                <li class="nav-menu-item"><a href="library.html"
+                        class="nav-menu-link nav-link">Biblioteca</a>
+                </li>
+                <li class="nav-menu-item"><a href="formulario.html" class="nav-menu-link nav-link nav-menu-link_active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <section id="formulario" class="fondo-form">
+        <div class="subtitulo-formulario">
+            <h1><strong>Formulario de contacto</strong></h1><br>
+            <h4> Contanos tus inquietudes o si te gustaría agregar una reseña de pelicula</h4>
+
+        </div>
+        
+        <div class="pos-form">
+            <section id="formulario-section">
+                <div class="recuadro-form">
+                    <form name="miformulario" method="get" action="procesar.php">
+
+                        <fieldset>
+                            <ol>
+                                <li>
+                                    <input type="text" class="form-control" placeholder="Nombre completo"
+                                        aria-label="Nombre completo" required>
+                                </li>
+                                <li>
+                                    <div class="col-md-4">
+                                        <label for="inputOption" class="form-label"></label>
+                                        <select id="inputOption" class="form-select">
+                                            <option selected>Seleccionar el motivo de la consulta</option>
+                                            <option value="1">Consultas</option>
+                                            <option value="2">Reclamos</option>
+                                            <option value="3">Sugerencias</option>
+                                            <option value="3">Problemas técnicos</option>
+                                            <option value="3">Otros</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-control">
+                                        <h4>¿Cómo quieres que te contactemos?</h4>
+                                        <input type="radio" name="contacto" value="email" id="email" checked>
+                                        <label for="email">E-mail</label>
+                                        <input type="radio" name="contacto" value="telefono" id="telefono">
+                                        <label for="telefono">Teléfono</label><br>
+                                        <br><input type="text" class="form-control"
+                                        placeholder="Contacto" aria-label="opción" required>
+                                     
+                                    </div>
+                                </li>
+                         
+                         
+                                
+                                <li>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Escribir aqui..."
+                                            id="floatingTextarea2" style="height: 150px"></textarea>
+
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="inputGroupFile01">
+                                    </div>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                    <button id="botonEnvio" onclick="mostrarInfoConCheckeo()">Enviar</button>
+                    <p id="demo"></p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <script src="../scripts/formulario.js"></script>
+</body>
+</html>
