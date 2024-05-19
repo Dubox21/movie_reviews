@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <script defer src="indexNos.js"></script>
+    <script defer src="../scripts/indexNos.js"></script>
     <!-- defer es para diferir la ejecucion de js hasta cargar completamente el dom-->
 </head>
 
@@ -20,16 +20,17 @@
     <header class="header"><!--es un DIV-->
 
         <nav class="navBar">
-            <a href="#" class="logo2">Logo2</a>
+            <!--<a href="/" class="logo2">Logo2</a>-->
+            <img style="border-radius: 50%;" src="../img/logo2.png" alt="logo" class="logo2">
             <button class="nav-toggle" aria-label="Abrir menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="nav-menu nav-menu_visible">
-                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Home</a></li>
-                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link nav-menu-link_active">Acerca de
+                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link nav-link">Home</a></li>
+                <li class="nav-menu-item"><a href="Acerca-de-nosotros.html" class="nav-menu-link nav-link nav-menu-link_active">Acerca de
                         Nosotros</a></li>
-                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Biblioteca</a></li>
-                <li class="nav-menu-item"><a href="" class="nav-menu-link nav-link">Contacto</a></li>
+                <li class="nav-menu-item"><a href="library.html" class="nav-menu-link nav-link">Biblioteca</a></li>
+                <li class="nav-menu-item"><a href="formulario.html" class="nav-menu-link nav-link">Contacto</a></li>
             </ul>
         </nav>
 
@@ -40,6 +41,7 @@
             <img src="../img/images-fondo/Acerca-de-nos-Proyector2.2.jpg" alt="" class="image2">
             <div class="superposicion">
                 <div class="Texto-AcercadeNosotros">
+                    <h1 id="tituloNos">Acerca de nosotros</h1>
                     <p id="textoNosotros">Somos un grupo de personas
                         <br> uniendo nuestros intereses <br> en el desarrollo web y <br> las peliculas, para crear
                         esto. <br>Esperamos que lo disfruten tanto como nosotros!!
@@ -51,6 +53,9 @@
         </div>
 
         <section id="seccioncard">
+            <!--<div class="tituloMasNos">
+                <h1>¡Conocenos!</h1>
+            </div>-->
             <div class="cardAbout"> <!--HISTORIA-->
                 <div class="face front">
                     <img src="../img/images-fondo/cardFilm.jpg" alt="">
@@ -93,7 +98,7 @@
                     <img src="../img/images-fondo/cardFilm.jpg" alt="">
                     <!--<i style="font-size:28px" class='fas'>&#xf4be;</i>-->
                     <i style="font-size:50px" class="fa-solid fa-person-chalkboard"></i>
-                    
+
                     <h2>Nuestra Mision</h2>
                 </div>
                 <div class="face back">
@@ -113,13 +118,16 @@
 
     </main>
 
+    <section><!--Footer (FILA)-->
+        <div class="footer">
+            <footer>
+                <p>Todos los derechos reservados&copy; 2024</p>
+            </footer>
+        </div>
+    </section>
 </body>
 
-<section><!--Footer (FILA)-->
-    <div class="footer">
-        <footer>Footer en construccion</footer>
-    </div>
-</section>
+
 
 
 </html>
