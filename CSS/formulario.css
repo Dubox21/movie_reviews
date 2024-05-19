@@ -6,47 +6,6 @@
     margin-bottom: 50px;
 } 
 
-@media (max-width: 600px) {
-  #formulario, 
-  #formulario-section {
-      width: 90%;
-      margin: 20px auto;
-  }
-
-  .form-control,
-  .form-select,
-  .form-check-label {
-      width: 100%;
-      margin-bottom: 15px;
-  }
-
-  .subtitulo-formulario h1,
-  .subtitulo-formulario h4 {
-      width: 100%;
-      max-width: none;
-  }
-
-  .form-control input[type="radio"],
-  .form-control label {
-      display: inline-block;
-      margin-right: 10px;
-  }
-
-  .form-floating textarea {
-      width: 100%;
-  }
-
-  .input-group input[type="file"] {
-      width: 100%;
-  }
-
-  #botonEnvio {
-      width: 100%;
-      padding: 10px;
-      margin-top: 20px;
-  }
-}
-
 
 #formulario ol li {
   margin-bottom: 0px; 
@@ -117,6 +76,10 @@ body {
   .subtitulo-formulario h2{
     font-size: 18px ;
   }
+  
+  h3{
+    font-size: 16px ;
+  }
 
 .recuadro-form {
     background-color: #c4c6c17b;
@@ -165,4 +128,71 @@ body {
 
 #botonEnvio:hover {
     background-color: #7a09a7;
+}
+
+ @media (max-width: 768px) {
+
+  #formulario {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  #formulario-section {
+    width: 110%;
+    margin: 20px auto;
+
+  }
+  
+  .form-control,
+  .form-select,
+  .form-check-label {
+    margin: 0 auto;
+    text-align: left;
+    display: block;
+    width: 70%;
+    background-color: #fff;
+  }
+
+  .form-select{
+    width: 80%; 
+  }
+
+  .form-control input[type="radio"] {
+    display: block;
+    margin-bottom: 10px;
+    width: 15px; 
+    height: 15px;
+    margin-right: 10px;
+  }
+
+  .form-control label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+  .form-floating textarea {
+    width: 70%;
+  }
+
+
+  .input-group input[type="file"] {
+    width: 70%;
+  }
+
+
+  #botonEnvio {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .recuadro-form {
+    padding: 10px;
+  }
+
+
+  .ol li {
+    margin-bottom: 20px; 
+  }
 }
