@@ -38,8 +38,7 @@
 .logo2 {
 
     padding: 0 20px;
-    margin-top: 10px;
-    margin: 20px;
+    margin: 5px;
     line-height: 50px;
     color: #ebe0ee;
     /*para centrarlo (debe ser igual al del cuerpo)*/
@@ -104,13 +103,6 @@
     }
 
 
-    .logo2 {
-        padding: 0 20px;
-        line-height: 60px;
-        color: #ebe0ee;
-
-    }
-
     .nav-link {
         color: #eee7f0;
         font-weight: bolder;
@@ -165,8 +157,6 @@
     .Texto-AcercadeNosotros {
         font-size: 2px;
         position: fixed;
-        /*transform: translate(-25%, -25%);
-        -ms-transform: translate(-25%, -25%);*/
         left: 0;
         top: 20px;
         width: 80%;
@@ -177,7 +167,6 @@
     #tituloNos{
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-        font-family: "Outfit", sans-serif;
         font-weight: bolder;
         text-align: center;
         font-size: 36px;
@@ -186,7 +175,6 @@
     #textoNosotros  {
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-        font-family: "Outfit", sans-serif;
         font-weight: bolder;
         text-align: center;
         font-size: 26px;
@@ -194,7 +182,6 @@
     }
     
     #text {
-        font-family: "Outfit", sans-serif;
         font-size: 15px;
         font-weight: bolder;
         color: #fffdfd;
@@ -225,7 +212,7 @@
     height: 900px;
     box-shadow: 0px 4px 5px #7386BF;
     margin: 0 auto;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .superposicion {
@@ -262,7 +249,6 @@
 #tituloNos {
     color: #fffdfd;
     text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-    font-family: "Outfit", sans-serif;
     font-weight: bolder;
     text-align: center;
     margin-bottom: 20px;
@@ -273,13 +259,11 @@
 #textoNosotros{
     color: #fffdfd;
     text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-    font-family: "Outfit", sans-serif;
     font-weight: bolder;
     text-align: center;
 }
 
 #text {
-    font-family: "Outfit", sans-serif;
     font-size: 14px;
     font-weight: bolder;
     color: #fffdfd;
@@ -442,9 +426,9 @@
 
 
 .cardAbout .back h2 {
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 25px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .cardAbout:hover .front {
