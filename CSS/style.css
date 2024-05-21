@@ -164,7 +164,7 @@
         color: #F2F2F2;
     }
 
-    #tituloNos{
+    #tituloNos {
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
         font-weight: bolder;
@@ -172,7 +172,7 @@
         font-size: 36px;
     }
 
-    #textoNosotros  {
+    #textoNosotros {
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
         font-weight: bolder;
@@ -180,15 +180,15 @@
         font-size: 26px;
         margin-bottom: 10px;
     }
-    
+
     #text {
         font-size: 15px;
         font-weight: bolder;
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-    
+
     }
-    
+
 }
 
 
@@ -256,7 +256,7 @@
 }
 
 
-#textoNosotros{
+#textoNosotros {
     color: #fffdfd;
     text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
     font-weight: bolder;
@@ -282,12 +282,13 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: rgba(71, 4, 89, 0.191);
+    /*background-color: rgba(71, 4, 89, 0.191);*/
+    background-color: rgba(71, 4, 89, 0.216);
     box-shadow: 0 5px 10px #000;
     border-radius: 15px;
     margin-bottom: 10px;
     margin-top: 12px;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
 
 }
 
@@ -296,8 +297,7 @@
     position: relative;
     width: 350px;
     height: 400px;
-    margin: 25px;
-    font-family: "Outfit", sans-serif;
+    margin: 30px;
 
 }
 
@@ -312,8 +312,9 @@
 }
 
 .cardAbout .front {
-    transform: perspective(600px) rotateY(0deg); 
+    transform: perspective(600px) rotateY(0deg);
     box-shadow: 0 6px 10px #000;
+
 }
 
 
@@ -323,113 +324,63 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.75;
 }
 
+#cardvalores {
+    opacity: 0.6;
+}
 
 .cardAbout .front h2 {
     position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 55px;
+    background: rgba(68, 65, 65, 0.4);
+    color: #fcf9f9; 
+    color: #f7e924;
     text-align: center;
-    margin: 30px;
-    padding: 60px;
-    width: 100px;
-    height: 80px;
-    letter-spacing: 2px;
-    font-size: 35px;
+    border-top: solid 2px #f3f3f3;
+    text-align: center;
+    font-size: 25px;
     font: bold;
-    color: #faf9f9;
-    text-shadow: 1px 1px 2px rgb(140, 123, 123), 0 0 25px rgb(103, 16, 216), 0 0 5px #000000;
+
 }
 
-.cardAbout .front .fa-people-arrows {
 
-    position: absolute;
-    text-align:center;
-    padding: 90px;
-    bottom: 35px;
-    margin: 25px;
-    width: 100px;
-    height: 30px;
-    color: #f3f3f3;
-    text-shadow: 1px 1px 2px rgb(140, 123, 123), 0 0 25px rgb(103, 16, 216), 0 0 5px #000000;
-    -webkit-text-stroke: 2px #66596e;
-}
-
-.cardAbout .front .fas {
-
-    position: absolute;
-    text-align:center;
-    padding: 90px;
-    bottom: 35px;
-    margin: 25px;
-    width: 100px;
-    height: 30px;
-    color: #f3f3f3;
-    text-shadow: 1px 1px 2px rgb(140, 123, 123), 0 0 25px rgb(103, 16, 216), 0 0 5px #000000;
-    -webkit-text-stroke: 2px #66596e;
-}
-
-.fa-heart-circle-check {
-    position: absolute;
-    text-align:center;
-    padding: 90px;
-    bottom: 35px;
-    margin: 25px;
-    width: 100px;
-    height: 30px;
-    color: #f3f3f3;
-    text-shadow: 1px 1px 2px rgb(140, 123, 123), 0 0 25px rgb(103, 16, 216), 0 0 5px #000000;
-    -webkit-text-stroke: 2px #66596e;
-}
-
-.fa-person-chalkboard {
-    position: absolute;
-    text-align:center;
-    padding: 90px;
-    bottom: 35px;
-    margin: 25px;
-    width: 100px;
-    height: 30px;
-    color: #f3f3f3;
-    text-shadow: 1px 1px 2px rgb(140, 123, 123), 0 0 25px rgb(103, 16, 216), 0 0 5px #000000;
-    -webkit-text-stroke: 2px #66596e;
-}
 
 .cardAbout .back {
     transform: perspective(600px) rotateY(180deg);
     padding: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     color: #fefcfc;
-    background: rgb(29, 22, 40); 
+    background: rgb(29, 22, 40);
     box-shadow: 0 5px 10px #000;
 
 }
 
 
-.cardAbout .back .linkHistoria {
-    border-top: solid 1px #f3f3f3;
-    height: 40px;
-    line-height: 45px;
-}
-
-.cardAbout .back .linkHistoria a {
-    color: #f3f3f3;
-}
-
-
 .cardAbout .back h2 {
-    font-size: 30px;
-    margin-top: 25px;
+    justify-content: center;
+    font-size: 35px;
+    margin-top: 35px;
+    margin-bottom: 35px;
     letter-spacing: 2px;
 }
+
+.cardAbout .back p{
+    font-size: 18px;
+}
+
 
 .cardAbout:hover .front {
     transform: perspective(600px) rotateY(180deg);
@@ -449,4 +400,5 @@
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;}
+    background: #ddd;
+}
