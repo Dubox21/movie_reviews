@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -17,12 +17,13 @@
 <body>
     <header class="header"><!--es un DIV-->
         <nav class="navBar">
-            <a href="#" class="logo2">Logo2</a>
-            <img src="" alt="">
+            <a href="/" class="logo2">
+                <img style="border-radius: 50%;" src="../img/logo2.png" alt="logo">
+            </a>
             <button class="nav-toggle" aria-label="Abrir menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <ul class="nav-menu nav-menu_visible">
+            <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="/" class="nav-menu-link nav-link">Home</a></li>
                 <li class="nav-menu-item"><a href="Pages/Acerca-de-nosotros.html" class="nav-menu-link nav-link">Acerca de
                         Nosotros</a></li>
@@ -35,8 +36,8 @@
     </header>
     <div class="container">
         <div class="welcome">
-          <img class="welcome-image" src="img/images-fondo/Bienvenidos.jpg" alt="Sala de cine llena">
-          <div class="text">
+          <img class="welcome-image" src="img/images-fondo/Bienvenidos.jpg" alt="">
+          <div class="text-bienvenida">
             <h1>Bienvenidos a <br>nuestra web</h1>
             <p class="parrafo">Descubre las reseñas más destacadas de películas en nuestra plataforma especializada en cine</p>
           </div>
@@ -55,24 +56,24 @@
     <div class="card">
         <div class="news-and-trends-images-section">
             <div class="images-section">
-                <img src="img/escuela_de_rock.png" alt="Profesor tocando la guitarra">
+                <img src="img/escuela_de_rock.png" alt="">
                 <h3>Escuela de Rock (2003)</h3>
                 <p class="parrafo">Tras ser expulsado de un grupo de rock, Dewey Finn trabaja como profesor substituto en una estricta escuela privada, e intenta convertirla en un grupo de rock.</p>
             </div>
             <div class="images-section">
-                <img src="/img/donde_estan_las_rubias.png" alt="Dos oficiales mostrando la placa de policia">
+                <img src="/img/donde_estan_las_rubias.png" alt="">
                 <h3>¿Y donde estan las rubias? (2004)</h3>
                 <p class="parrafo">Dos agentes del FBI en desgracia van encubiertos en un esfuerzo por proteger a unas herederas de hoteles, las hermanas Wilson, de un complot de secuestro.</p>
             </div>
             <div class="images-section">
-                <img src="img/ghostbusters.png" alt="Auto dirigiendose a una ciudad congelada">
+                <img src="img/ghostbusters.png" alt="">
                 <h3>Ghostbusters: Apocalipsis Fantasma (2024)</h3>
                 <p class="parrafo">Cuando el descubrimiento de un artefacto antiguo libera una fuerza
                     maligna, los nuevos y viejos Ghostbusters unen sus fuerzas para proteger su hogar y salvar al
                     mundo de una segunda era de hielo.</p>
             </div>
             <div class="images-section">
-                <img src="img/paddington_2.png" alt="Oso con sombrero sentado aldedor de una mesa">
+                <img src="img/paddington_2.png" alt="">
                 <h3>Paddington 2 (2017)</h3>
                 <p class="parrafo">Completamente integrado a la sociedad, el oso Paddington (Ben Whishaw)
                     vive feliz con los Brown, gozando de la simpatía y respeto de la comunidad de Windsor Gardens.</p>
@@ -102,7 +103,7 @@
         <div class="half right-1">
             <h2>Paddington</h2>
             <div class="video-container">
-                <iframe width="800" height="400" src="https://www.youtube.com/embed/sw7RElt-SvE?autoplay=1&mute=1&controls=0&loop=1" title="PADDINGTON 2 - Full US Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="800" height="400" src="https://www.youtube.com/embed/sw7RElt-SvE?mute=1&controls=0&loop=1" title="PADDINGTON 2 - Full US Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -111,7 +112,7 @@
         <div class="half left-2">
             <h2>Ghostbusters</h2>
             <div class="video-container">
-                <iframe width="800" height="400" src="https://www.youtube.com/embed/6-TqjCpvlr4?autoplay=1&mute=1&controls=0&loop=1" title="Ghostbusters: Apocalipsis Fantasma | Tráiler Oficial - (Sony Pictures) HD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="800" height="400" src="https://www.youtube.com/embed/6-TqjCpvlr4?mute=1&controls=0&loop=1" title="Ghostbusters: Apocalipsis Fantasma | Tráiler Oficial - (Sony Pictures) HD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
         <div class="half right-2">
@@ -134,7 +135,9 @@
         </div>
     </div>
     <div class="footer">
-        <footer>Footer en construccion</footer>
+        <footer>
+            <p>Todos los derechos reservados&copy; 2024</p>
+        </footer>
     </div>
     <script src="scripts/index.js"></script>
     <script defer src="/scripts/indexNos.js"></script>

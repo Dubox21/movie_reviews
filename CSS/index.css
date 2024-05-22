@@ -10,7 +10,7 @@
   }
   
   .welcome-image {
-    margin-top: 90px;
+    margin-top: 15px;
     width: 100%;
     max-width: none;
     border-radius: 15px; 
@@ -21,7 +21,7 @@
     padding: 0;
   }
   
-.text {
+.text-bienvenida {
     position: absolute;
     top: 43%;
     left: 50%;
@@ -30,16 +30,19 @@
     color: #555555;
 }
   
-.text h1{
+.text-bienvenida h1{
     margin: 0;
     font-size: 70px;
 }
 
-.text p {
+.text-bienvenida p {
     margin: 0;
     font-size: 20px;
     color: var(--colorBackgroud);
     margin-top: 40px;
+}
+
+.text-bienvenida p:hover{
 }
 
 #btn-1 {
@@ -263,6 +266,10 @@
     font-size: 14px;
     margin: 4px;
 }
+.show {
+    /* Toggle (activa/desactiva) la clase "show" en el desplegable */
+    display: block;
+}
 
 
 @media only screen and (max-width: 1097px) {
@@ -271,7 +278,7 @@
         max-width: none;
     }
 
-    .text {
+    .text-bienvenida {
         position: absolute;
         top: 47%;
         left: 50%;
@@ -280,7 +287,7 @@
         color: #555555;
     }
 
-    .text h1 {
+    .text-bienvenida h1 {
         font-size: 30px;
     }
 
@@ -386,7 +393,7 @@
         max-width: none;
     }
 
-    .text {
+    .text-bienvenida {
         position: absolute;
         top: 47%;
         left: 50%;
@@ -395,7 +402,7 @@
         color: #555555;
     }
 
-    .text h1 {
+    .text-bienvenida h1 {
         font-size: 30px;
     }
 
@@ -474,5 +481,18 @@
     .bottom-block {
         margin: 10px;
         padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto; /* Centrado horizontal */
+    }
+    
+    .video-container iframe {
+        max-width: 100%;
+        height: auto;
     }
 }
