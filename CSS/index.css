@@ -13,13 +13,6 @@
     left: 0;
 }
 
-.navBar {
-    display: flex;
-    justify-content: space-between;
-    max-width: 992px;
-    margin: 0 auto;
-}
-
 .welcome {
     width: 100%;
     margin: 0 auto;
@@ -139,9 +132,8 @@
     margin-bottom: 40px;
 }
 
-.images-section {
+.images-section{
     text-align: center;
-    padding: 40px;
 }
 
 .images-section img {
@@ -286,13 +278,24 @@
 }
 
 
-@media only screen and (max-width: 1097px) {
-    .navBar {
-        display: flex;
-        justify-content: space-between;
-        max-width: 992px;
-        margin: 0 auto;
+@media only screen and (max-width: 1688px) {
+    .text-bienvenida {
+        top: 47%;
     }
+}
+
+@media only screen and (max-width: 1280px) {
+    .text-bienvenida {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #555555;
+    }
+}
+
+@media only screen and (max-width: 1097px) {
     .welcome-image {
         height: 400px;
         max-width: none;
@@ -300,7 +303,7 @@
 
     .text-bienvenida {
         position: absolute;
-        top: 54%;
+        top: 53%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -333,14 +336,12 @@
     }
     .container-video {
         flex-direction: column;
-        align-items: center;
     }
 
     .half {
         padding: 10px;
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .half.left-1 {
@@ -443,15 +444,16 @@
       .welcome-image {
         height: 100%;
         max-width: none;
+        filter: brightness(30%); /* Aplica un filtro de brillo al 50% para oscurecer la imagen */
     }
 
     .text-bienvenida {
         position: absolute;
-        top: 53%;
+        top: 56%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        color: #555555;
+        color: #fefcfc;
     }
 
     .text-bienvenida h1 {
@@ -523,9 +525,16 @@
         margin: 0;
     }
     /* Estilos para el contenedor de video */
+
     .video-container {
-        width: 50%;
-        margin-top: 10px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto; /* Centrado horizontal */
+    }
+    
+    .video-container iframe {
+        max-width: 100%;
+        height: auto;
     }
 
     /* Estilos para los bloques superiores e inferiores */
@@ -546,8 +555,15 @@
     }
 
     .text-bienvenida {
-        margin-top: 20px; /* Añade margen superior para mover el texto hacia abajo */
+        top: 55%;
         color: #fefcfc;
+    }
+
+    .text-bienvenida h1 {
+        font-size: 25px;
+    }
+    .text-bienvenida p {
+        font-size: 15px;
     }
     
     .video-container {
@@ -563,6 +579,18 @@
 }
 
 @media only screen and (max-width: 340px) {
+    .text-bienvenida {
+        top: 57%;
+        color: #fefcfc;
+    }
+
+    .text-bienvenida h1 {
+        font-size: 20px;
+    }
+    .text-bienvenida p {
+        font-size: 15px;
+    }
+
     .text-bienvenida p {
         font-size: 15px;
     }
