@@ -15,14 +15,13 @@
 body {
     background-color: var(--colorBackgroud);
     padding: 0 10px;
-    box-sizing: border-box; /* Añadimos esto para asegurar el modelo de caja */
+    box-sizing: border-box;
 }
 
 body,
 button,
 input {
     font-family: "Outfit", sans-serif;
-    overflow-x: hidden; /* Esto asegurará que no haya desbordamiento horizontal */
 }
 
 header {
