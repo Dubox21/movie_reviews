@@ -167,9 +167,8 @@
 @media (min-width: 1024px) {
     .item {
         width: 582px;
-        height: 404px;
+        height: 350px;
         margin: 0 70px;
-        padding: 30px;
     }
 
     .description-text_reviews {
