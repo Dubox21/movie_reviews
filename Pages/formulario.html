@@ -53,53 +53,44 @@
                     <form name="miformulario" method="get" action="procesar.php">
 
                         <fieldset>
-                            <ol>
-                                <li>
-                                    <input type="text" class="form-control" placeholder="Nombre completo"
-                                        aria-label="Nombre completo" required>
-                                </li>
-                                <li>
-                                    <div class="col-md-4">
-                                        <label for="inputOption" class="form-label"></label>
-                                        <select id="inputOption" class="form-select">
-                                            <option selected>Seleccionar el motivo de la consulta</option>
-                                            <option value="1">Consultas</option>
-                                            <option value="2">Reclamos</option>
-                                            <option value="3">Sugerencias</option>
-                                            <option value="3">Problemas técnicos</option>
-                                            <option value="3">Otros</option>
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-control">
-                                        <h3>¿Cómo quieres que te contactemos?</h3>
-                                        <input type="radio" name="contacto" value="email" id="email" checked>
-                                        <label for="email">E-mail</label>
-                                        <input type="radio" name="contacto" value="telefono" id="telefono">
-                                        <label for="telefono">Teléfono</label><br>
-                                        <br><input type="text" class="form-control"
-                                        placeholder="Contacto" aria-label="opción" required>
-                                     
-                                    </div>
-                                </li>
                          
-                         
-                                
-                                <li>
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Escribir aqui..."
-                                            id="floatingTextarea2" style="height: 150px"></textarea>
+                            <input type="text" class="form-control" placeholder="Nombre completo"
+                                aria-label="Nombre completo" required>
+                    
+                            <div class="col-md-4">
+                                <label for="inputOption" class="form-label"></label>
+                                <select id="inputOption" class="form-select">
+                                    <option selected>Seleccionar el motivo de la consulta</option>
+                                    <option value="1">Consultas</option>
+                                    <option value="2">Reclamos</option>
+                                    <option value="3">Sugerencias</option>
+                                    <option value="3">Problemas técnicos</option>
+                                    <option value="3">Otros</option>
+                                </select>
+                            </div>
+                    
+                            <div class="form-control">
+                                <h3>¿Cómo quieres que te contactemos?</h3>
+                                <input type="radio" name="contacto" value="email" id="email" checked>
+                                <label for="email">E-mail</label>
+                                <input type="radio" name="contacto" value="telefono" id="telefono">
+                                <label for="telefono">Teléfono</label><br>
+                                <br><input type="text" class="form-control"
+                                placeholder="Contacto" aria-label="opción" required>
+                            
+                            </div>
+                
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Escribir aqui..."
+                                    id="floatingTextarea2" style="height: 150px"></textarea>
 
-                                    </div>
-                                </li>
-                                <li>
+                            </div>
+        
 
-                                    <div class="input-group mb-3">
-                                        <input type="file" class="form-control" id="inputGroupFile01">
-                                    </div>
-                                </li>
-                            </ol>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="inputGroupFile01">
+                            </div>
+                          
                         </fieldset>
                     </form>
                     <button id="botonEnvio" onclick="mostrarInfoConCheckeo()">Enviar</button>
