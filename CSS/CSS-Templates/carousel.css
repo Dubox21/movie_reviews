@@ -241,7 +241,7 @@
 
     .carousel_film .carousel_inner {
         justify-content: space-evenly;
-        gap: 30px;
+        gap: 10px;
     }
 
     .carousel_item {
