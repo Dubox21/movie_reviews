@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <script src="https://kit.fontawesome.com/1e098fcb69.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script defer src="../scripts/indexNos.js"></script>
+    <!-- defer es para diferir la ejecucion de js hasta cargar completamente el dom-->
+</head>
+
+
+<body class="cuerpo">
+    <header class="header"><!--es un DIV-->
+
+        <nav class="navBar">
+            <a href="/" class="logo2"> <img style="border-radius: 50%;" src="../img/logo2.png" alt="logo"> </a>
+            <button class="nav-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="/home" class="nav-menu-link nav-link">Home</a></li>
+                <li class="nav-menu-item"><a href="/about"
+                        class="nav-menu-link nav-link nav-menu-link_active">Acerca de
+                        Nosotros</a></li>
+                <li class="nav-menu-item"><a href="/library" class="nav-menu-link nav-link">Biblioteca</a></li>
+                <li class="nav-menu-item"><a href="/contact" class="nav-menu-link nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="conteinerGral">
+            <img src="../img/images-fondo/Acerca-de-nos-Proyector2.2.jpg" alt="" class="image2">
+            <div class="superposicion">
+                <div class="Texto-AcercadeNosotros">
+                    <h1 id="tituloNos">Acerca de nosotros</h1>
+                    <p id="textoNosotros">Somos un grupo de personas
+                        <br> uniendo nuestros intereses <br> en el desarrollo web y <br> las peliculas, para crear
+                        esto. <br>Esperamos que lo disfruten tanto como nosotros!!
+                    </p> <br>
+
+                    <div class="conteiner_btnmas">
+                        <button id="btn-mas" class="btn_2">
+                            <i class="fa-solid fa-angles-down fa-2x"> Saber mas </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="seccioncard">
+            <div class="cardAbout"> <!--HISTORIA-->
+                <div class="face front">
+                    <img src="../img/images-fondo/imgCard1.jpg" alt="">
+                    <h2>Nuestra historia</h2>
+                </div>
+                <div class="face back">
+                    <h2>Nuestra historia</h2>
+
+                    <p>Somos
+                        Ambar, Gisela , Nicolás y Ximena, estudiantes del curso de desarrollo web Full-Stack
+                        Node JS. del programa "Codo a Codo". <br>
+                        Sin conocernos, y de forma aleatoria, nos unimos para la realización
+                        de un proyecto basado en la construcción una pagina web desde 0, sobre reseñas de peliculas,
+                        con la ayuda de todas las herramientas y conocimientos aprendidos durante el curso.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cardAbout"> <!--VALORES-->
+                <div class="face front">
+                    <img id="cardvalores" src="../img/images-fondo/imgCard2.jpg" alt="">
+                    <h2>Nuestros Valores</h2>
+                </div>
+                <div class="face back">
+                    <h2>Nuestros Valores</h2>
+                    <p>Sentirnos cómodos y divertirnos es la premisa para poder trabajar de manera eficiente, es por eso
+                        que <br>
+                        fomentamos la solidaridad, respeto y empatía entre nosotros mismos. <br>
+                        Aceptamos los errores y fracasos como parte del aprendizaje continuo, motivándonos para
+                        continuar creciendo día a día.</p>
+                </div>
+            </div>
+
+            <div class="cardAbout"><!--MISION-->
+                <div class="face front">
+                    <img src="../img/images-fondo/ImgCard3.jpg" alt="">
+                    <h2>Nuestra Mision</h2>
+                </div>
+                <div class="face back">
+                    <h2>Nuestra Mision</h2>
+                    <p> Con el objetivo de desarrollarnos de manera profesional y personal buscamos que nuestra
+                        pagina web crezca y mejore con el tiempo, generando nevos desafíos para nosotros mismos. <br>A
+                        si
+                        mimo, deseamos que sea una pagina de calidad para todos aquellos que quieran usarla, y en un futuro no muy lejano se convierta en una de las paginas mas visitadas y valoradas para los amantes de las peliculas como nosotros.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="footer"><!--Footer (FILA)-->
+        <footer>
+            <p>Todos los derechos reservados&copy; 2024</p>
+        </footer>
+    </div>
+</body>
+
+
+
+
+</html>
