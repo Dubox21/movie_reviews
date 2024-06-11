@@ -1,0 +1,9 @@
+{
+    "routes": [
+      { "src": "/home", "dest": "/public/index.html" },
+      { "src": "/about", "dest": "/public/Pages/Acerca-de-nosotros.html" },
+      { "src": "/library", "dest": "/public/Pages/library.html" },
+      { "src": "/contact", "dest": "/public/Pages/formulario.html" }
+    ]
+  }
+  
