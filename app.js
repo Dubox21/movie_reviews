@@ -2,8 +2,8 @@ import express from 'express';
 import ejs from 'ejs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import config from require('./config/db');
-import movieRoutes from require('./routes/movieRoutes');
+// import config from './config/db.js';
+import movieRoutes from './routes/movieRoutes.js';
 
 // Obtener __filename y __dirname en un módulo ES
 const __filename = fileURLToPath(import.meta.url);
@@ -34,6 +34,10 @@ app.get('/library', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/formulario.html'));
+});
+
+app.get('/form', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages/formMovie.html'));
 });
 
 // Inicia el servidor

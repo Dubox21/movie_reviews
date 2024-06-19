@@ -1,9 +1,14 @@
+document.addEventListener('DOMContentLoaded', () => {
+    loadNavbar();
+});
+
 function loadNavbar() {
     fetch('../Templates/navbar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('navbarContainer').innerHTML = html;
             setActiveLink(); // Llamar a la función para establecer el enlace activo
+            addEventListeners(); // Agregar event listeners después de cargar el navbar
         })
         .catch(error => console.error('Error loading navbar:', error));
 }
@@ -23,6 +28,19 @@ function setActiveLink() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadNavbar();
-});
+function addEventListeners() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("nav-menu_visible");
+
+            if (navMenu.classList.contains("nav-menu_visible")) {
+                navToggle.setAttribute("aria-label", "Cerrar menú");
+            } else {
+                navToggle.setAttribute("aria-label", "Abrir menú");
+            }
+        });
+    }
+}
