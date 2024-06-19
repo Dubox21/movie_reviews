@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable con Formulario de Películas</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/formMovie.css">
+</head>
+
+<body>
+    <header class="header" id="navbarContainer">
+        <!-- Se renderiza el navbar -->
+    </header>
+
+    <div class="container_form">
+        <h3 id="formHeading" class="titleForm">Agregar Película</h3>
+
+        <form id="movieForm" class="form">
+            <h4 class="subTitleForm">Información General</h4>
+            <div class="form-group">
+                <label for="title" class="form-label">Título</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="image" class="form-label">Imagen Cover</label>
+                <input type="file" id="image" name="image" accept="image/*" >
+                <div class="image-preview" id="imagePreview">
+                    <span>Vista previa de la imagen</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image" class="form-label">Imagen Sipnosis</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <div class="image-preview" id="imagePreview">
+                    <span>Vista previa de la imagen</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="form-label">Sipnosis:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <h4 class="subTitleForm">Creditos y Reparto</h4>
+            <div class="form-group">
+                <label for="director" class="form-label">Director:</label>
+                <input type="text" id="director" name="director" required>
+                <label for="screenwriter" class="form-label">Escritores:</label>
+                <input type="text" id="screenwriter" name="screenwriter" required>
+            </div>
+            <div class="form-group">
+                <label for="gender" class="form-label">Genero :</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="country" class="form-label">País:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="language" class="form-label">Idioma:</label>
+                <input type="text" id="language" name="language" required>
+            </div>
+            <div class="form-group">
+                <label for="duration" class="form-label">Duracion:</label>
+                <input type="text" id="duration" name="duration" required>
+            </div>
+            <div class="form-group">
+                <label for="premiere" class="form-label">Estreno:</label>
+                <input type="text" id="premiere" name="premiere" required>
+            </div>
+            <h4 class="subTitleForm">Valoracion</h4>
+            <div >
+                <label for="rating" class="form-label">Calificación:</label>
+        <div class="star-rating">
+            <input type="radio" id="5-stars" name="rating" value="5" />
+            <label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" id="4-stars" name="rating" value="4" />
+            <label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" id="3-stars" name="rating" value="3" />
+            <label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" id="2-stars" name="rating" value="2" />
+            <label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" id="1-star" name="rating" value="1" />
+            <label for="1-star" class="star">&#9733;</label>
+        </div>
+            </div>
+            <button type="submit" id="submitBtn">Agregar Película</button>
+        </form>
+
+    </div>
+    <div class="footer">
+        <footer>
+            <p>Todos los derechos reservados&copy; 2024</p>
+        </footer>
+    </div>
+    <script src="/scripts/navbar.js"></script>
+    <!-- <script src="/scripts/indexNos.js"></script> -->
+</body>
+
+</html>
