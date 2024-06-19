@@ -1,0 +1,4 @@
+/*
+Definen los endpoints y utilizan los controladores para manejar las solicitudes.
+
+*/

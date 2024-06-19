@@ -2,6 +2,8 @@ import express from 'express';
 import ejs from 'ejs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import config from require('./config/db');
+import movieRoutes from require('./routes/movieRoutes');
 
 // Obtener __filename y __dirname en un módulo ES
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +17,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/api/movies', movieRoutes);
 
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
