@@ -30,70 +30,102 @@
             <h4 class="subTitleForm">Información General</h4>
             <div class="form-group">
                 <label for="title" class="form-label">Título</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" class="input">
             </div>
-            <div class="form-group">
-                <label for="image" class="form-label">Imagen Cover</label>
-                <input type="file" id="image" name="image" accept="image/*" >
-                <div class="image-preview" id="imagePreview">
+            <div class="form-group group-image">
+                <div class="custom-file-input">
+                    <label for="image" class="custom-file-label">Imagen Cover</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                <div class="image-preview cover" id="imagePreviewCover">
                     <span>Vista previa de la imagen</span>
                 </div>
+                <p class="image-size-info">
+                    La imagen no debe ser superior a 280px x 280px en dispositivos móviles y tablets, y 287px x 314px en
+                    desktop.
+                </p>
             </div>
-            <div class="form-group">
-                <label for="image" class="form-label">Imagen Sipnosis</label>
-                <input type="file" id="image" name="image" accept="image/*">
-                <div class="image-preview" id="imagePreview">
+            <div class="form-group group-image">
+                <div class="custom-file-input">
+                    <label for="image" class="custom-file-label">Imagen Banner</label>
+                    <input type="file" id="imageBanner" name="image" accept="image/*">
+                </div>
+                <div class="image-preview img-banner" id="imagePreviewBanner">
                     <span>Vista previa de la imagen</span>
                 </div>
+                <p class="image-size-info">
+                    La imagen no debe ser superior a 340px x 200px en dispositivos móviles, 700px x 340px en tablets, y
+                    1200px x 540px en desktop.
+                </p>
             </div>
             <div class="form-group">
-                <label for="description" class="form-label">Sipnosis:</label>
-                <textarea id="description" name="description" required></textarea>
+                <label for="description" class="form-label">Sipnosis</label>
+                <textarea id="description" name="description" class="input text-area"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="trailer" class="form-label">Trailer</label>
+                <input type="text" id="trailer" name="trailer" class="input">
             </div>
             <h4 class="subTitleForm">Creditos y Reparto</h4>
-            <div class="form-group">
-                <label for="director" class="form-label">Director:</label>
-                <input type="text" id="director" name="director" required>
-                <label for="screenwriter" class="form-label">Escritores:</label>
-                <input type="text" id="screenwriter" name="screenwriter" required>
-            </div>
-            <div class="form-group">
-                <label for="gender" class="form-label">Genero :</label>
-                <input type="text" id="gender" name="gender" required>
-            </div>
-            <div class="form-group">
-                <label for="country" class="form-label">País:</label>
-                <input type="text" id="country" name="country" required>
-            </div>
-            <div class="form-group">
-                <label for="language" class="form-label">Idioma:</label>
-                <input type="text" id="language" name="language" required>
-            </div>
-            <div class="form-group">
-                <label for="duration" class="form-label">Duracion:</label>
-                <input type="text" id="duration" name="duration" required>
-            </div>
-            <div class="form-group">
-                <label for="premiere" class="form-label">Estreno:</label>
-                <input type="text" id="premiere" name="premiere" required>
+            <div class="form-group__grid">
+                <div class="form-group">
+                    <label for="director" class="form-label">Director</label>
+                    <input type="text" id="director" name="director" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="screenwriter" class="form-label">Escritores</label>
+                    <input type="text" id="screenwriter" name="screenwriter" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="gender" class="form-label">Genero</label>
+                    <input type="text" id="gender" name="gender" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="country" class="form-label">País</label>
+                    <input type="text" id="country" name="country" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="language" class="form-label">Idioma</label>
+                    <input type="text" id="language" name="language" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="duration" class="form-label">Duracion</label>
+                    <input type="text" id="duration" name="duration" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="premiere" class="form-label">Estreno</label>
+                    <input type="text" id="premiere" name="premiere" class="input">
+                </div>
             </div>
             <h4 class="subTitleForm">Valoracion</h4>
-            <div >
-                <label for="rating" class="form-label">Calificación:</label>
-        <div class="star-rating">
-            <input type="radio" id="5-stars" name="rating" value="5" />
-            <label for="5-stars" class="star">&#9733;</label>
-            <input type="radio" id="4-stars" name="rating" value="4" />
-            <label for="4-stars" class="star">&#9733;</label>
-            <input type="radio" id="3-stars" name="rating" value="3" />
-            <label for="3-stars" class="star">&#9733;</label>
-            <input type="radio" id="2-stars" name="rating" value="2" />
-            <label for="2-stars" class="star">&#9733;</label>
-            <input type="radio" id="1-star" name="rating" value="1" />
-            <label for="1-star" class="star">&#9733;</label>
-        </div>
+            <div class="form-group__grid">
+                <div class="quantity-rating">
+                    <label for="rating" class="form-label">Calificación</label>
+                    <div class="star-rating">
+                        <input type="radio" id="5-stars" name="rating" value="5" />
+                        <label for="5-stars" class="star">&#9733;</label>
+                        <input type="radio" id="4-stars" name="rating" value="4" />
+                        <label for="4-stars" class="star">&#9733;</label>
+                        <input type="radio" id="3-stars" name="rating" value="3" />
+                        <label for="3-stars" class="star">&#9733;</label>
+                        <input type="radio" id="2-stars" name="rating" value="2" />
+                        <label for="2-stars" class="star">&#9733;</label>
+                        <input type="radio" id="1-star" name="rating" value="1" />
+                        <label for="1-star" class="star">&#9733;</label>
+                    </div>
+                </div>
+                <div class="form-group score">
+                    <p class="form-label">Puntaje</p>
+                    <div class="result" id="result">
+                        0 / 5 (0%)
+                    </div>
+                </div>
             </div>
-            <button type="submit" id="submitBtn">Agregar Película</button>
+            <div class="container-button">
+                <button type="submit" id="submitBtn" class="submitBtn">
+                    Agregar Película
+                </button>
+            </div>
         </form>
 
     </div>
@@ -102,8 +134,9 @@
             <p>Todos los derechos reservados&copy; 2024</p>
         </footer>
     </div>
+
+    <script src="/scripts/formMovie.js"></script>
     <script src="/scripts/navbar.js"></script>
-    <!-- <script src="/scripts/indexNos.js"></script> -->
 </body>
 
 </html>

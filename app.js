@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 // import config from './config/db.js';
 import movieRoutes from './routes/movieRoutes.js';
+import multer from 'multer';
 
 // Obtener __filename y __dirname en un módulo ES
 const __filename = fileURLToPath(import.meta.url);
