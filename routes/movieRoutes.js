@@ -1,19 +1,25 @@
-/*
-Definen los endpoints y utilizan los controladores para manejar las solicitudes.
-
-*/
-
 import express from 'express';
+import { addMovie, getMovieDetails } from '../controllers/movieController.js';
+import multer from 'multer';
+
 const router = express.Router();
-
-// Ejemplo de rutas
-router.get('/', (req, res) => {
-    res.send('Obteniendo todas las películas');
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/uploads'); // Directorio donde se guardarán las imágenes
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // Nombre original del archivo
+    }
 });
 
-router.post('/', (req, res) => {
-    res.send('Creando una nueva película');
-});
+const upload = multer({ storage: storage });
 
-// Exportar el router como exportación por defecto
+// Ruta para agregar una película
+router.post('/add', upload.fields([{ name: 'imageCover', maxCount: 1 }, { name: 'imageBanner', maxCount: 1 }]), addMovie);
+
+router.get('/:title', getMovieDetails);
+
+// Ruta para mostrar la página de detalles de la película
+router.get('/movie/:title', getMovieDetails);
+
 export default router;

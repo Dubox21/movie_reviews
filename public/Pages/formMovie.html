@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Desplegable con Formulario de Películas</title>
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="../img/logo2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
@@ -26,7 +26,7 @@
     <div class="container_form">
         <h3 id="formHeading" class="titleForm">Agregar Película</h3>
 
-        <form id="movieForm" class="form">
+        <form id="movieForm" class="form" action="/api/movies/add" method="POST" enctype="multipart/form-data">
             <h4 class="subTitleForm">Información General</h4>
             <div class="form-group">
                 <label for="title" class="form-label">Título</label>
@@ -35,7 +35,7 @@
             <div class="form-group group-image">
                 <div class="custom-file-input">
                     <label for="image" class="custom-file-label">Imagen Cover</label>
-                    <input type="file" id="image" name="image" accept="image/*">
+                    <input type="file" id="image" name="imageCover" accept="image/*">
                 </div>
                 <div class="image-preview cover" id="imagePreviewCover">
                     <span>Vista previa de la imagen</span>
@@ -48,7 +48,7 @@
             <div class="form-group group-image">
                 <div class="custom-file-input">
                     <label for="image" class="custom-file-label">Imagen Banner</label>
-                    <input type="file" id="imageBanner" name="image" accept="image/*">
+                    <input type="file" id="imageBanner" name="imageBanner" accept="image/*">
                 </div>
                 <div class="image-preview img-banner" id="imagePreviewBanner">
                     <span>Vista previa de la imagen</span>
@@ -77,8 +77,10 @@
                     <input type="text" id="screenwriter" name="screenwriter" class="input">
                 </div>
                 <div class="form-group">
-                    <label for="gender" class="form-label">Genero</label>
-                    <input type="text" id="gender" name="gender" class="input">
+                    <label for="genre_id" class="form-label">Género</label>
+                    <select id="genre_id" name="genre_id" class="input-select" required>
+                        <option value="" disabled selected>Seleccione un género </option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="country" class="form-label">País</label>
@@ -94,7 +96,7 @@
                 </div>
                 <div class="form-group">
                     <label for="premiere" class="form-label">Estreno</label>
-                    <input type="text" id="premiere" name="premiere" class="input">
+                    <input type="text" id="premiere" name="premiere" class="input" placeholder="YYYY-MM-DD">
                 </div>
             </div>
             <h4 class="subTitleForm">Valoracion</h4>

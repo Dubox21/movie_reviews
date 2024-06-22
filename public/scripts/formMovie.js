@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    async function loadGenres() {
+        try {
+            const response = await fetch('/api/genres');
+            const genres = await response.json();
+            const genreSelect = document.getElementById('genre_id');
+
+            genres.forEach(genre => {
+                const option = document.createElement('option');
+                option.value = genre.id;
+                option.textContent = genre.name;
+                genreSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar los géneros:', error);
+        }
+    }
+
+    loadGenres();
+
     // Manejo de la calificación y visualización del resultado
     const ratingInputs = document.querySelectorAll('.star-rating input[type="radio"]');
     const resultDiv = document.getElementById('result');

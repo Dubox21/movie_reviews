@@ -68,6 +68,19 @@
     resize: none;
 }
 
+.input-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--colorGrey);
+    box-sizing: border-box;
+    padding-right: 30px; /* Ajusta para dejar espacio a la flecha */
+}
+
 .image-preview {
     width: 300px;
     height: 300px;
@@ -106,7 +119,7 @@
     font-weight: bold;
     border: 2px solid var(--colorVioletLight);
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 8px 8px;
     background-color: var(--colorVioletLight);
     color: white;
     transition: background-color 0.3s ease;
@@ -209,7 +222,7 @@
         font-size: 18px;
     }
 
-    .input {
+    .input, .input-select {
         font-size: 18px;
     }
 
@@ -276,7 +289,7 @@
         padding: 8px 70px;
     }
 
-    .input {
+    .input, .input-select {
         padding: 20px;
         font-size: 22px;
     }
