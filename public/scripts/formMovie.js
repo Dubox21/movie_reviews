@@ -18,6 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadGenres();
 
+    async function loadCountry() {
+        try {
+            const response = await fetch('/api/countries');
+            const country = await response.json();
+            const countrySelect = document.getElementById('country_id');
+
+            country.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.id;
+                option.textContent = country.country;
+                countrySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar los paises:', error);
+        }
+    }
+
+    loadCountry();
+
     // Manejo de la calificación y visualización del resultado
     const ratingInputs = document.querySelectorAll('.star-rating input[type="radio"]');
     const resultDiv = document.getElementById('result');

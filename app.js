@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import movieRoutes from './routes/movieRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
+import countryRoutes from './routes/countryRoutes.js';
 import multer from 'multer';
 
 // Obtener __filename y __dirname en un módulo ES
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 app.use('/api/genres', genreRoutes);
+app.use('/api/countries', countryRoutes);
 app.use('/api/movies', movieRoutes);
 
 app.get('/home', (req, res) => {

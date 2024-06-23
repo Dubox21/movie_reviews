@@ -131,12 +131,20 @@
             <!-- Cada elemento del carrusel desde un componente reutilizable renderizado con JS-->
         </div>
     </section>
+    <button id="addButton">Agregar Pelicula</button>
+    <button id="modifyButton">Modificar Pelicula</button>
     <div class="footer">
         <footer>
             <p>Todos los derechos reservados&copy; 2024</p>
         </footer>
     </div>
 
+
+    <script>
+        document.getElementById('addButton').addEventListener('click', function() {
+            window.location.href = '/form';
+        });
+    </script>
 
 
 
