@@ -19,14 +19,14 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    <link rel="preload" href="../CSS/normalize.css" as="style">
-    <link rel="stylesheet" href="../CSS/normalize.css">
-    <link rel="preload" href="../CSS/globales.css" as="style">
-    <link rel="stylesheet" href="../CSS/globales.css">
-    <link rel="preload" href="../CSS/style.css" as="style">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="preload" href="../CSS/CSS-Templates/movie.css" as="style">
-    <link rel="stylesheet" href="../CSS/CSS-Templates/movie.css">
+    <link rel="preload" href="/CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="preload" href="/CSS/globales.css" as="style">
+    <link rel="stylesheet" href="/CSS/globales.css">
+    <link rel="preload" href="/CSS/style.css" as="style">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preload" href="/CSS/CSS-Templates/movie.css" as="style">
+    <link rel="stylesheet" href="/CSS/CSS-Templates/movie.css">
 </head>
 
 <body>
@@ -101,7 +101,9 @@
             </div>
         </div>
     </div>
-
+    <div class="container">
+        <button id="modifyButton">Modificar Película</button>
+    </div>
 
 
     <div class="footer">
@@ -112,6 +114,18 @@
 
     <script src="/scripts/navbar.js"></script>
     <script src="/scripts/movie.js"></script>
+    <script src="/scripts/common.js"></script>
+    <script>
+        // Evento al hacer clic en "Modificar Película"
+        document.getElementById('modifyButton').addEventListener('click', function () {
+            // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieTitle = urlParams.get('title');// Debes obtener esto dinámicamente
+
+            // Redireccionar a la página de formulario con el título en la URL
+            window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
+        });
+    </script>
 </body>
 
 </html>

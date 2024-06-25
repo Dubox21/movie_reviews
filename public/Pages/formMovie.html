@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Desplegable con Formulario de Películas</title>
+    <title></title>
     <link rel="shortcut icon" href="../img/logo2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/globales.css">
-    <link rel="stylesheet" href="../CSS/formMovie.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/globales.css">
+    <link rel="stylesheet" href="/CSS/formMovie.css">
 </head>
 
 <body>
@@ -24,18 +24,19 @@
     </header>
 
     <div class="container_form">
-        <h3 id="formHeading" class="titleForm">Agregar Película</h3>
+        <h3 id="formHeading" class="titleForm"></h3>
 
-        <form id="movieForm" class="form" action="/api/movies/add" method="POST" enctype="multipart/form-data">
+        <form id="movieForm" class="form" action="" method="" enctype="multipart/form-data">
             <h4 class="subTitleForm">Información General</h4>
             <div class="form-group">
                 <label for="title" class="form-label">Título</label>
-                <input type="text" id="title" name="title" class="input">
+                <input type="text" id="title" name="title" class="input" list="movie-titles">
+                <datalist id="movie-titles"></datalist>
             </div>
             <div class="form-group group-image">
                 <div class="custom-file-input">
-                    <label for="image" class="custom-file-label">Imagen Cover</label>
-                    <input type="file" id="image" name="imageCover" accept="image/*">
+                    <label for="imageCover" class="custom-file-label">Imagen Cover</label>
+                    <input type="file" id="imageCover" name="imageCover" accept="image/*">
                 </div>
                 <div class="image-preview cover" id="imagePreviewCover">
                     <span>Vista previa de la imagen</span>
@@ -126,9 +127,7 @@
                 </div>
             </div>
             <div class="container-button">
-                <button type="submit" id="submitBtn" class="submitBtn">
-                    Agregar Película
-                </button>
+                <button type="submit" id="submitBtn" class="submitBtn"></button>
             </div>
         </form>
 
@@ -139,8 +138,10 @@
         </footer>
     </div>
 
+
     <script src="/scripts/formMovie.js"></script>
     <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/common.js"></script>
 </body>
 
 </html>

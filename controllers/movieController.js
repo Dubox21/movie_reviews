@@ -5,15 +5,15 @@ Los controladores reciben las solicitudes HTTP, llaman a los métodos del modelo
 Contienen la lógica de negocio y manipulan los modelos.
 */
 
-import { insertMovie, fetchMovieDetails } from '../models/movieModel.js';
+import { insertMovie, fetchMovieDetails, updateMovie, searchMovie } from '../models/movieModel.js';
 
 // Controlador para agregar una nueva película
 export const addMovie = (req, res) => {
 
-    const { title, genre_id, description, trailer, director, screenwriter, country, language, duration, premiere, rating } = req.body;
+    const { title, genre_id, description, trailer, director, screenwriter, country_id, language, duration, premiere, rating } = req.body;
 
-    const imageCover = req.files['imageCover'][0].path;
-    const imageBanner = req.files['imageBanner'][0].path;
+    const imageCover = req.files['imageCover'][0].originalname;
+    const imageBanner = req.files['imageBanner'][0].originalname;
 
     insertMovie({
         title,
@@ -22,7 +22,7 @@ export const addMovie = (req, res) => {
         trailer,
         director,
         screenwriter,
-        country,
+        country_id,
         language,
         duration,
         premiere,
@@ -35,9 +35,48 @@ export const addMovie = (req, res) => {
             res.status(500).send('Error al guardar la película en la base de datos.');
         } else {
             console.log('Película añadida correctamente.');
-            res.status(200).send('Película añadida correctamente.');
+            res.status(200).redirect('/success');
         }
     });
+};
+
+export const modifyMovie = async (req, res) => {
+     const title = decodeURIComponent(req.params.title);
+
+     searchMovie(title, (err, currentMovie) => {
+         if (err) {
+             console.error('Error al obtener detalles de la película:', err);
+             res.status(500).json({ error: 'Error al obtener detalles de la película' });
+         } else if (!currentMovie) {
+             console.log(`Película no encontrada: ${title}`);
+             res.status(404).json({ error: 'Película no encontrada' });
+         } else {
+             const updatedMovieData = {
+                 title: req.body.title || currentMovie.title,
+                 genre_id: req.body.genre_id || currentMovie.genre_id,
+                 description: req.body.description || currentMovie.description,
+                 trailer: req.body.trailer || currentMovie.trailer,
+                 director: req.body.director || currentMovie.director,
+                 screenwriter: req.body.screenwriter || currentMovie.screenwriter,
+                 country_id: req.body.country_id || currentMovie.country_id,
+                 language: req.body.language || currentMovie.language,
+                 duration: req.body.duration || currentMovie.duration,
+                 premiere: req.body.premiere || currentMovie.premiere,
+                 rating: req.body.rating || currentMovie.rating,
+                 image_cover: req.files['imageCover'] ? req.files['imageCover'][0].originalname : currentMovie.image_cover,
+                 image_banner: req.files['imageBanner'] ? req.files['imageBanner'][0].originalname : currentMovie.image_banner
+             };
+
+             updateMovie(title, updatedMovieData, (err, result) => {
+                 if (err) {
+                     console.error('Error al actualizar la película:', err);
+                     res.status(500).json({ error: 'Error al actualizar la película' });
+                 } else {
+                     res.status(200).json({ message: 'Película actualizada correctamente' });
+                 }
+             });
+         }
+     });
 };
 
 export const getMovieDetails = (req, res) => {
@@ -46,12 +85,32 @@ export const getMovieDetails = (req, res) => {
     fetchMovieDetails(title, (err, movie) => {
         if (err) {
             console.error('Error al obtener detalles de la película:', err);
-            res.status(500).json({ error: 'Error al obtener detalles de la película' });
-        } else {
-            movie.imageCoverUrl = movie.image_cover;
-            movie.imageBanner = movie.image_banner;
-            res.status(200).json(movie);
+            return res.status(500).json({ error: 'Error al obtener detalles de la película' });
         }
+
+        if (!movie) {
+            return res.status(404).json({ error: 'Película no encontrada' });
+        }
+
+        // Verificar y asignar valores por defecto para las imágenes
+        movie.imageCover = movie.image_cover || 'default_cover.jpg';
+        movie.imageBanner = movie.image_banner || 'default_banner.jpg';
+
+        res.status(200).json(movie);
     });
 };
 
+export const getMovieSearch = (req, res) => {
+    const title = decodeURIComponent(req.params.title);
+
+    searchMovie(title, (err, movies) => {
+        if (err) {
+            console.error('Error al buscar películas:', err);
+            res.status(500).json({ error: 'Error al buscar películas' });
+        } else if (!movies || movies.length === 0) {
+            res.status(404).json({ error: 'Película no encontrada' });
+        } else {
+            res.status(200).json(movies);
+        }
+    });
+};

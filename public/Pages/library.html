@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="/img/logo2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -132,19 +132,19 @@
         </div>
     </section>
     <button id="addButton">Agregar Pelicula</button>
-    <button id="modifyButton">Modificar Pelicula</button>
-    <div class="footer">
+          
+      <div class="footer">
         <footer>
-            <p>Todos los derechos reservados&copy; 2024</p>
+          <p>Todos los derechos reservados&copy; 2024</p>
         </footer>
-    </div>
-
-
-    <script>
+      </div>
+      
+      <script>
         document.getElementById('addButton').addEventListener('click', function() {
-            window.location.href = '/form';
+          localStorage.setItem('action', 'add');
+          window.location.href = '/form'; // Redirige a la página del formulario
         });
-    </script>
+      </script>
 
 
 
