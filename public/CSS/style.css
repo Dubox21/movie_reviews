@@ -23,7 +23,7 @@
     display: flex;
     /*para que el contenido se alinie*/
     justify-content: space-between;
-
+    height: 60px;
     max-width: 992px;
     margin: 0 auto;
 
@@ -365,7 +365,7 @@
     height: 70px;
     line-height: 55px;
     background: rgba(68, 65, 65, 0.4);
-    color: #fcf9f9; 
+    color: #fcf9f9;
     color: #f7e924;
     text-align: center;
     border-top: solid 2px #f3f3f3;
@@ -398,7 +398,7 @@
     letter-spacing: 2px;
 }
 
-.cardAbout .back p{
+.cardAbout .back p {
     font-size: 18px;
 }
 
