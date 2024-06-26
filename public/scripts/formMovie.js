@@ -15,14 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         formHeading.textContent = 'Agregar Película';
         submitBtn.textContent = 'Agregar Película';
         document.title = `Agregar Película - ${pageTitle}`;
-        movieForm.method = 'POST';
-        movieForm.action = '/api/movies/add';
+        
     } else if (action === 'modify') {
         formHeading.textContent = 'Modificar Película';
         submitBtn.textContent = 'Modificar Película';
         document.title = `Modificar Película - ${pageTitle}`;
-        movieForm.method = 'PUT';
-        movieForm.action = `/api/movies/modify/${encodeURIComponent(movieTitle)}`;
 
         // Si hay un título en la URL, hacer la solicitud para obtener los datos de la película
         if (movieTitle) {
@@ -74,6 +71,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    movieForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(movieForm);
+
+        try {
+            let response;
+
+            if (action === 'add') {
+                response = await fetch('/api/movies/add', {
+                    method: 'POST',
+                    body: formData
+                });
+            } else if (action === 'modify' && movieTitle) {
+                response = await fetch(`/api/movies/modify/${encodeURIComponent(movieTitle)}`, {
+                    method: 'PUT',
+                    body: formData
+                });
+            }
+
+            if (!response.ok) {
+                throw new Error('Error al enviar el formulario');
+            }
+
+            localStorage.setItem('successAction', action);
+            window.location.href = '/success';
+
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+
     // Manejo de la calificación y visualización del resultado
     const ratingInputs = document.querySelectorAll('.star-rating input[type="radio"]');
     const resultDiv = document.getElementById('result');
@@ -84,29 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = (ratingValue / 5) * 100;
             resultDiv.innerHTML = `${ratingValue} / 5 (${percentage}%)`;
         });
-    });
-
-    // Captura el evento de envío del formulario
-    movieForm.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Evita el envío por defecto
-
-        const formData = new FormData(movieForm); // Obtén los datos del formulario
-        const url = movieForm.action;
-
-        try {
-            const response = await fetch(`/api/movies/modify/${encodeURIComponent(movieTitle)}`, {
-                method: 'PUT',
-                body: formData
-            });
-
-            if (!response.ok) {
-                throw new Error('Error al modificar la película.');
-            }
-
-            const result = await response.json();
-            console.log(result); // Maneja la respuesta del servidor
-        } catch (error) {
-            console.error('Error al enviar la solicitud PUT:', error);
-        }
     });
 });

@@ -115,14 +115,15 @@
     <script src="/scripts/navbar.js"></script>
     <script src="/scripts/movie.js"></script>
     <script src="/scripts/common.js"></script>
+    <script src="/scripts/formMovie.js"></script>
     <script>
-        // Evento al hacer clic en "Modificar Película"
         document.getElementById('modifyButton').addEventListener('click', function () {
             // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
             const urlParams = new URLSearchParams(window.location.search);
-            const movieTitle = urlParams.get('title');// Debes obtener esto dinámicamente
+            const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
 
-            // Redireccionar a la página de formulario con el título en la URL
+            // Guarda la acción y redirecciona
+            localStorage.setItem('action', 'modify');
             window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
         });
     </script>

@@ -73,6 +73,7 @@ export const modifyMovie = async (req, res) => {
                      res.status(500).json({ error: 'Error al actualizar la película' });
                  } else {
                      res.status(200).json({ message: 'Película actualizada correctamente' });
+        
                  }
              });
          }

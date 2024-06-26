@@ -29,13 +29,32 @@
 
     <main class="container_success">
         <div class="container_success-flex">
-            <h1 class="container_success-title">Película añadida exitosamente</h1>
-            <p class="container_success-text">La película ha sido añadida a la Biblioteca correctamente.</p>
+            <h1 id="success-title" class="container_success-title"></h1>
+            <p id="success-text" class="container_success-text"></p>
             <div class="container_success-btn">
                 <a href="/library">Ir a la biblioteca</a>
             </div>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const action = localStorage.getItem('successAction');
+
+            const successTitle = document.getElementById('success-title');
+            const successText = document.getElementById('success-text');
+
+            if (action === 'add') {
+                successTitle.textContent = 'Película añadida exitosamente';
+                successText.textContent = 'La película ha sido añadida a la Biblioteca correctamente.';
+            } else if (action === 'modify') {
+                successTitle.textContent = 'Película actualizada exitosamente';
+                successText.textContent = 'La película ha sido actualizada en la Biblioteca correctamente.';
+            }
+
+            localStorage.removeItem('successAction');
+        });
+    </script>
    
     <script src="/scripts/navbar.js"></script>
 </body>
