@@ -1,13 +1,18 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
 
-const pool = mysql.createPool({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'movies-reviews',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+    password: '0000',
+    database: 'movies_reviews'
 });
 
-module.exports = pool.promise();
+db.connect(err => {
+    if (err) {
+        console.error('Error al conectar con la base de datos:', err);
+        return;
+    }
+    console.log('Conexión establecida con la base de datos.');
+});
+
+export default db;
