@@ -44,3 +44,32 @@
     text-align: center;
     margin: 0;
 }
+
+/* Estilos para el formulario de registro */
+#alert-container {
+    margin-top: 10px; /* Ajusta el margen superior según necesites */
+}
+
+.alert {
+    position: relative; /* Asegura que el botón de cierre esté posicionado correctamente */
+    padding-right: 40px; /* Espacio para el botón de cierre */
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 10px; /* Ajusta el espacio del botón de cierre respecto a la alerta */
+    padding: 0.5rem 0.7rem;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-close:focus {
+    outline: none;
+}
+
+.btn-close:hover {
+    color: #000; /* Color del botón al pasar el ratón por encima */
+}

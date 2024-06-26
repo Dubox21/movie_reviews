@@ -26,26 +26,28 @@
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="card p-5 w-50">
             <div class="card-header card-header-custom">
-                <img src="/public/favicon.ico" alt="Logo"> <!-- Reemplaza "logo.png" con la ruta de tu imagen -->
+                <img src="../favicon.ico" alt="Logo"> <!-- Reemplaza "logo.png" con la ruta de tu imagen -->
                 <h3 class="card-title">Registro de Usuario</h3>
             </div>
-            <form>
+             <!-- Contenedor para la alerta -->
+            <form id="register-form" action="/api/users/register" method="post">
                 <div class="mb-4">
-                    <label for="InputNombre" class="form-label">Nombre</label>
-                    <input type="email" class="form-control" id="InputNombre"  placeholder="Por favor indique su nombre">
+                    <label for="InputName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="InputName" name="nombre"  placeholder="Por favor indique su nombre">
                 </div>
 
                 <div class="mb-4">
                     <label for="InputEmail" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="InputEmail"  placeholder="Nombre@mail.com">
+                    <input type="email" class="form-control" id="InputEmail" name="correo_electronico" placeholder="Nombre@mail.com">
                 </div>
                 
                 <div class="mb-4">
                     <label for="InputPassword" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="InputPassword"  placeholder="Tu contraseña debe tener entre 5 y 10 caracteres.">
+                    <input type="password" class="form-control" id="InputPassword" name="contrasena"  placeholder="Tu contraseña debe tener entre 5 y 10 caracteres.">
                 </div>
                 
                 <button type="submit" class="btn btn-custom w-100">Crear Cuenta</button>
+                <div id="alert-container"></div>
             </form>
         </div>
     </div>
@@ -58,6 +60,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/scripts/navbar.js"></script>
+    <script src="scripts/formRegistro.js"></script>
     <!-- <script src="/scripts/indexNos.js"></script> -->
 </body>
 
