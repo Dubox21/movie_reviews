@@ -44,3 +44,19 @@ function addEventListeners() {
         });
     }
 }
+
+
+//Funciones para el container_desplegable, que se muestre el desplegable
+// Selecciona el botón de la flecha por su ID
+var desplegableButton = document.getElementById("desplegableButton");
+var desplegableButton2 = document.getElementById("desplegableButton2");
+
+//Funcion del desplegable
+// Añade un event listener para detectar click en el botón de la flecha
+desplegableButton.addEventListener("click", function () {
+    // Selecciona el desplegable
+    var desplegableContent = document.getElementById("myDesplegable");
+
+    // Toggle (activa/desactiva) la clase "show" en el desplegable
+    desplegableContent.classList.toggle("show");
+});
