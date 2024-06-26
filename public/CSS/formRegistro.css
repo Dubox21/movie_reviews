@@ -1,0 +1,46 @@
+.form-control {
+    border-color: #a654dd;
+}
+
+.form-control:hover, .form-control:focus {
+    border-color: #a654dd;
+    box-shadow: 0 0 0 0.2rem rgba(188, 94, 243, 0.25);
+}
+
+.btn-custom {
+    background-color:#924bc2;
+    border-color: #924bc2;
+    color: white;
+    font-size: 20px;
+}
+.btn-custom:hover {
+    background-color: #852ac2;
+    border-color: #852ac2;
+    color: white;
+}
+
+.form-label{
+    font-weight: bold;
+}
+
+.card-header-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card-header-custom i {
+    margin-right: 10px;
+}
+
+.card-header-custom img {
+    width: 40px;
+    height: 40px;
+}
+
+.card-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
