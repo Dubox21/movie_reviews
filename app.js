@@ -6,12 +6,13 @@ import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
 import allMovieRoutes from './routes/allMovieRoutes.js';
 
+
 // Obtener __filename y __dirname en un módulo ES
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const SECRET_KEY = process.env.SECRET_KEY
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Middleware 
 app.use(express.urlencoded({ extended: false }));
@@ -60,3 +61,4 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 app.listen(port, () => {
     console.log(`Escuchando en el puerto http://localhost:${port}`);
 });
+
