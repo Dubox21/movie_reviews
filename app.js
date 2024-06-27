@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const SECRET_KEY = process.env.SECRET_KEY
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Middleware 
 app.use(express.urlencoded({ extended: false }));
