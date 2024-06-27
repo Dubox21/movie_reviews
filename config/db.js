@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import mysql from 'mysql2';
 
 const db = mysql.createConnection({
@@ -7,7 +8,7 @@ const db = mysql.createConnection({
     //database: process.env.MYSQL_ADDON_DB
     host: 'localhost',
     user: 'root',
-    //password: '0000',
+    password: '0000',
     database: 'movies_reviews'
 });
 
