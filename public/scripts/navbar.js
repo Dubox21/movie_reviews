@@ -59,10 +59,12 @@ function addEventListeners() {
 }
 
 
+
+//CODIGO VIEJO
+
 //Funciones para el container_desplegable, que se muestre el desplegable
 // Selecciona el botón de la flecha por su ID
 var desplegableButton = document.getElementById("desplegableButton");
-var desplegableButton2 = document.getElementById("desplegableButton2");
 
 //Funcion del desplegable
 // Añade un event listener para detectar click en el botón de la flecha
@@ -73,4 +75,22 @@ desplegableButton.addEventListener("click", function () {
     // Toggle (activa/desactiva) la clase "show" en el desplegable
     desplegableContent.classList.toggle("show");
 });
+
+
+//NUEVO CODIGO con FUNCION AGREGADA
+
+// Cuando el usuario hace clic en el botón, puede alternar entre ocultar y mostrar el contenido desplegable
+function myFunctionDesplegable() {
+    document.getElementById("myDesplegable").classList.toggle("show");
+  }
+
+  //Cierre el menú desplegable si el usuario hace clic fuera de él.
+  window.onclick = function(e) {
+    if (!e.target.matches('.despbtn')) {
+    var myDesplegable = document.getElementById("myDesplegable");
+      if (myDesplegable.classList.contains('show')) {
+        myDesplegable.classList.remove('show');
+      }
+    }
+  }
 
