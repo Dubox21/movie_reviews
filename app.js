@@ -6,7 +6,6 @@ import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
 import allMovieRoutes from './routes/allMovieRoutes.js';
 
-const puerto= process.env.PORT || 3000;
 
 // Obtener __filename y __dirname en un módulo ES
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
