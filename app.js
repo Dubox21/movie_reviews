@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import movieRoutes from './routes/movieRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
+import allMovieRoutes from './routes/allMovieRoutes.js';
 
 const puerto= process.env.PORT || 3000;
 
@@ -11,7 +12,8 @@ const puerto= process.env.PORT || 3000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 3000;
+const SECRET_KEY = process.env.SECRET_KEY
+const port = process.env.PORT || 3000;
 
 // Middleware 
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use('/api/genres', genreRoutes);
 app.use('/api/countries', countryRoutes);
 app.use('/api/movies', movieRoutes);
+app.use('/api/allMovies', allMovieRoutes);
 
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
