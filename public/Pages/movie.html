@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="movieTitleHead"></title>
+    <link rel="shortcut icon" href="../img/logo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <link rel="preload" href="/CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="preload" href="/CSS/globales.css" as="style">
+    <link rel="stylesheet" href="/CSS/globales.css">
+    <link rel="preload" href="/CSS/style.css" as="style">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preload" href="/CSS/CSS-Templates/movie.css" as="style">
+    <link rel="stylesheet" href="/CSS/CSS-Templates/movie.css">
+</head>
+
+<body>
+    <header class="header" id="navbarContainer">
+        <!-- Se renderiza el navbar -->
+    </header>
+
+    <main class="container_main" id="main_movie">
+        <div class="rating-stars">
+            <span class="star"></span>
+        </div>
+        <div class="container_img">
+            <img src="" alt="" id="movieBanner">
+        </div>
+    </main>
+    <div id="container-movie">
+        <h3 class="title" id="movieTitle"></h3>
+        <div class="container_creditsDistributions">
+            <h4 class="title-movie">Créditos y reparto</h4>
+            <div class="container_flex">
+                <p class="title_Credits">Directores:</p>
+                <p class="credits" id="movieDirector"></p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Guión:</p>
+                <div class="container_directors" id="movieScreenwriter">
+
+                </div>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Género:</p>
+                <p class="credits" id="movieGenre"></p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">País:</p>
+                <p class="credits" id="movieCountry"></p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Idioma:</p>
+                <p class="credits" id="movieLanguage"></p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Duración:</p>
+                <p class="credits" id="movieDuration"></p>
+            </div>
+            <div class="container_flex">
+                <p class="title_Credits">Estreno:</p>
+                <p class="credits" id="movieRelease"></p>
+            </div>
+        </div>
+        <div class="container_description-movie">
+            <p class="description" id="movieDescription"></p>
+        </div>
+    </div>
+    <div id="qualification_trailer">
+        <h4 class="title-movie">Trailer</h4>
+        <div class="container_trailer">
+            <iframe src="" frameborder="0" allowfullscreen id="movieTrailer"></iframe>
+        </div>
+        <div class="container_qualification">
+            <div class="container_qualification-flex">
+                <h5>Calificacion</h5>
+                <div class="qualification">
+                    <p id="movieRating"></p>
+                </div>
+            </div>
+            <div class="container_qualification-flex">
+                <h5>Le Gusto</h5>
+                <div class="qualification">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button id="modifyButton">Modificar Película</button>
+    </div>
+
+
+    <div class="footer">
+        <footer>
+            <p>Todos los derechos reservados&copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/movie.js"></script>
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/formMovie.js"></script>
+    <script>
+        document.getElementById('modifyButton').addEventListener('click', function () {
+            // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
+
+            // Guarda la acción y redirecciona
+            localStorage.setItem('action', 'modify');
+            window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
+        });
+    </script>
+</body>
+
+</html>

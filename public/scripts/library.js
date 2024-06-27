@@ -38,30 +38,33 @@ const noResultsMessage = document.getElementById('noResultsMessage');
 /*Aca se renderizan los titulos de las peliculas para mostrar en un desplegable las coincidencias y poder 
 navegar a la info completa de la pelicula*/
 const handleSearch = async () => {
-    const searchValue = searchInput.value.toLowerCase();
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    if (searchValue === '') {
+        searchResultsContainer.innerHTML = '';
+        searchResultsContainer.style.display = 'none';
+        noResultsMessage.style.display = 'none';
+        return;
+    }
 
     try {
-        // Cargar los datos de las películas
-        const response = await fetch('../JSON/movies.json');
+        // Realizar la solicitud al backend para obtener las películas filtradas
+        const response = await fetch(`/api/movies/search/${encodeURIComponent(searchValue)}`);
         const moviesData = await response.json();
-
-        //aca se usa filter y se agregar toLowerCase para que no diferencia entre mayusculas y minusculas y consiga coincidencias desde la primera letra
-        const filteredMovies = moviesData.filter(movie => movie.title.toLowerCase().startsWith(searchValue));
 
         // Limpiar resultados anteriores
         searchResultsContainer.innerHTML = '';
 
         // Mostrar sugerencias de búsqueda
-        if (filteredMovies.length > 0 && searchValue !== '') {
-            // Mostrar sugerencias de búsqueda
-            filteredMovies.forEach(movie => {
+        if (moviesData.length > 0) {
+            moviesData.forEach(movie => {
                 const resultItem = document.createElement('a');
                 resultItem.textContent = movie.title;
                 resultItem.classList.add('search-result');
 
                 // Al hacer clic en la sugerencia, ir a la página de detalles de esa película
                 resultItem.addEventListener('click', () => {
-                    window.location.href = `../Templates/movie.html?title=${encodeURIComponent(movie.title)}`;
+                    window.location.href = `/movies?title=${encodeURIComponent(movie.title)}`;
                 });
 
                 searchResultsContainer.appendChild(resultItem);
@@ -70,21 +73,18 @@ const handleSearch = async () => {
             searchResultsContainer.style.display = 'block';
 
             // Ocultar el mensaje de no resultados
-            if (noResultsMessage) {
-                noResultsMessage.style.display = 'none';
-            }
+            noResultsMessage.style.display = 'none';
         } else {
             // Si no hay coincidencias, ocultar el contenedor de resultados
             searchResultsContainer.style.display = 'none';
-            // Mostrar el mensaje de no resultados solo si el campo de búsqueda no está vacío
-            if (searchValue.trim() !== '') {
-                noResultsMessage.style.display = 'block';
-            } else {
-                noResultsMessage.style.display = 'none'; // Ocultar el mensaje si el campo está vacío
-            }
+            // Mostrar el mensaje de no resultados
+            noResultsMessage.style.display = 'block';
         }
     } catch (error) {
-        console.error('Error al cargar los datos de las películas:', error);
+        console.error('Error al buscar películas:', error);
+        // Mostrar el mensaje de no resultados en caso de error
+        searchResultsContainer.style.display = 'none';
+        noResultsMessage.style.display = 'block';
     }
 };
 
