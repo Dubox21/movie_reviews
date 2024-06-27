@@ -101,9 +101,6 @@
     border: 1px solid #000;
     background-color: var(--colorVioletDark);
     text-align: center;
-}
-
-.btn_film a {
     color: white;
     font-size: 12px;
 }
@@ -256,9 +253,6 @@
     .btn_film {
         width: 136px;
         height: 40px;
-    }
-
-    .btn_film a {
         font-size: 14px;
     }
 }
