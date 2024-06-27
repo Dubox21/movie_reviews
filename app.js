@@ -5,25 +5,28 @@ import movieRoutes from './routes/movieRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
+import allMovieRoutes from './routes/allMovieRoutes.js';
 
 
 // Obtener __filename y __dirname en un módulo ES
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 3000;
+const SECRET_KEY = process.env.SECRET_KEY
+const port = process.env.PORT || 3000;
 
 // Middleware para procesar datos JSON y datos de formulario
 app.use(express.json()); // Para JSON
 app.use(express.urlencoded({ extended: true })); // Para datos de formulario
 
-app.use('/api/users', userRoutes); // Usar el enrutador importado
+app.use('/api/users', userRoutes);
 
 //Routes
 app.use('/api/genres', genreRoutes);
 app.use('/api/countries', countryRoutes);
 
 app.use('/api/movies', movieRoutes);
+app.use('/api/allMovies', allMovieRoutes);
 
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

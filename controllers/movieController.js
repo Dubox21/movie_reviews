@@ -1,10 +1,3 @@
-/*
-El archivo movieController.js contiene la lógica de negocio y se comunica con el modelo (movieModel). 
-Los controladores reciben las solicitudes HTTP, llaman a los métodos del modelo y envían las respuestas correspondientes.
-
-Contienen la lógica de negocio y manipulan los modelos.
-*/
-
 import { insertMovie, fetchMovieDetails, updateMovie, searchMovie } from '../models/movieModel.js';
 
 // Controlador para agregar una nueva película
@@ -40,6 +33,7 @@ export const addMovie = (req, res) => {
     });
 };
 
+// Controlador para modificar una pelicula
 export const modifyMovie = async (req, res) => {
      const title = decodeURIComponent(req.params.title);
 
@@ -80,6 +74,7 @@ export const modifyMovie = async (req, res) => {
      });
 };
 
+// Controlador para obtener los detalles de una pelicula
 export const getMovieDetails = (req, res) => {
     const title = decodeURIComponent(req.params.title);
 
@@ -101,6 +96,7 @@ export const getMovieDetails = (req, res) => {
     });
 };
 
+// Controlador para buscar una pelicula
 export const getMovieSearch = (req, res) => {
     const title = decodeURIComponent(req.params.title);
 

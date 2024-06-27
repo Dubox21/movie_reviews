@@ -114,3 +114,5 @@ dropdownButton2.addEventListener("click", function () {
     // Toggle (activa/desactiva) la clase "show" en el desplegable
     dropdownContent.classList.toggle("show");
 });
+
+
