@@ -48,7 +48,6 @@ export const updateMovie = (title, updatedMovieData, callback) => {
     });
   };
   
-
 export const fetchMovieDetails = (title, callback) => {
     const sql = `SELECT * FROM movies M JOIN genres g ON m.genre_id = g.id JOIN countries c ON m.country_id = c.id WHERE title = ?`;
     db.query(sql, [title], (err, result) => {
