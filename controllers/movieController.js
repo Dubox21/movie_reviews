@@ -112,6 +112,9 @@ export const getMovieSearch = (req, res) => {
     });
 };
 
+
+// Controlador para eliminar una pelicula
+
 // Controlador para obtener películas por género
 export const getMoviesByGenre = (req, res) => {
     const { genreId } = req.params;
@@ -125,3 +128,4 @@ export const getMoviesByGenre = (req, res) => {
         }
     });
 };
+
