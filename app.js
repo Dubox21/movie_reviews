@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import movieRoutes from './routes/movieRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
 import allMovieRoutes from './routes/allMovieRoutes.js';
@@ -14,13 +15,16 @@ const app = express();
 const SECRET_KEY = process.env.SECRET_KEY
 const port = process.env.PORT || 3000;
 
-// Middleware 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// Middleware para procesar datos JSON y datos de formulario
+app.use(express.json()); // Para JSON
+app.use(express.urlencoded({ extended: true })); // Para datos de formulario
+
+app.use('/api/users', userRoutes);
 
 //Routes
 app.use('/api/genres', genreRoutes);
 app.use('/api/countries', countryRoutes);
+
 app.use('/api/movies', movieRoutes);
 app.use('/api/allMovies', allMovieRoutes);
 
@@ -56,6 +60,10 @@ app.get('/contact', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
+
+app.get('/formRegistro', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages/formRegistro.html'));
+});
 
 // Inicia el servidor
 app.listen(port, () => {
