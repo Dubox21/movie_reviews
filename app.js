@@ -19,9 +19,10 @@ const port = process.env.PORT || 3000;
 app.use(express.json()); // Para JSON
 app.use(express.urlencoded({ extended: true })); // Para datos de formulario
 
+//Routes
+
 app.use('/api/users', userRoutes);
 
-//Routes
 app.use('/api/genres', genreRoutes);
 app.use('/api/countries', countryRoutes);
 
@@ -40,30 +41,38 @@ app.get('/library', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/library.html'));
 });
 
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages/formulario.html'));
+});
+
+//Formulario de Agregar y Modificar pelicula
 app.get('/form', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/formMovie.html'));
 });
 
+//Pagina de exito luego de agregar/modificar
 app.get('/success', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages', 'success.html'));
 });
 
+//Pagina de error luego de realizar alguna accion
+app.get('/error', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages', 'ups.html'));
+});
+
+//Pagina de detalle de la pelicula
 app.get('/movies', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages', 'movie.html'));
 });
 
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Pages/formulario.html'));
+//Formulario de Registro
+app.get('/formRegistro', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages/formRegistro.html'));
 });
 
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
-
-
-app.get('/formRegistro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Pages/formRegistro.html'));
-});
 
 // Inicia el servidor
 app.listen(port, () => {

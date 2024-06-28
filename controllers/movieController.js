@@ -1,4 +1,4 @@
-import { insertMovie, fetchMovieDetails, updateMovie, searchMovie } from '../models/movieModel.js';
+import { insertMovie, fetchMovieDetails, updateMovie, searchMovie, fetchMoviesByGenre } from '../models/movieModel.js';
 
 // Controlador para agregar una nueva película
 export const addMovie = (req, res) => {
@@ -96,7 +96,7 @@ export const getMovieDetails = (req, res) => {
     });
 };
 
-// Controlador para buscar una pelicula
+// Controlador para buscar una pelicula por coincidencias
 export const getMovieSearch = (req, res) => {
     const title = decodeURIComponent(req.params.title);
 
@@ -112,4 +112,20 @@ export const getMovieSearch = (req, res) => {
     });
 };
 
+
 // Controlador para eliminar una pelicula
+
+// Controlador para obtener películas por género
+export const getMoviesByGenre = (req, res) => {
+    const { genreId } = req.params;
+
+    fetchMoviesByGenre(genreId, (err, movies) => {
+        if (err) {
+            console.error('Error al obtener películas por género:', err);
+            res.status(500).json({ error: 'Error al obtener películas por género' });
+        } else {
+            res.status(200).json(movies);
+        }
+    });
+};
+

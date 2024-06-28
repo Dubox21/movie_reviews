@@ -21,6 +21,11 @@ function loadNavbar() {
                 // Redirigir a la página del formulario
                 window.location.href = '/form';
             });
+
+            const singUpButton = document.getElementById('singupButton');
+            singUpButton.addEventListener('click', function() {
+                window.location.href = '/formRegistro';
+            });
         })
         .catch(error => console.error('Error loading navbar:', error));
 }
