@@ -35,6 +35,9 @@ async function renderMovies(containerId) {
         const halfStar = movie.rating - fullStars >= 0.5 ? 1 : 0;
         const emptyStars = 5 - fullStars - halfStar;
 
+         // Recortar la descripción a máximo 32 caracteres
+         const truncatedDescription = movie.description.slice(0, 132) + (movie.description.length > 132 ? '...' : '');
+
         // Crear el contenido HTML para cada película
         const movieHtml = `
             <div class="container_img">
@@ -46,7 +49,7 @@ async function renderMovies(containerId) {
             <div class="container_description">
                 <h4 class="film_title">${movie.title}</h4>
                 <div class="description-wrapper">
-                    <p class="description-text">${movie.description}</p>
+                    <p class="description-text">${truncatedDescription}</p>
                     <button class="btn_readMore" onclick="toggleDescription(this)">
                         <i class="fa-solid fa-sort-down"></i>
                     </button>
