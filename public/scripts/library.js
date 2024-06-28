@@ -179,7 +179,7 @@ dropdownButton.addEventListener('click', function () {
 
 dropdownButton2.addEventListener("click", function () {
     // Toggle (activa/desactiva) la clase "show" en el desplegable
-    dropdownContent.classList.toggle("show");
+    dropdownContent2.classList.toggle("show");
 });
 
 loadGenres();
