@@ -8,7 +8,7 @@
 }
 
 .btn-custom {
-    background-color:#924bc2;
+    background-color: #924bc2;
     border-color: #924bc2;
     color: white;
     font-size: 20px;
@@ -19,7 +19,7 @@
     color: white;
 }
 
-.form-label{
+.form-label {
     font-weight: bold;
 }
 
@@ -47,18 +47,18 @@
 
 /* Estilos para el formulario de registro */
 #alert-container {
-    margin-top: 10px; /* Ajusta el margen superior según necesites */
+    margin-top: 10px;
 }
 
 .alert {
-    position: relative; /* Asegura que el botón de cierre esté posicionado correctamente */
-    padding-right: 40px; /* Espacio para el botón de cierre */
+    position: relative;
+    padding-right: 40px;
 }
 
 .btn-close {
     position: absolute;
     top: 0;
-    right: 10px; /* Ajusta el espacio del botón de cierre respecto a la alerta */
+    right: 10px;
     padding: 0.5rem 0.7rem;
     color: inherit;
     background-color: transparent;
@@ -71,5 +71,19 @@
 }
 
 .btn-close:hover {
-    color: #000; /* Color del botón al pasar el ratón por encima */
+    color: #000;
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 90%;
+    }
+
+    .card-header-custom {
+        flex-direction: column;
+    }
+
+    .card-header-custom img {
+        margin-bottom: 10px;
+    }
 }
