@@ -14,14 +14,38 @@ async function fetchMovies() {
 }
 
 // Función para crear el componente de película y mostrar en library.html
-async function renderMovies(containerId) {
+async function renderMovies(containerId, genreId) {
     const moviesContainer = document.querySelector(`#${containerId} .carousel_inner`);
 
-    // Obtener datos de la API
-    const moviesData = await fetchMovies();
+    let moviesData;
+
+    if (genreId) {
+        // Obtener datos de la API por género
+        moviesData = await fetchMoviesByGenre(genreId);
+    } else {
+        // Obtener datos de todas las películas
+        moviesData = await fetchMovies();
+    }
 
     // Limpiar contenedor antes de agregar nuevos elementos
     moviesContainer.innerHTML = '';
+
+    if (moviesData.length === 0) {
+        const noMoviesMessage = document.createElement('p');
+        noMoviesMessage.textContent = 'No se encontraron películas para este género.';
+        noMoviesMessage.classList.add('no-movies-message');
+        moviesContainer.appendChild(noMoviesMessage);
+
+         // Deshabilitar las flechas del carrusel
+         const container = document.getElementById(containerId);
+         const prevButton = container.querySelector('.carousel-prev');
+         const nextButton = container.querySelector('.carousel-next');
+         prevButton.disabled = true;
+         prevButton.classList.add('disabled');
+         nextButton.disabled = true;
+         nextButton.classList.add('disabled');
+        return;
+    }
 
     // Iterar sobre cada película y crear el componente HTML
     moviesData.forEach(movie => {

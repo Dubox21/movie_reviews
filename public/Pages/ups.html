@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Ha ocurrido un problema</title>
+    <link rel="shortcut icon" href="../img/logo2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preload" href="/CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="preload" href="/CSS/globales.css" as="style">
+    <link rel="stylesheet" href="/CSS/globales.css">
+    <link rel="preload" href="/CSS/style.css" as="style">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/error.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+</head>
+
+<body>
+    <header class="header" id="navbarContainer">
+        <!-- Renderizar el navbar aquí -->
+    </header>
+
+    <main class="container_error">
+        <div class="container_error-flex">
+            <p id="error-code" class="error-code"></p>
+            <h1 id="error-title" class="container_error-title">¡Ups! Ha ocurrido un problema</h1>
+            <p id="error-text" class="container_error-text">Hubo un error al procesar tu solicitud.</p>
+            <div class="container_error-btn">
+                <a href="/home">Ir al Inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtener el código de error almacenado en localStorage
+            const errorCode = localStorage.getItem('errorCode');
+
+            const errorTitle = document.getElementById('error-title');
+            const errorText = document.getElementById('error-text');
+            const errorCodeElement = document.getElementById('error-code');
+
+            // Personalizar el mensaje de error según el código recibido
+            switch (errorCode) {
+                case '404':
+                    errorTitle.textContent = '¡Ups! Página no encontrada';
+                    errorText.textContent = 'La página que estás buscando no existe.';
+                    break;
+                case '500':
+                    errorTitle.textContent = '¡Ups! Error interno del servidor';
+                    errorText.textContent = 'Hubo un problema con el servidor. Inténtalo nuevamente más tarde.';
+                    break;
+                // Puedes agregar más casos según sea necesario
+                default:
+                    errorTitle.textContent = '¡Ups! Ha ocurrido un problema';
+                    errorText.textContent = 'Hubo un error al procesar tu solicitud.';
+                    break;
+            }
+
+            // Mostrar el código de error en rojo
+            errorCodeElement.textContent = `Error ${errorCode}`;
+            errorCodeElement.style.color = 'red';
+
+            // Limpiar el errorCode almacenado en localStorage después de mostrarlo
+            localStorage.removeItem('errorCode');
+        });
+    </script>
+   
+    <script src="/scripts/navbar.js"></script>
+</body>
+
+</html>

@@ -21,7 +21,7 @@ document.getElementById('btn-all').addEventListener('click', function () {
 //Funcion para posicionarse en el carrusel de mejores valoradas
 document.getElementById('btn-liked').addEventListener('click', function () {
     const headerHeight = document.querySelector('.header').offsetHeight; // Obtener la altura del encabezado
-    const topRated = document.getElementById('top-rated').offsetTop   - headerHeight; // Ajustar la posición
+    const topRated = document.getElementById('top-rated').offsetTop - headerHeight; // Ajustar la posición
 
     // Desplazarse a la posición del elemento h3
     window.scrollTo({
@@ -94,25 +94,92 @@ searchInput.addEventListener('input', handleSearch);
 //Funciones para el dropdown, que se muestre el desplegable
 // Selecciona el botón de la flecha por su ID
 var dropdownButton = document.getElementById("dropdownButton");
+const dropdownContent = document.getElementById('myDropdown');
 var dropdownButton2 = document.getElementById("dropdownButton2");
+const dropdownContent2 = document.getElementById('myDropdown2');
 
 //Funcion del dropdown Carrusel 1
-// Añade un event listener para detectar click en el botón de la flecha
-dropdownButton.addEventListener("click", function () {
-    // Selecciona el desplegable
-    var dropdownContent = document.getElementById("myDropdown");
+async function loadGenres() {
+    try {
+        const response = await fetch('/api/genres');
+        const genres = await response.json();
 
-    // Toggle (activa/desactiva) la clase "show" en el desplegable
-    dropdownContent.classList.toggle("show");
+        // Crear enlace para mostrar todas las películas
+        const allMoviesLink = document.createElement('a');
+        allMoviesLink.href = '#';
+        allMoviesLink.textContent = 'Todas las películas';
+        allMoviesLink.addEventListener('click', async (e) => {
+            e.preventDefault();
+            dropdownContent.classList.remove('show'); // Cerrar el dropdown después de seleccionar todas las películas
+            await renderMovies('carouselContainer1'); // Renderizar todas las películas sin filtro de género
+        });
+        dropdownContent.appendChild(allMoviesLink);
+
+        // Crear enlace para mostrar todas las películas en el carrusel 2
+        const allMoviesLink2 = document.createElement('a');
+        allMoviesLink2.href = '#';
+        allMoviesLink2.textContent = 'Todas las películas';
+        allMoviesLink2.addEventListener('click', async (e) => {
+            e.preventDefault();
+            dropdownContent2.classList.remove('show'); // Cerrar el dropdown después de seleccionar todas las películas
+            await renderMovies('carouselContainer2'); // Renderizar todas las películas sin filtro de género
+        });
+        dropdownContent2.appendChild(allMoviesLink2);
+
+        genres.forEach(genre => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.dataset.category = genre.id;
+            link.textContent = genre.name;
+            link.addEventListener('click', async (e) => {
+                e.preventDefault();
+                dropdownContent.classList.remove('show'); // Cerrar el dropdown después de seleccionar un género
+                await renderMovies('carouselContainer1', genre.id); // Renderizar películas del género seleccionado
+            });
+            dropdownContent.appendChild(link);
+        });
+
+        // Iterar sobre los géneros y crear enlaces para el carrusel 2
+        genres.forEach(genre => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.dataset.category = genre.id;
+            link.textContent = genre.name;
+            link.addEventListener('click', async (e) => {
+                e.preventDefault();
+                dropdownContent2.classList.remove('show'); // Cerrar el dropdown después de seleccionar un género
+                await renderMovies('carouselContainer2', genre.id); // Renderizar películas del género seleccionado para el carrusel 2
+            });
+            dropdownContent2.appendChild(link);
+        });
+
+    } catch (error) {
+        console.error('Error al cargar los géneros:', error);
+    }
+}
+
+//para obtener el genero por id
+async function fetchMoviesByGenre(genreId) {
+    try {
+        const response = await fetch(`/api/movies/genre/${genreId}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching movies by genre ${genreId}:`, error);
+        return [];
+    }
+}
+
+dropdownButton.addEventListener('click', function () {
+    dropdownContent.classList.toggle('show');
 });
 
-//Funcion del dropdown Carrusel 2
 dropdownButton2.addEventListener("click", function () {
-    // Selecciona el desplegable
-    var dropdownContent = document.getElementById("myDropdown2");
-
     // Toggle (activa/desactiva) la clase "show" en el desplegable
     dropdownContent.classList.toggle("show");
 });
 
-
+loadGenres();
