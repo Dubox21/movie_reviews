@@ -140,3 +140,29 @@
     /* Toggle (activa/desactiva) la clase "show" en el desplegable */
     display: block;
 }
+
+
+/*Cuando la pantalla sea < 768px se le van a aplicar estos estilos*/
+@media (max-width: 768px) {
+
+    .desplegable .despbtn .desplegable-content{
+        flex-direction: column;
+        /*para que los elementos queden verticalmente*/
+        align-items: center;
+        margin: 0;
+        list-style: none;
+        position: fixed;
+        /*para que la posicion dependa del tamanio de la ventana*/
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        /*60px por el logo*/
+        overflow-y: auto;
+        /*para agregar scroll si se necesita*/
+
+        left: 100%;
+        transition: left 0.3s;
+    } }

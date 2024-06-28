@@ -111,3 +111,5 @@ export const getMovieSearch = (req, res) => {
         }
     });
 };
+
+// Controlador para eliminar una pelicula
