@@ -8,7 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(`/api/movies/${encodeURIComponent(title)}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Error al obtener los detalles de la película.');
+                // Guardar el código de error en localStorage
+                if (response.status === 404) {
+                    localStorage.setItem('errorCode', '404');
+                } else {
+                    localStorage.setItem('errorCode', '500');
+                }
+                // Redirigir a la página de error
+                window.location.href = '/error';
+                return null; // Detener el procesamiento adicional
             }
             return response.json();
         })
@@ -16,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Llenar los elementos HTML con los datos obtenidos
             document.getElementById('movieTitleHead').textContent = movie.title;
             if (movie.imageBanner) {
-                document.getElementById('movieBanner').src = `/uploads/${movie.image_banner}`;
+                const imageUrl = `/uploads/${movie.image_banner}`;
+                console.log('URL de la imagen del banner:', imageUrl);
+
+                const movieBanner = document.getElementById('movieBanner');
+                movieBanner.src = imageUrl;
+                movieBanner.alt = movie.title;
             } else {
                 console.error('La propiedad imageBanner no está definida en el objeto movie.');
             }
@@ -37,8 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showStars(movie.rating);
         })
         .catch(error => {
-            console.error('Error al obtener los detalles de la película:', error);
-            alert('Error al cargar los detalles de la película. Por favor, inténtelo más tarde.');
+            console.error('Error al buscar película:', error);
         });
 
     function formatDate(dateString) {
