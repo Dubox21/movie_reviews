@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formHeading.textContent = 'Agregar Película';
         submitBtn.textContent = 'Agregar Película';
         document.title = `Agregar Película - ${pageTitle}`;
-        
+
     } else if (action === 'modify') {
         formHeading.textContent = 'Modificar Película';
         submitBtn.textContent = 'Modificar Película';
@@ -24,7 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Si hay un título en la URL, hacer la solicitud para obtener los datos de la película
         if (movieTitle) {
             fetch(`/api/movies/${encodeURIComponent(movieTitle)}`)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        if (response.status === 404) {
+                            localStorage.setItem('errorCode', '404');
+                        } else {
+                            localStorage.setItem('errorCode', '500');
+                        }
+                        window.location.href = '/error';
+                        return null; // Detener el procesamiento adicional
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     // Autocompletar los campos del formulario con los datos obtenidos
                     document.getElementById('title').value = data.title;
@@ -33,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const imageCoverUrl = `/uploads/${data.image_cover}`;
                         const imagePreviewCover = document.getElementById('imagePreviewCover');
                         imagePreviewCover.style.backgroundImage = `url(${imageCoverUrl})`;
-                        imagePreviewCover.style.height = '280px';
-                        imagePreviewCover.style.width = '280px';
                         imagePreviewCover.style.backgroundSize = 'cover';
                         imagePreviewCover.innerHTML = '';
                     } else {
@@ -44,8 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const imageBannerUrl = `/uploads/${data.image_banner}`;
                         const imagePreviewCover = document.getElementById('imagePreviewBanner');
                         imagePreviewCover.style.backgroundImage = `url(${imageBannerUrl})`;
-                        imagePreviewCover.style.height = '540px';
-                        imagePreviewCover.style.width = '1200px';
                         imagePreviewCover.style.backgroundSize = 'cover'; // Ajustar el tamaño de fondo según sea necesario
                         imagePreviewCover.innerHTML = ''; // Limpiar contenido si es necesario
                     } else {
@@ -68,12 +75,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('Error al obtener los datos de la película:', error);
                 });
         }
-
     }
 
     movieForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const title = document.getElementById('title').value.trim();
+        const description = document.getElementById('description').value.trim();
+        const trailer = document.getElementById('trailer').value.trim();
+        const director = document.getElementById('director').value.trim();
+        const screenwriter = document.getElementById('screenwriter').value.trim();
+        const language = document.getElementById('language').value.trim();
+        const duration = document.getElementById('duration').value.trim();
+        const premiere = document.getElementById('premiere').value.trim();
+        const genre_id = document.getElementById('genre_id').value.trim();
+        const country_id = document.getElementById('country_id').value.trim();
+        const imageCover = document.getElementById('imageCover').files[0];
+        const imageBanner = document.getElementById('imageBanner').files[0];
+
+        if (action === 'add') {
+            if (!title || !description || !trailer || !director || !screenwriter || !language || !duration ||
+                !premiere || !genre_id || !country_id || !imageCover || !imageBanner) {
+                const errorContainer = document.getElementById("error-container");
+                errorContainer.innerHTML = `
+            <div >
+                <p class="msg-error">Por favor complete todos los campos.</p>
+            </div>
+        `;
+                return;
+            }
+        }
         const formData = new FormData(movieForm);
 
         try {
@@ -92,7 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (!response.ok) {
-                throw new Error('Error al enviar el formulario');
+                if (response.status === 404) {
+                    localStorage.setItem('errorCode', '404');
+                } else {
+                    localStorage.setItem('errorCode', '500');
+                }
+                window.location.href = '/error';
+                return;
             }
 
             localStorage.setItem('successAction', action);
@@ -117,3 +154,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

@@ -14,14 +14,38 @@ async function fetchMovies() {
 }
 
 // Función para crear el componente de película y mostrar en library.html
-async function renderMovies(containerId) {
+async function renderMovies(containerId, genreId) {
     const moviesContainer = document.querySelector(`#${containerId} .carousel_inner`);
 
-    // Obtener datos de la API
-    const moviesData = await fetchMovies();
+    let moviesData;
+
+    if (genreId) {
+        // Obtener datos de la API por género
+        moviesData = await fetchMoviesByGenre(genreId);
+    } else {
+        // Obtener datos de todas las películas
+        moviesData = await fetchMovies();
+    }
 
     // Limpiar contenedor antes de agregar nuevos elementos
     moviesContainer.innerHTML = '';
+
+    if (moviesData.length === 0) {
+        const noMoviesMessage = document.createElement('p');
+        noMoviesMessage.textContent = 'No se encontraron películas para este género.';
+        noMoviesMessage.classList.add('no-movies-message');
+        moviesContainer.appendChild(noMoviesMessage);
+
+         // Deshabilitar las flechas del carrusel
+         const container = document.getElementById(containerId);
+         const prevButton = container.querySelector('.carousel-prev');
+         const nextButton = container.querySelector('.carousel-next');
+         prevButton.disabled = true;
+         prevButton.classList.add('disabled');
+         nextButton.disabled = true;
+         nextButton.classList.add('disabled');
+        return;
+    }
 
     // Iterar sobre cada película y crear el componente HTML
     moviesData.forEach(movie => {
@@ -35,6 +59,9 @@ async function renderMovies(containerId) {
         const halfStar = movie.rating - fullStars >= 0.5 ? 1 : 0;
         const emptyStars = 5 - fullStars - halfStar;
 
+         // Recortar la descripción a máximo 32 caracteres
+         const truncatedDescription = movie.description.slice(0, 132) + (movie.description.length > 132 ? '...' : '');
+
         // Crear el contenido HTML para cada película
         const movieHtml = `
             <div class="container_img">
@@ -46,7 +73,7 @@ async function renderMovies(containerId) {
             <div class="container_description">
                 <h4 class="film_title">${movie.title}</h4>
                 <div class="description-wrapper">
-                    <p class="description-text">${movie.description}</p>
+                    <p class="description-text">${truncatedDescription}</p>
                     <button class="btn_readMore" onclick="toggleDescription(this)">
                         <i class="fa-solid fa-sort-down"></i>
                     </button>

@@ -1,8 +1,6 @@
 import db from '../config/db.js';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const baseURL = isProduction ? process.env.IMAGE_BASE_URL_PROD : process.env.IMAGE_BASE_URL_DEV;
-
+// Función para insertar una dirección en la base de datos
 export const insertMovie = (movieData, callback) => {
     const {
         title, genre_id, description, trailer, director, screenwriter,
@@ -54,6 +52,7 @@ export const updateMovie = (title, updatedMovieData, callback) => {
     });
 };
 
+// Función para obtener los detalles de una pelicula desde la base de datos
 export const fetchMovieDetails = (title, callback) => {
     const sql = `SELECT M.*, g.name as genre_name, c.country as country_name
      FROM movies M 
@@ -75,6 +74,28 @@ export const fetchMovieDetails = (title, callback) => {
     });
 };
 
+// Función para obtener las películas por genero
+export const fetchMoviesByGenre = (genreId, callback) => {
+    const sql = `SELECT M.*, g.name as genre_name, c.country as country_name
+     FROM movies M 
+     JOIN genres g ON M.genre_id = g.id 
+     JOIN countries c ON M.country_id = c.id 
+     WHERE genre_id = ?`;
+    db.query(sql, [genreId], (err, result) => {
+        if (err) {
+            console.error('Error al obtener películas por género:', err);
+            callback(err, null);
+        } else {
+            if (result.length === 0) {
+                callback(new Error('No se encontraron películas para este género'), null);
+            } else {
+                callback(null, result);
+            }
+        }
+    });
+};
+
+// Función para buscar películas por titulo parcial
 export const searchMovie = (title, callback) => {
     const sql = `SELECT M.*, g.name as genre_name, c.country as country_name 
     FROM movies M 
