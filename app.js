@@ -70,6 +70,10 @@ app.get('/formRegistro', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/formRegistro.html'));
 });
 
+app.get('/signIn', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Pages/signIn.html'));
+})
+
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
