@@ -28,7 +28,7 @@ export const addMovie = (req, res) => {
             res.status(500).send('Error al guardar la película en la base de datos.');
         } else {
             console.log('Película añadida correctamente.');
-            res.status(200).redirect('/success');
+            res.status(200).json({ message: 'Película añadida correctamente' });
         }
     });
 };
@@ -84,7 +84,7 @@ export const getMovieDetails = (req, res) => {
             return res.status(500).json({ error: 'Error al obtener detalles de la película' });
         }
 
-        if (!movie) {
+        else  if (!movie) {
             return res.status(404).json({ error: 'Película no encontrada' });
         }
 
