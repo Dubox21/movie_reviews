@@ -1,5 +1,6 @@
 <head>
-    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+    <script src="/scripts/navbar.js"></script>
 </head>
 <nav class="navBar">
     <a href="/home" class="logo2">
@@ -16,7 +17,19 @@
     </ul>
     <class class="conteinerbtn">
         <button class="login" aria-label="Log in">Log in</button> 
-        <button class="singup" aria-label="Sing up"> Sing up</button>     
+        <button class="singup" id="singupButton" aria-label="Sing up"> Sing up</button>     
     </class>
-
+    <div class="container_desplegable">
+        <img id="imgLogin" src="../img/Login.png" alt="">
+        <div class="desplegable">
+            <button id="desplegableButton" class="despbtn" onclick="myFunctionDesplegable()">
+                <i class="fa-solid fa-circle-chevron-down"></i>
+            </button>
+            <div id="myDesplegable" class="desplegable-content">
+                <a href="#" data-category="Agregar">Agregar peliculas</a>
+                <a href="#" data-category="Cerrar_sesion">Cerrar sesion</a>
+            </div>
+        </div>
+    </div>
 </nav>
+

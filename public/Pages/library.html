@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="/CSS/CSS-Templates/carouselReviews.css">
     <link rel="preload" href="/CSS/style.css" as="style">
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preload" href="/CSS/navbar.css" as="style">
+    <link rel="stylesheet" href="/CSS/navbar.css">
 </head>
 
 <body>
@@ -79,16 +81,22 @@
                         <i class="fa-solid fa-circle-chevron-down"></i>
                     </button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="#" data-category="all">Todas</a>
-                        <a href="#" data-category="recent_popular_movies">+ Populares recientes</a>
-                        <a href="#" data-category="clasic">Clásicas</a>
-                        <a href="#" data-category="comedy">Comedias</a>
-                        <a href="#" data-category="horror">Terror</a>
+                       <!--Se renderiza el dropdown desde la BD-->
                     </div>
                 </div>
             </div>
-            <div class="carouselContainer carrusel-1" id="carouselContainer1">
-                <!-- Cada elemento del carrusel renderizado desde un JSON y cargado en un JS-->
+            <div id="carouselContainer1" class="carouselContainer">
+                <div class="carousel_film">
+                    <div class="carousel_inner">
+                        <!-- Los slides de películas se agregarán aquí dinámicamente -->
+                    </div>
+                    <nav class="carousel_navigation">
+                        <button class="carousel-prev" aria-hidden="true"><i
+                                class="fa-solid fa-circle-chevron-left"></i></button>
+                        <button class="carousel-next" aria-hidden="true"><i
+                                class="fa-solid fa-circle-chevron-right"></i></button>
+                    </nav>
+                </div>
             </div>
             <div class="container_points"></div>
         </div>
@@ -108,16 +116,20 @@
                         <i class="fa-solid fa-circle-chevron-down"></i>
                     </button>
                     <div id="myDropdown2" class="dropdown-content">
-                        <a href="#" data-category="all">Todas</a>
-                        <a href="#" data-category="recent_popular_movies">+ Populares recientes</a>
-                        <a href="#" data-category="clasic">Clásicas</a>
-                        <a href="#" data-category="comedy">Comedias</a>
-                        <a href="#" data-category="horror">Terror</a>
+                       
                     </div>
                 </div>
             </div>
             <div class="carouselContainer carrusel-2" id="carouselContainer2">
-                <!-- Cada elemento del carrusel renderizado desde un JSON y cargado en un JS-->
+                <div class="carousel_film">
+                    <div class="carousel_inner">
+                        <!-- Los slides de películas se agregarán aquí dinámicamente -->
+                    </div>
+                    <nav class="carousel_navigation">
+                        <button class="carousel-prev" aria-hidden="true"><i class="fa-solid fa-circle-chevron-left"></i></button>
+                        <button class="carousel-next" aria-hidden="true"><i class="fa-solid fa-circle-chevron-right"></i></button>
+                    </nav>
+                </div>
             </div>
             <div class="container_points">
             </div>
@@ -131,20 +143,13 @@
             <!-- Cada elemento del carrusel desde un componente reutilizable renderizado con JS-->
         </div>
     </section>
-    <button id="addButton">Agregar Pelicula</button>
-          
-      <div class="footer">
+
+    <div class="footer">
         <footer>
-          <p>Todos los derechos reservados&copy; 2024</p>
+            <p>Todos los derechos reservados&copy; 2024</p>
         </footer>
-      </div>
-      
-      <script>
-        document.getElementById('addButton').addEventListener('click', function() {
-          localStorage.setItem('action', 'add');
-          window.location.href = '/form'; // Redirige a la página del formulario
-        });
-      </script>
+    </div>
+
 
 
 

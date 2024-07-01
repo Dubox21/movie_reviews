@@ -25,16 +25,21 @@
     <link rel="stylesheet" href="/CSS/globales.css">
     <link rel="preload" href="/CSS/style.css" as="style">
     <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="preload" href="/CSS/CSS-Templates/movie.css" as="style">
-    <link rel="stylesheet" href="/CSS/CSS-Templates/movie.css">
+    <link rel="preload" href="/CSS/movie.css" as="style">
+    <link rel="stylesheet" href="/CSS/movie.css">
+    <link rel="preload" href="/CSS/navbar.css" as="style">
+    <link rel="stylesheet" href="/CSS/navbar.css">
 </head>
 
 <body>
     <header class="header" id="navbarContainer">
         <!-- Se renderiza el navbar -->
     </header>
-
     <main class="container_main" id="main_movie">
+        <div class="containerBtn">
+            <button id="modifyButton" class="btnMovie">Modificar Película</button>
+            <button id="deleteButton" class="btnMovie">Eliminar Película</button>
+        </div>
         <div class="rating-stars">
             <span class="star"></span>
         </div>
@@ -43,7 +48,7 @@
         </div>
     </main>
     <div id="container-movie">
-        <h3 class="title" id="movieTitle"></h3>
+        <h3 class="title-movie" id="movieTitle"></h3>
         <div class="container_creditsDistributions">
             <h4 class="title-movie">Créditos y reparto</h4>
             <div class="container_flex">
@@ -52,8 +57,8 @@
             </div>
             <div class="container_flex">
                 <p class="title_Credits">Guión:</p>
-                <div class="container_directors" id="movieScreenwriter">
-
+                <div class="container_directors">
+                    <p class="credits" id="movieScreenwriter"></p>
                 </div>
             </div>
             <div class="container_flex">
@@ -101,11 +106,6 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <button id="modifyButton">Modificar Película</button>
-    </div>
-
-
     <div class="footer">
         <footer>
             <p>Todos los derechos reservados&copy; 2024</p>
@@ -116,17 +116,6 @@
     <script src="/scripts/movie.js"></script>
     <script src="/scripts/common.js"></script>
     <script src="/scripts/formMovie.js"></script>
-    <script>
-        document.getElementById('modifyButton').addEventListener('click', function () {
-            // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
-            const urlParams = new URLSearchParams(window.location.search);
-            const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
-
-            // Guarda la acción y redirecciona
-            localStorage.setItem('action', 'modify');
-            window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
-        });
-    </script>
 </body>
 
 </html>
