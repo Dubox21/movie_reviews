@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('genre_id').value = data.genre_id;
                     document.getElementById('country_id').value = data.country_id;
 
-                    showStars(data.rating);
                 })
                 .catch(error => {
                     console.error('Error al obtener los datos de la película:', error);

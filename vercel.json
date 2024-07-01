@@ -1,9 +1,44 @@
 {
-    "routes": [
-      { "src": "/home", "dest": "/index.html" },
-      { "src": "/about", "dest": "/Pages/Acerca-de-nosotros.html" },
-      { "src": "/library", "dest": "/Pages/library.html" },
-      { "src": "/contact", "dest": "/Pages/formulario.html" }
-    ]
-  }
-  
+  "routes": [
+    {
+      "src": "/home",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/Pages/Acerca-de-nosotros.html"
+    },
+    {
+      "src": "/library",
+      "dest": "/Pages/library.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/Pages/formulario.html"
+    },
+    {
+      "src": "/success",
+      "dest": "/Pages/success.html"
+    },
+    {
+      "src": "/error",
+      "dest": "/Pages/ups.html"
+    },
+    {
+      "src": "/movies",
+      "dest": "/Pages/movies.html"
+    },
+    {
+      "src": "/form",
+      "dest": "/Pages/formMovie.html"
+    },
+    {
+      "src": "/formRegistro",
+      "dest": "/Pages/formRegistro.html"
+    },
+    {
+      "src": "/singin",
+      "dest": "/Pages/singIn.html"
+    }
+  ]
+}
