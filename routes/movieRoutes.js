@@ -1,6 +1,7 @@
 import express from 'express';
 import { addMovie, modifyMovie, getMovieDetails, getMovieSearch, getMoviesByGenre } from '../controllers/movieController.js';
 import upload from '../middlewares/multerConfig.js';
+import { deleteMovie } from '../models/movieModel.js';
 
 const router = express.Router();
 
@@ -21,5 +22,8 @@ router.get('/search/:title', getMovieSearch);
 
 // Ruta para obtener películas por género
 router.get('/genre/:genreId', getMoviesByGenre);
+
+// Ruta para eliminar una películas
+router.get('/:title', deleteMovie);
 
 export default router;

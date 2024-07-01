@@ -28,7 +28,7 @@ export const addMovie = (req, res) => {
             res.status(500).send('Error al guardar la película en la base de datos.');
         } else {
             console.log('Película añadida correctamente.');
-            res.status(200).json({ message: 'Película añadida correctamente' });
+            res.status(200).redirect('/success');
         }
     });
 };
@@ -84,7 +84,7 @@ export const getMovieDetails = (req, res) => {
             return res.status(500).json({ error: 'Error al obtener detalles de la película' });
         }
 
-        else  if (!movie) {
+        if (!movie) {
             return res.status(404).json({ error: 'Película no encontrada' });
         }
 
@@ -112,9 +112,6 @@ export const getMovieSearch = (req, res) => {
     });
 };
 
-<<<<<<<<< Temporary merge branch 1
-// Controlador para eliminar una pelicula
-=========
 // Controlador para obtener películas por género
 export const getMoviesByGenre = (req, res) => {
     const { genreId } = req.params;
@@ -128,4 +125,19 @@ export const getMoviesByGenre = (req, res) => {
         }
     });
 };
->>>>>>>>> Temporary merge branch 2
+
+// Controlador para eliminar una pelicula
+export const deleteMovie = (req, res) => {
+    const title = decodeURIComponent(req.params.title);   
+
+    searchMovie(title, (err, movies) => {
+        if (err) {
+            console.error('Error al encontrar la película:', err);
+            res.status(500).json({ error: 'Error al encontrar la película:' });
+        } else {
+            res.status(200).json({message: 'Película eliminada correctamente'});
+        }
+    });
+};
+
+

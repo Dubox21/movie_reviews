@@ -112,3 +112,19 @@ export const searchMovie = (title, callback) => {
         }
     });
 };
+
+
+// Función para eliminar películas
+export const deleteMovie = (title, callback) => {
+    const sql = `DELETE FROM movies M 
+    WHERE M.title = ?`;
+
+    db.query(sql, [title], (err, results) => {
+        if (err) {
+            callback(err, null);
+        } else {
+            console.log('Película eliminada correctamente.')
+            callback(null, results);
+        }
+    });
+};
