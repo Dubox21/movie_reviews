@@ -130,7 +130,7 @@ export const getMoviesByGenre = (req, res) => {
 export const deleteMovie = (req, res) => {
     const title = decodeURIComponent(req.params.title);   
 
-    searchMovie(title, (err, movies) => {
+    searchMovie(title, (err, movie) => {
         if (err) {
             console.error('Error al encontrar la película:', err);
             res.status(500).json({ error: 'Error al encontrar la película:' });
