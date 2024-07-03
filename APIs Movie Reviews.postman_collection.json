@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "2e3a5b04-570f-4eb8-909d-f7e6786fab5d",
+		"name": "APIs Movie Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20968747"
+	},
+	"item": [
+		{
+			"name": "all_movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/allMovies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allMovies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_movie_partial_title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/search/Escuela%20de%20Rock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"search",
+						"Escuela%20de%20Rock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_movie_title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/Escuela%20de%20Rock%20(2003)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"Escuela%20de%20Rock%20(2003)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "genre_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "probando apis add",
+							"type": "text"
+						},
+						{
+							"key": "director",
+							"value": "Patricia Font",
+							"type": "text"
+						},
+						{
+							"key": "screenwriter",
+							"value": "Marta Sánchez",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "es una pelicula para probar la api desde postman",
+							"type": "text"
+						},
+						{
+							"key": "trailer",
+							"value": "https://www.youtube.com/embed/jRUheYjIVew",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "Español",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "98 min",
+							"type": "text"
+						},
+						{
+							"key": "premiere",
+							"value": "2024-04-12",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "imageCover",
+							"type": "file",
+							"src": "/C:/Users/Jonas/Documents/Cursos Ambar/Fullstack Node.js (Codo a Codo)/Proyecto Fron-end/Sitio Web de Reseñas de Peliculas/movie_reviews/public/img/logo2.png"
+						},
+						{
+							"key": "imageBanner",
+							"type": "file",
+							"src": "/C:/Users/Jonas/Documents/Cursos Ambar/Fullstack Node.js (Codo a Codo)/Proyecto Fron-end/Sitio Web de Reseñas de Peliculas/movie_reviews/public/img/movie_theater.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modify_movie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Pared Con Pared (2024)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies/modify/pelicula%20probando",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"modify",
+						"pelicula%20probando"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"prueba postman\",\r\n  \"correo_electronico\": \"prueba@mail.com\",\r\n  \"contrasena\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
