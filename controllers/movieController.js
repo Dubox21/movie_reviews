@@ -130,17 +130,17 @@ export const getMoviesByGenre = (req, res) => {
 export const deleteMovieData = async (req, res) => {
    const title = decodeURIComponent(req.params.title);   
 
-    searchMovie(title, (err, Movie) => {
+    searchMovie(title, (err, movie) => {
         if (err) {
             console.error('Error al encontrar la película:', err);
             res.status(500).json({ error: 'Error al encontrar la película:' });
-        } else if (!Movie){
+        } else if (!movie){
             console.log(`Película no encontrada: ${title}`);
             res.status(404).json({ error: 'Película no encontrada' });
         } else {
-           deleteMovie(title, (err, result) => {
+           deleteMovie(title, (err, results) => {    
                 if (err) {
-                    console.error('Error al eliminar la película:', err);
+                    console.errordelete('Error al eliminar la película:', err);
                     res.status(500).json({ error: 'Error al eliminar la película' });
                 } else {res.status(200).json({ message: 'Película eliminada correctamente' });
             }

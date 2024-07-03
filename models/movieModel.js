@@ -121,6 +121,7 @@ export const deleteMovie = (title, callback) => {
 
     db.query(sql, [title], (err, results) => {
         if (err) {
+            console.errordelete('Error al eliminar la película:', err);
             callback(err, null);
         } else {
             console.log('Película eliminada correctamente.')
