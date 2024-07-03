@@ -138,7 +138,7 @@ export const deleteMovieData = async (req, res) => {
             console.log(`Película no encontrada: ${title}`);
             res.status(404).json({ error: 'Película no encontrada' });
         } else {
-            deleteMovie(title, (err, result) => {
+           deleteMovie(title, (err, result) => {
                 if (err) {
                     console.error('Error al eliminar la película:', err);
                     res.status(500).json({ error: 'Error al eliminar la película' });
