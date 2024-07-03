@@ -24,6 +24,6 @@ router.get('/search/:title', getMovieSearch);
 router.get('/genre/:genreId', getMoviesByGenre);
 
 // Ruta para eliminar una películas
-router.get('/:title', deleteMovie);
+router.delete('/delete/:title', upload.fields([{ name: 'imageCover', maxCount: 1 }, { name: 'imageBanner', maxCount: 1 }]),deleteMovie);
 
 export default router;
