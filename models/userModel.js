@@ -12,3 +12,31 @@ export const insertUser = (nombre, correo_electronico, contrasena) => {
         });
     });
 };
+
+
+export const getUser = function (email, contrasena) {
+    const sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND contrasena = ?";
+    return new Promise((resolve, reject) => {
+        db.query(sql, [email, contrasena], function (err, result) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};
+
+/*
+export const getUser = function (nombre, contrasena) {
+    const sql = "SELECT * FROM usuarios WHERE nombre ='" + nombre + "' AND contrasena ='" + contrasena + "'" ;
+    return new Promise((resolve, reject) => {
+        db.query(sql, function (err, result) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};*/

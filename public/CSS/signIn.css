@@ -1,10 +1,7 @@
-html {
-    background-color: rgb(133,56,166);
-}
-
 body {
+    background-color: #8538A6 !important;
     margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Outfit", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +24,7 @@ form {
 
 p {
     text-align: center;
+    padding: 10px;
     
 }
 

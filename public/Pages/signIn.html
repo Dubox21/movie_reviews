@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="/CSS/signIn.css">
-    <script src="/scripts/signIn.js" defer></script>
+    <link rel="stylesheet" href="/CSS/globales.css">
+    <script src="/scripts/formSignin.js" defer></script>
 </head>
 <body>
     <main>
+        <header class="header" id="navbarContainer">
+            <!-- Se renderiza el navbar -->
+        </header>
         <div class="form-container">
             <h1>Iniciar Sesión</h1>
-            <form id="login">
-                <label for="user">USUARIO</label>
-                <input type="text" name="user" id="user" placeholder="Nombre de Usuario">
+            <form id="login" action="/api/formSignin" method="post">
+                <label for="email">USUARIO</label>
+                <input type="email" name="email" id="email" placeholder="Ingrese su correo electronico">
                 <label for="password">CONTRASEÑA</label>
                 <input type="password" name="password" id="password" placeholder="Contraseña">
                 <button type="submit">Iniciar Sesión</button>
