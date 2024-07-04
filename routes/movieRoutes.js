@@ -1,7 +1,7 @@
 import express from 'express';
 import { addMovie, modifyMovie, getMovieDetails, getMovieSearch, getMoviesByGenre, deleteMovieByTitle } from '../controllers/movieController.js';
 import upload from '../middlewares/multerConfig.js';
-import { deleteMovieByTitle } from '../controllers/movieController.js';
+
 
 const router = express.Router();
 

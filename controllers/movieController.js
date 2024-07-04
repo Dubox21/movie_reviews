@@ -1,4 +1,4 @@
-import { insertMovie, fetchMovieDetails, updateMovie, searchMovie, fetchMoviesByGenre } from '../models/movieModel.js';
+import { insertMovie, fetchMovieDetails, updateMovie, searchMovie, fetchMoviesByGenre, deleteMovie } from '../models/movieModel.js';
 
 // Controlador para agregar una nueva película
 export const addMovie = (req, res) => {
