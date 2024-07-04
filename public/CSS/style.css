@@ -108,7 +108,7 @@
         font-weight: bolder;
     }
 
-    .nav-menu {
+    .nav-menu{
         flex-direction: column;
         /*para que los elementos queden verticalmente*/
         align-items: center;
@@ -131,7 +131,7 @@
         transition: left 0.3s;
     }
 
-    .nav-menu-item {
+    .nav-menu-item .login .singup{
         font-size: 14px;
         line-height: 70px;
 

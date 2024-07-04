@@ -97,5 +97,5 @@ function myFunctionDesplegable() {
         myDesplegable.classList.remove('show');
       }
     }
-  }
+}
 

@@ -1,4 +1,4 @@
-import { insertMovie, fetchMovieDetails, updateMovie, searchMovie, fetchMoviesByGenre } from '../models/movieModel.js';
+import { insertMovie, fetchMovieDetails, updateMovie, searchMovie, fetchMoviesByGenre, deleteMovie } from '../models/movieModel.js';
 
 // Controlador para agregar una nueva película
 export const addMovie = (req, res) => {
@@ -28,7 +28,7 @@ export const addMovie = (req, res) => {
             res.status(500).send('Error al guardar la película en la base de datos.');
         } else {
             console.log('Película añadida correctamente.');
-            res.status(200).json({ message: 'Película añadida correctamente' });
+            res.status(200).redirect('/success');
         }
     });
 };
@@ -84,7 +84,7 @@ export const getMovieDetails = (req, res) => {
             return res.status(500).json({ error: 'Error al obtener detalles de la película' });
         }
 
-        else  if (!movie) {
+        if (!movie) {
             return res.status(404).json({ error: 'Película no encontrada' });
         }
 
@@ -112,9 +112,6 @@ export const getMovieSearch = (req, res) => {
     });
 };
 
-
-// Controlador para eliminar una pelicula
-
 // Controlador para obtener películas por género
 export const getMoviesByGenre = (req, res) => {
     const { genreId } = req.params;
@@ -129,3 +126,15 @@ export const getMoviesByGenre = (req, res) => {
     });
 };
 
+// Controlador para eliminar una pelicula
+export const deleteMovieByTitle = (req, res) => {
+    const { title } = req.params;   
+
+           deleteMovie(title, (err, result) => {    
+                if (err) {
+                    res.status(500).json({ error:err.message});
+                } else {
+                    res.status(200).json({ message: 'Película eliminada correctamente' });
+                }
+            });
+        };
