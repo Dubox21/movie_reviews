@@ -127,26 +127,14 @@ export const getMoviesByGenre = (req, res) => {
 };
 
 // Controlador para eliminar una pelicula
-export const deleteMovieData = async (req, res) => {
-   const title = decodeURIComponent(req.params.title);   
+export const deleteMovieByTitle = (req, res) => {
+    const { title } = req.params;   
 
-    searchMovie(title, (err, currentMovie) => {
-        if (err) {
-            console.error('Error al obtener detalles de la película:', err);
-            res.status(500).json({ error: 'Error al obtener detalles de la película' });
-        } else if (!currentMovie) {
-            console.log(`Película no encontrada: ${title}`);
-            res.status(404).json({ error: 'Película no encontrada' });
-        } else {
-           deleteMovie(title, (err, results) => {    
+           deleteMovie(title, (err, result) => {    
                 if (err) {
-                    console.error('Error al eliminar la película:', err);
-                    res.status(500).json({ error: 'Error al eliminar la película' });
+                    res.status(500).json({ error:err.message});
                 } else {
                     res.status(200).json({ message: 'Película eliminada correctamente' });
-            }
-        });
-    }
-});
-};
-
+                }
+            });
+        };

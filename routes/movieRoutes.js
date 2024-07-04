@@ -1,7 +1,7 @@
 import express from 'express';
-import { addMovie, modifyMovie, getMovieDetails, getMovieSearch, getMoviesByGenre } from '../controllers/movieController.js';
+import { addMovie, modifyMovie, getMovieDetails, getMovieSearch, getMoviesByGenre, deleteMovieByTitle } from '../controllers/movieController.js';
 import upload from '../middlewares/multerConfig.js';
-import { deleteMovie } from '../models/movieModel.js';
+import { deleteMovieByTitle } from '../controllers/movieController.js';
 
 const router = express.Router();
 
@@ -24,6 +24,6 @@ router.get('/search/:title', getMovieSearch);
 router.get('/genre/:genreId', getMoviesByGenre);
 
 // Ruta para eliminar una películas
-router.delete('/delete/:title', upload.fields([{ name: 'imageCover', maxCount: 1 }, { name: 'imageBanner', maxCount: 1 }]),deleteMovie);
+router.delete('/delete/:title',deleteMovieByTitle);
 
 export default router;
