@@ -112,3 +112,24 @@ export const searchMovie = (title, callback) => {
         }
     });
 };
+
+
+// Función para eliminar películas
+export const deleteMovie = (title, callback) => {
+    const sql = `DELETE FROM movies
+    WHERE title = ?`;
+
+    db.query(sql, [title], (err, result) => {
+        if (err) {
+            console.error('Error al eliminar la película:', err);
+            callback(err, null);
+        } else {
+            if (result.affectedRows === 0) {
+                callback(new Error('Película no encontrada'), null);
+            } else {
+                console.log('Película eliminada correctamente.');
+                callback(null, result);
+        }
+    }
+});
+};

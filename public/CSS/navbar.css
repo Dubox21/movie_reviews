@@ -1,15 +1,6 @@
 .conteinerbtn {
-    /*box-sizing: border-box;
-    display: flex;
-    justify-content:space-around;
-    align-content: flex-end;
-    padding: 10px;
-    position: absolute;
-    right: 20px;*/
-
-    font-family: "Outfit", sans-serif;
-
-    display: flex;
+ font-family: "Outfit", sans-serif;
+display: flex;
   justify-content: right;
   padding: 10px;
   right: 20px;
@@ -145,7 +136,7 @@
 /*Cuando la pantalla sea < 768px se le van a aplicar estos estilos*/
 @media (max-width: 768px) {
 
-    .desplegable .despbtn .desplegable-content{
+    .desplegable .despbtn .desplegable-content .conteinerbtn {
         flex-direction: column;
         /*para que los elementos queden verticalmente*/
         align-items: center;
@@ -165,4 +156,24 @@
 
         left: 100%;
         transition: left 0.3s;
-    } }
+
+    }
+    
+    .conteinerbtn {
+        flex-direction: column;
+        margin-right: 0;
+        position: fixed;
+        left: 0;
+        top: 90px;
+        width: 100%;
+        align-items:center;
+        padding: 100px 0;
+    }
+
+
+    .conteinerbtn {
+        display: block;
+        /*para que aparezca el menu hamburguesa*/
+    }
+}
+
