@@ -79,6 +79,14 @@ document.getElementById('deleteButton').addEventListener('click', function () {
 localStorage.setItem('action', 'delete');
 window.alert("¿Estás seguro de que deseas eliminar la pelicula?");
 
+var resultado = window.confirm('Estas seguro de eliminar la pelicula?');
+if (resultado === true) {
+    window.alert('Okay, si estas seguro.');
+} else {
+    // El usuario canceló la acción
+    window.alert('Pelicula eliminada');
+  }
+
 });
 
 
@@ -116,5 +124,4 @@ function showStars(rating) {
     }
 }
 
-
-
+});
