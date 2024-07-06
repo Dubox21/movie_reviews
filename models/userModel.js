@@ -14,10 +14,10 @@ export const insertUser = (nombre, correo_electronico, contrasena) => {
 };
 
 
-export const getUser = function (email, contrasena) {
+export const getUser = function (correo_electronico, contrasena) {
     const sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND contrasena = ?";
     return new Promise((resolve, reject) => {
-        db.query(sql, [email, contrasena], function (err, result) {
+        db.query(sql, [correo_electronico, contrasena], function (err, result) {
             if (err) {
                 reject(err);
             } else {

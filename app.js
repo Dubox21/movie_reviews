@@ -6,7 +6,7 @@ import userRoutes from './routes/userRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
 import allMovieRoutes from './routes/allMovieRoutes.js';
-import { loginUser } from './controllers/userController.js'
+
 
 
 // Obtener __filename y __dirname en un módulo ES
@@ -76,7 +76,7 @@ app.get('/formSignin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/signIn.html'));
 })
 
-app.post('/api/formSignin', loginUser);
+
    
 
 //Public files

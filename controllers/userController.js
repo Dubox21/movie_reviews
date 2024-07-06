@@ -16,20 +16,20 @@ export const registerUser = async (req, res) => {
 
 export const loginUser = async (req, res) =>{
     console.log(req.body);
-    const email = req.body.email;
-    const password = req.body.password;
+    const correo_electronico = req.body.correo_electronico;
+    const contrasena = req.body.contrasena;
 
-    console.log('Datos recibidos del cliente:', { email, password });
+    console.log('Datos recibidos del cliente:', { correo_electronico, contrasena });
 
-    if (!email || !password) {
+    if (!correo_electronico || !contrasena) {
         return res.status(400).send({ status: "Error", message: "Complete todos los campos" });
     }
 
     try {
-        const usuario = await getUser(email);
+        const usuario = await getUser(correo_electronico, contrasena);
 
         console.log('Usuario encontrado en la base de datos:', usuario);
-        if (!usuario || usuario.length === 0 || usuario[0].contrasena !== password) {
+        if (!usuario || usuario.length === 0 || usuario[0].contrasena !== contrasena) {
             return res.status(401).send('Credenciales inválidas');
         }
 
