@@ -69,12 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
     });
 
+// Evento para el botón de eliminar
+document.getElementById('deleteButton').addEventListener('click', function () {
+    // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
+
+// Guarda la acción y eliminar
+localStorage.setItem('action', 'delete');
+window.alert("¿Estás seguro de que deseas eliminar la pelicula?");
+
 });
+
+
+
 
 function calculateLikePercentage(rating) {
     // en función del valor de la calificación (rating)
     return Math.round((rating / 5) * 100);
 }
+
+
 
 // Función para mostrar las estrellas
 function showStars(rating) {
@@ -100,3 +115,6 @@ function showStars(rating) {
         starsContainer.appendChild(star);
     }
 }
+
+
+
