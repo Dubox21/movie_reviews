@@ -77,15 +77,16 @@ document.getElementById('deleteButton').addEventListener('click', function () {
 
 // Guarda la acción y eliminar
 localStorage.setItem('action', 'delete');
-window.alert("¿Estás seguro de que deseas eliminar la pelicula?");
 
 var resultado = window.confirm('Estas seguro de eliminar la pelicula?');
 if (resultado === true) {
-    window.alert('Okay, si estas seguro.');
+    window.alert('Ok, si estas seguro.');
 } else {
     // El usuario canceló la acción
     window.alert('Pelicula eliminada');
   }
+
+  window.location.href = "http://localhost:3000/library";
 
 });
 
