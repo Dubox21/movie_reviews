@@ -12,3 +12,4 @@ export const insertUser = (nombre, correo_electronico, contrasena) => {
         });
     });
 };
+

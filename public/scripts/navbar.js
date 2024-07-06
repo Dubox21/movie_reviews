@@ -26,6 +26,11 @@ function loadNavbar() {
             singUpButton.addEventListener('click', function() {
                 window.location.href = '/formRegistro';
             });
+
+            const logInButton = document.getElementById('logInButton');
+            logInButton.addEventListener('click', function() {
+                window.location.href = '/signin';
+            });
         })
         .catch(error => console.error('Error loading navbar:', error));
 }
