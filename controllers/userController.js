@@ -33,9 +33,7 @@ export const loginUser = async (req, res) =>{
             return res.status(401).send('Credenciales inválidas');
         }
 
-       /* if (!usuario || usuario.contrasena !== password) {
-            return res.status(401).send('Credenciales inválidas');
-        }*/
+
 
         console.log('Usuario logueado:', usuario);
         res.json({ redirect: '/home' });
@@ -43,16 +41,18 @@ export const loginUser = async (req, res) =>{
         console.error('Error al loguear el usuario:', error);
         res.status(500).send('Error al loguear el usuario');
     }
-/*
-    try {
-        const result = await getUser(email, password);
-        console.log('Usuario logueado:', result);
-        res.send('Sign in exitoso');
-    } catch (error) {
-        console.error('Error al registrar el usuario:', error);
-        res.status(500).send('Error al loguear el usuario');
-    }
-*/
+
    
 
 }
+
+export const logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error al cerrar sesión:', err);
+            res.status(500).json({ error: 'Error al cerrar sesión' });
+        } else {
+            res.status(200).json({ message: 'Sesión cerrada correctamente' });
+        }
+    });
+};
