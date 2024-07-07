@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento para el botón de modificar
     document.getElementById('modifyButton').addEventListener('click', function () {
-        // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
+        // Aquí se obtiene el título de la película
         const urlParams = new URLSearchParams(window.location.search);
-        const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
+        const movieTitle = urlParams.get('title'); // se obtiene dinámicamente
 
         // Guarda la acción y redirecciona
         localStorage.setItem('action', 'modify');
@@ -104,24 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-
-
-
-
     function calculateLikePercentage(rating) {
         // en función del valor de la calificación (rating)
         return Math.round((rating / 5) * 100);
     }
-
-
 
     // Función para mostrar las estrellas
     function showStars(rating) {
         const starsContainer = document.querySelector('.rating-stars');
         starsContainer.innerHTML = ''; // Limpiar las estrellas existentes
 
-        const fullStar = '&#9733;'; // Estrella llena
-        const halfStar = '&#9733;'; // Estrella media
+        const fullStar = '&#9733;'; // Estrella llenaS
         const emptyStar = '&#9734;'; // Estrella vacía
 
         for (let i = 0; i < 5; i++) {

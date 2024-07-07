@@ -35,7 +35,6 @@ function loadNavbar() {
         .catch(error => console.error('Error loading navbar:', error));
 }
 
-
 function setActiveLink() {
     const currentPage = window.location.pathname; // Obtener la ruta de la página actual
     
@@ -67,8 +66,6 @@ function addEventListeners() {
         });
     }
 }
-
-
 
 //CODIGO VIEJO
 
