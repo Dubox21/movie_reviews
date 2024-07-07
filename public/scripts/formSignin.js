@@ -26,7 +26,7 @@ document.getElementById("login").addEventListener("submit", async (e) => {
 
         if (resJson.redirect) {
             localStorage.setItem("isLoggedIn", "true");
-            console.log("Usuario logueado:", localStorage.getItem("isLoggedIn")); // Agregado console.log
+            console.log("Usuario logueado:", localStorage.getItem("isLoggedIn")); 
 
             // Obtener y almacenar el ID del usuario si está disponible en la respuesta
             const userId = resJson.userId; // Asegúrate de ajustar esto según lo que devuelve tu API
@@ -66,7 +66,7 @@ document.getElementById("login").addEventListener("submit", async (e) => {
 
     if (resJson.redirect) {
         localStorage.setItem("isLoggedIn", "true");
-        console.log("Usuario logueado:", localStorage.getItem("isLoggedIn")); // Agregado console.log
+        console.log("Usuario logueado:", localStorage.getItem("isLoggedIn"));
 
         // Obtener y almacenar el ID del usuario si está disponible en la respuesta
         const userId = resJson.userId; // Asegúrate de ajustar esto según lo que devuelve tu API

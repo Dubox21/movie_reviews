@@ -1,5 +1,4 @@
-import { insertUser } from '../models/userModel.js';
-import {getUser} from '../models/userModel.js';
+import { insertUser, getUser } from '../models/userModel.js';
 
 export const registerUser = async (req, res) => {
     const { nombre, correo_electronico, contrasena } = req.body;
@@ -32,25 +31,12 @@ export const loginUser = async (req, res) =>{
         if (!usuario || usuario.length === 0 || usuario[0].contrasena !== contrasena) {
             return res.status(401).send('Credenciales inválidas');
         }
-
-
-
         console.log('Usuario logueado:', usuario);
         res.json({ redirect: '/home' });
     } catch (error) {
         console.error('Error al loguear el usuario:', error);
         res.status(500).send('Error al loguear el usuario');
     }
-/*
-    try {
-        const result = await getUser(email, password);
-        console.log('Usuario logueado:', result);
-        res.send('Sign in exitoso');
-    } catch (error) {
-        console.error('Error al registrar el usuario:', error);
-        res.status(500).send('Error al loguear el usuario');
-    }
-*/
 }
 
 export const logout = (req, res) => {
