@@ -1,13 +1,12 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import session from 'express-session';
 import movieRoutes from './routes/movieRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
 import countryRoutes from './routes/countryRoutes.js';
 import allMovieRoutes from './routes/allMovieRoutes.js';
-
-
 
 // Obtener __filename y __dirname en un módulo ES
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -19,6 +18,13 @@ const port = process.env.PORT || 3000;
 // Middleware para procesar datos JSON y datos de formulario
 app.use(express.json()); // Para JSON
 app.use(express.urlencoded({ extended: true })); // Para datos de formulario
+// Configuración de sesiones
+app.use(session({
+    secret: SECRET_KEY, 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } 
+}));
 
 //Routes
 
@@ -75,9 +81,6 @@ app.get('/formRegistro', (req, res) => {
 app.get('/formSignin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Pages/signIn.html'));
 })
-
-
-   
 
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));

@@ -13,7 +13,6 @@ export const insertUser = (nombre, correo_electronico, contrasena) => {
     });
 };
 
-
 export const getUser = function (correo_electronico, contrasena) {
     const sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND contrasena = ?";
     return new Promise((resolve, reject) => {

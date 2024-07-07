@@ -60,43 +60,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento para el botón de modificar
     document.getElementById('modifyButton').addEventListener('click', function () {
-        // Aquí obtienes el título de la película (puedes ajustar esto según cómo obtienes el título)
+        // Aquí se obtiene el título de la película
         const urlParams = new URLSearchParams(window.location.search);
-        const movieTitle = urlParams.get('title'); // Debes obtener esto dinámicamente
+        const movieTitle = urlParams.get('title'); // se obtiene dinámicamente
 
         // Guarda la acción y redirecciona
         localStorage.setItem('action', 'modify');
         window.location.href = `/form?title=${encodeURIComponent(movieTitle)}`;
     });
 
-});
-
-function calculateLikePercentage(rating) {
-    // en función del valor de la calificación (rating)
-    return Math.round((rating / 5) * 100);
-}
-
-// Función para mostrar las estrellas
-function showStars(rating) {
-    const starsContainer = document.querySelector('.rating-stars');
-    starsContainer.innerHTML = ''; // Limpiar las estrellas existentes
-
-    const fullStar = '&#9733;'; // Estrella llena
-    const halfStar = '&#9733;'; // Estrella media
-    const emptyStar = '&#9734;'; // Estrella vacía
-
-    for (let i = 0; i < 5; i++) {
-        const star = document.createElement('span');
-        star.classList.add('star');
-
-        if (i < Math.floor(rating)) {
-            star.innerHTML = fullStar;
-        } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-            star.innerHTML = halfStar;
+    // Evento para el botón de eliminar
+    document.getElementById('deleteButton').addEventListener('click', function () {
+        // Aquí se obtiene el título de la película
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+    
+        // Guarda la acción y eliminar
+        localStorage.setItem('action', 'delete');
+    
+        const resultado = window.confirm('¿Estás seguro de que quieres eliminar esta película?');
+        if (resultado === true) {
+            window.alert('Ok, si estás seguro.');
+    
+            fetch(`/api/movies/delete/${encodeURIComponent(title)}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al eliminar la película');
+                }
+                return response.json();
+            })
+            .then(data => {
+                window.alert('Película eliminada correctamente');
+                window.location.href = '/library'; // Redirigir a la biblioteca después de eliminar
+            })
+            .catch(error => {
+                console.error('Error al eliminar película:', error);
+                window.alert('Error al eliminar la película');
+            });
         } else {
-            star.innerHTML = emptyStar;
+            window.alert('Cancelaste la eliminación de la película');
         }
-
-        starsContainer.appendChild(star);
+    });
+    
+    function calculateLikePercentage(rating) {
+        // en función del valor de la calificación (rating)
+        return Math.round((rating / 5) * 100);
     }
-}
+
+    // Función para mostrar las estrellas
+    function showStars(rating) {
+        const starsContainer = document.querySelector('.rating-stars');
+        starsContainer.innerHTML = ''; // Limpiar las estrellas existentes
+
+        const fullStar = '&#9733;'; // Estrella llenaS
+        const emptyStar = '&#9734;'; // Estrella vacía
+
+        for (let i = 0; i < 5; i++) {
+            const star = document.createElement('span');
+            star.classList.add('star');
+
+            if (i < Math.floor(rating)) {
+                star.innerHTML = fullStar;
+            } else if (i === Math.floor(rating) && rating % 1 !== 0) {
+                star.innerHTML = halfStar;
+            } else {
+                star.innerHTML = emptyStar;
+            }
+
+            starsContainer.appendChild(star);
+        }
+    }
+
+});
