@@ -53,6 +53,15 @@ export const loginUser = async (req, res) =>{
         res.status(500).send('Error al loguear el usuario');
     }
 */
-   
-
 }
+
+export const logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error al cerrar sesión:', err);
+            res.status(500).json({ error: 'Error al cerrar sesión' });
+        } else {
+            res.status(200).json({ message: 'Sesión cerrada correctamente' });
+        }
+    });
+};

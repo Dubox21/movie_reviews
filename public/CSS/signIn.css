@@ -6,7 +6,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100svh;
-    font-size: large;
 }
 
 .form-container {
@@ -32,7 +31,7 @@ label {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-input, button {
+.form-container input, .form-container button {
     border-radius: 5px;
     border: unset;
     padding: 15px 30px;
@@ -40,7 +39,7 @@ input, button {
 
 }
 
-button {
+.form-container button {
     background-color: rgb(133,56,166);
     color:white;
     font-weight: bold;
