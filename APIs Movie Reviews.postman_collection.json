@@ -12,12 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/allMovies",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/allMovies",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"allMovies"
@@ -32,12 +33,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/countries",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/countries",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"countries"
@@ -52,12 +54,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/genres",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/genres",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"genres"
@@ -72,12 +75,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/movies/search/Escuela%20de%20Rock",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/movies/search/Escuela%20de%20Rock",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"movies",
@@ -94,12 +98,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/movies/Escuela%20de%20Rock%20(2003)",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/movies/Escuela%20de%20Rock%20(2003)",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"movies",
@@ -175,17 +180,18 @@
 						{
 							"key": "imageBanner",
 							"type": "file",
-							"src": "/C:/Users/Jonas/Documents/Cursos Ambar/Fullstack Node.js (Codo a Codo)/Proyecto Fron-end/Sitio Web de Reseñas de Peliculas/movie_reviews/public/img/movie_theater.jpg"
+							"src": "/C:/Users/Jonas/Documents/Cursos Ambar/Fullstack Node.js (Codo a Codo)/Proyecto Fron-end/Sitio Web de Reseñas de Peliculas/movie_reviews/public/img/background_library.png"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movies/add",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/movies/add",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"movies",
@@ -205,23 +211,47 @@
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Pared Con Pared (2024)",
+							"value": "Probando modify apis",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movies/modify/pelicula%20probando",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/movies/modify/probando%20apis%20add",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"movies",
 						"modify",
-						"pelicula%20probando"
+						"probando%20apis%20add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/movies/delete/Probando%20modify%20apis",
+					"protocol": "https",
+					"host": [
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"movies",
+						"delete",
+						"Probando%20modify%20apis"
 					]
 				}
 			},
@@ -234,7 +264,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombre\": \"prueba postman\",\r\n  \"correo_electronico\": \"prueba@mail.com\",\r\n  \"contrasena\": \"12345678\"\r\n}",
+					"raw": "{\r\n  \"nombre\": \"prueba postman 2\",\r\n  \"correo_electronico\": \"prueba@mail.com\",\r\n  \"contrasena\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -242,16 +272,51 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/users/register",
-					"protocol": "http",
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/users/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"users",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo_electronico\": \"prueba@mail.com\",\r\n  \"contrasena\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movie-reviews-b0ek.onrender.com/api/users/login",
+					"protocol": "https",
+					"host": [
+						"movie-reviews-b0ek",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
 					]
 				}
 			},
