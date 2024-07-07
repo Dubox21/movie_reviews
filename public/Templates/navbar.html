@@ -16,11 +16,11 @@
         <li class="nav-menu-item"><a href="/contact" class="nav-menu-link nav-link">Contacto</a></li>
     </ul>
     
-    <class class="conteinerbtn">
-        <button class="login" id="logInButton" aria-label="Log in">Log in</button> 
+    <div class="conteinerbtn" id="authButtons">
+        <button class="login" id="loginButton" aria-label="Log in">Log in</button> 
         <button class="singup" id="singupButton" aria-label="Sing up"> Sing up</button>     
-    </class>
-    <div class="container_desplegable">
+    </div>
+    <div class="container_desplegable escondido" id="userDropdown">
         <img id="imgLogin" src="../img/Login.png" alt="">
         <div class="desplegable">
             <button id="desplegableButton" class="despbtn" onclick="myFunctionDesplegable()">
@@ -28,7 +28,7 @@
             </button>
             <div id="myDesplegable" class="desplegable-content">
                 <a href="#" data-category="Agregar">Agregar peliculas</a>
-                <a href="#" data-category="Cerrar_sesion">Cerrar sesion</a>
+                <a href="#" data-category="Cerrar_sesion" id="logoutButton">Cerrar sesion</a>
             </div>
         </div>
     </div>

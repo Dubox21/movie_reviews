@@ -1,28 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadNavbar();
-});
 
-function loadNavbar() {
-    fetch('../Templates/navbar.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('navbarContainer').innerHTML = html;
-            setActiveLink(); // Llamar a la función para establecer el enlace activo
-            addEventListeners(); // Agregar event listeners después de cargar el navbar
-            
-            // Agregar el evento de clic al enlace "Agregar películas"
-            const addMovieLink = document.querySelector('#myDesplegable a[data-category="Agregar"]');
+    function loadNavbar() {
+        fetch('../Templates/navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbarContainer').innerHTML = html;
+                setActiveLink();
+                addEventListeners();
+                handleAuthentication();
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    }
+
+    function setActiveLink() {
+        const currentPage = window.location.pathname;
+        const links = document.querySelectorAll('.nav-menu-link');
+        links.forEach(link => {
+            if (currentPage.includes('movie.html') && link.getAttribute('href') === '/library') {
+                link.classList.add('nav-menu-link_active');
+            } else if (link.getAttribute('href') === currentPage) {
+                link.classList.add('nav-menu-link_active');
+            }
+        });
+    }
+
+    function addEventListeners() {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+        if (navToggle && navMenu) {
+            navToggle.addEventListener("click", () => {
+                navMenu.classList.toggle("nav-menu_visible");
+                if (navMenu.classList.contains("nav-menu_visible")) {
+                    navToggle.setAttribute("aria-label", "Cerrar menú");
+                } else {
+                    navToggle.setAttribute("aria-label", "Abrir menú");
+                }
+            });
+        }
+
+        const addMovieLink = document.querySelector('#myDesplegable a[data-category="Agregar"]');
+        if (addMovieLink) {
             addMovieLink.addEventListener('click', function(event) {
-                event.preventDefault(); // Evita que el enlace redirija
-                
-                // Establecer la acción en el localStorage
+                event.preventDefault();
                 localStorage.setItem('action', 'add');
-                
-                // Redirigir a la página del formulario
                 window.location.href = '/form';
             });
+        }
 
-            const singUpButton = document.getElementById('singupButton');
+        const singUpButton = document.getElementById('singupButton');
+        if (singUpButton) {
             singUpButton.addEventListener('click', function() {
                 window.location.href = '/formRegistro';
             });
@@ -47,25 +74,51 @@ function setActiveLink() {
         } else if (link.getAttribute('href') === currentPage) {
             link.classList.add('nav-menu-link_active'); // Agregar la clase activa si coincide con la página actual
         }
-    });
-}
 
-function addEventListeners() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+        const logInButton = document.getElementById('loginButton');
+        if (logInButton) {
+            logInButton.addEventListener('click', function() {
+                window.location.href = '/formSignin';
+            });
+        }
+    }
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("nav-menu_visible");
+    function handleAuthentication() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const authButtons = document.getElementById("authButtons");
+        const userDropdown = document.getElementById("userDropdown");
+        const modifyButton = document.getElementById("modifyButton");
+        const deleteButton = document.getElementById("deleteButton");
+        const logoutButton = document.getElementById("logoutButton");
 
-            if (navMenu.classList.contains("nav-menu_visible")) {
-                navToggle.setAttribute("aria-label", "Cerrar menú");
-            } else {
-                navToggle.setAttribute("aria-label", "Abrir menú");
+        if (isLoggedIn) {
+            if (authButtons) authButtons.classList.add("escondido");
+            if (userDropdown) userDropdown.classList.remove("escondido");
+            if (modifyButton) modifyButton.classList.remove("escondido");
+            if (deleteButton) deleteButton.classList.remove("escondido");
+
+            if (logoutButton) {
+                logoutButton.addEventListener("click", () => {
+                    localStorage.removeItem("isLoggedIn");
+                    window.location.href = "/home";
+                });
             }
-        });
+        } else {
+            if (authButtons) authButtons.classList.remove("escondido");
+            if (userDropdown) userDropdown.classList.add("escondido");
+            if (modifyButton) modifyButton.classList.add("escondido");
+            if (deleteButton) deleteButton.classList.add("escondido");
+
+            if (logoutButton) {
+                logoutButton.removeEventListener("click", () => {
+                    localStorage.removeItem("isLoggedIn");
+                    window.location.href = "/home";
+                });
+            }
+        }
     }
 }
+});
 
 //CODIGO VIEJO
 
