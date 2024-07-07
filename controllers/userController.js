@@ -33,9 +33,7 @@ export const loginUser = async (req, res) =>{
             return res.status(401).send('Credenciales inválidas');
         }
 
-       /* if (!usuario || usuario.contrasena !== password) {
-            return res.status(401).send('Credenciales inválidas');
-        }*/
+
 
         console.log('Usuario logueado:', usuario);
         res.json({ redirect: '/home' });
