@@ -53,6 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
             singUpButton.addEventListener('click', function() {
                 window.location.href = '/formRegistro';
             });
+
+            const logInButton = document.getElementById('logInButton');
+            logInButton.addEventListener('click', function() {
+                window.location.href = '/signin';
+            });
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+}
+
+function setActiveLink() {
+    const currentPage = window.location.pathname; // Obtener la ruta de la página actual
+    
+    // Obtener todos los elementos de enlace del menú
+    const links = document.querySelectorAll('.nav-menu-link');
+    
+    links.forEach(link => {
+        if (currentPage.includes('movie.html') && link.getAttribute('href') === '/library') {
+            link.classList.add('nav-menu-link_active'); // Agregar la clase activa si coincide con movie.html y el enlace es de biblioteca
+        } else if (link.getAttribute('href') === currentPage) {
+            link.classList.add('nav-menu-link_active'); // Agregar la clase activa si coincide con la página actual
         }
 
         const logInButton = document.getElementById('loginButton');
@@ -97,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+}
 });
 
 //CODIGO VIEJO
