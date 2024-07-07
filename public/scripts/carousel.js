@@ -155,7 +155,7 @@ function initializeCarousel(containerId) {
         if (window.innerWidth >= 1024) {
             slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
         } else if (window.innerWidth >= 768) {
-            slidesToShow = 2; // En tabletas, mostrar 2 slides
+            slidesToShow = 2; // En tablet, mostrar 2 slides
         }
 
         currentIndex = Math.min(currentIndex + slidesToShow, totalSlides - slidesToShow);
@@ -169,7 +169,7 @@ function initializeCarousel(containerId) {
         if (window.innerWidth >= 1024) {
             slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
         } else if (window.innerWidth >= 768) {
-            slidesToShow = 2; // En tabletas, mostrar 2 slides
+            slidesToShow = 2; // En tablet, mostrar 2 slides
         }
 
         currentIndex = Math.max(0, currentIndex - slidesToShow);
@@ -227,7 +227,7 @@ function initializeCarousel(containerId) {
         if (window.innerWidth >= 1024) {
             slidesToShow = 4; // En pantallas de escritorio, mostrar 4 slides
         } else if (window.innerWidth >= 768) {
-            slidesToShow = 2; // En tabletas, mostrar 2 slides
+            slidesToShow = 2; // En tablet, mostrar 2 slides
         }
         return slidesToShow;
     }
