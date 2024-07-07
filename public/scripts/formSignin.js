@@ -1,6 +1,3 @@
-const mensajeError = document.getElementsByClassName('error')[0];
-
-
 document.getElementById("login").addEventListener("submit", async(e) =>{
     e.preventDefault();
     const email = e.target.children.email.value;
@@ -11,7 +8,7 @@ document.getElementById("login").addEventListener("submit", async(e) =>{
     console.log(e.target.children.password.value);
 
 try {
-    const respuesta = await fetch("/api/users/login", {
+    const respuesta = await fetch(`/api/users/login?timestamp=${timestamp}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
