@@ -1,21 +1,24 @@
-document.getElementById("login").addEventListener("submit", async (e) => {
+document.getElementById("login").addEventListener("submit", async(e) =>{
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     const mensajeError = document.getElementsByClassName('error')[0];
 
-    try {
-        const timestamp = new Date().getTime(); // Obtener el timestamp actual
-        const respuesta = await fetch(`/api/users/login?timestamp=${timestamp}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                correo_electronico: email,
-                contrasena: password
-            })
-        });
+    console.log(e.target.children.email.value);
+    console.log(e.target.children.password.value);
+
+try {
+    const respuesta = await fetch(`/api/users/login?timestamp=${timestamp}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            correo_electronico: email,
+            contrasena: password
+        })
+        
+    });
 
         if (!respuesta.ok) {
             mensajeError.classList.toggle("escondido", false);
