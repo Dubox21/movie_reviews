@@ -113,7 +113,6 @@ export const searchMovie = (title, callback) => {
     });
 };
 
-
 // Función para eliminar películas
 export const deleteMovie = (title, callback) => {
     const sql = `DELETE FROM movies
@@ -129,7 +128,7 @@ export const deleteMovie = (title, callback) => {
             } else {
                 console.log('Película eliminada correctamente.');
                 callback(null, result);
+            }
         }
-    }
-});
+    });
 };

@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const starsContainer = document.querySelector('.rating-stars');
         starsContainer.innerHTML = ''; // Limpiar las estrellas existentes
 
-        const fullStar = '&#9733;'; // Estrella llenaS
+        const fullStar = '&#9733;'; // Estrella llenas
         const emptyStar = '&#9734;'; // Estrella vacía
 
         for (let i = 0; i < 5; i++) {

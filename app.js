@@ -18,6 +18,7 @@ const port = process.env.PORT || 3000;
 // Middleware para procesar datos JSON y datos de formulario
 app.use(express.json()); // Para JSON
 app.use(express.urlencoded({ extended: true })); // Para datos de formulario
+
 // Configuración de sesiones
 app.use(session({
     secret: SECRET_KEY, 
