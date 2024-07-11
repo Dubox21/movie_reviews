@@ -6,6 +6,7 @@
     --colorYellow: #f2e205;
     --colorGrey: #343434;
     --colorRed: #FF0000;
+    --colorForm: #c4c6c17b;
 }
 
 * {
@@ -15,7 +16,6 @@
 
 body {
     background-color: var(--colorBackgroud);
-    padding: 0 10px;
     box-sizing: border-box;
 }
 

@@ -1,52 +1,68 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('botonEnvio').addEventListener('click', validarFormulario);
+    document.getElementById('botonEnvio').addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar el envío del formulario por defecto
 
-    function validarFormulario(event) {
-        event.preventDefault(); 
+        // Obtener los valores de los campos del formulario
+        const nombre = document.getElementById('inputName').value.trim();
+        const motivo = document.getElementById('inputOption').value.trim();
+        const contacto = document.getElementById('inputContact').value.trim();
+        const mensaje = document.getElementById('floatingTextarea2').value.trim();
+        const archivo = document.getElementById('inputGroupFile01').files[0]; // Obtener el archivo seleccionado
 
-        var errores = document.querySelectorAll('.error');
-        errores.forEach(function (error) {
-            error.remove();
+        // Validar que todos los campos obligatorios estén completos
+        if (!nombre || motivo === "" || !contacto || !mensaje) {
+            document.getElementById('mensajeGeneral').textContent = "Por favor, complete todos los campos obligatorios.";
+            document.getElementById('mensajeGeneral').classList.remove('mensaje-exito');
+            document.getElementById('mensajeGeneral').classList.add('mensaje-error');
+            return; // Detener el envío del formulario si hay campos vacíos
+        }
+
+        // Deshabilitar el botón y mostrar estado de "procesando"
+        const botonEnvio = document.getElementById('botonEnvio');
+        botonEnvio.disabled = true;
+        botonEnvio.textContent = 'Procesando...';
+
+        // Preparar el objeto de formulario para enviar
+        const form = new FormData();
+        form.append('Nombre', nombre);
+        form.append('Motivo', motivo);
+        form.append('Contacto', contacto);
+        form.append('Mensaje', mensaje);
+        
+        // Añadir archivo al formulario si se seleccionó alguno
+        if (archivo) {
+            form.append('archivo', archivo, archivo.name);
+        }
+
+        // Enviar el formulario usando FormSubmit.co
+        fetch('https://formsubmit.co/ajax/lorenadubox@gmail.com', {
+            method: 'POST',
+            body: form
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud de envío del formulario');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Restaurar el estado del botón y mostrar mensaje de éxito
+            botonEnvio.textContent = 'Enviar';
+            botonEnvio.disabled = false;
+            console.log('Formulario enviado exitosamente:', data);
+            document.getElementById('mensajeGeneral').textContent = "El formulario se envió correctamente.";
+            document.getElementById('mensajeGeneral').classList.remove('mensaje-error');
+            document.getElementById('mensajeGeneral').classList.add('mensaje-exito');
+            document.getElementById('form').reset(); // Limpiar el formulario después del envío
+        })
+        .catch(error => {
+            // Restaurar el estado del botón y mostrar mensaje de error
+            botonEnvio.textContent = 'Enviar';
+            botonEnvio.disabled = false;
+            console.error('Error al enviar el formulario:', error);
+            document.getElementById('mensajeGeneral').textContent = "Hubo un problema al enviar el formulario. Por favor, intenta nuevamente más tarde.";
+            document.getElementById('mensajeGeneral').classList.remove('mensaje-exito');
+            document.getElementById('mensajeGeneral').classList.add('mensaje-error');
         });
-
-        var nombre = document.querySelector('input[placeholder="Nombre completo"]');
-        var motivo = document.getElementById('inputOption');
-        var contacto = document.querySelector('input[placeholder="Contacto"]');
-        var mensaje = document.getElementById('floatingTextarea2');
-
-        var esValido = true;
-
-        // Validación de campos
-        if (nombre.value.trim() === "") {
-            mostrarError(nombre, "Por favor, ingrese su nombre completo.");
-            esValido = false;
-        }
-
-        if (motivo.value === "Seleccionar el motivo de la consulta") {
-            mostrarError(motivo, "Por favor, seleccione el motivo de la consulta.");
-            esValido = false;
-        }
-
-        if (contacto.value.trim() === "") {
-            mostrarError(contacto, "Por favor, ingrese su información de contacto.");
-            esValido = false;
-        }
-
-        if (mensaje.value.trim() === "") {
-            mostrarError(mensaje, "Por favor, ingrese su mensaje.");
-            esValido = false;
-        }
-
-        if (esValido) {
-            document.forms['miformulario'].submit();
-        }
-    }
-
-    function mostrarError(elemento, mensaje) {
-        var error = document.createElement('div');
-        error.className = 'error';
-        error.style.color = 'red';
-        error.textContent = mensaje;
-        elemento.parentNode.appendChild(error);
-    }
+    });
 });

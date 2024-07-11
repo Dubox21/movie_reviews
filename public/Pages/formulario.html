@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Contáctanos</title>
+    <link rel="shortcut icon" href="/img/logo2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Outfit:wght@100..900&display=swap"
@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/formulario.css">
-    <link rel="stylesheet" href="../CSS/globales.css">
-
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/formulario.css">
+    <link rel="stylesheet" href="/CSS/globales.css">
 </head>
-
 
 <body>
     <header class="header" id="navbarContainer">
@@ -29,57 +27,61 @@
         <div class="subtitulo-formulario">
             <h1><strong>Formulario de contacto</strong></h1><br>
             <h2> Contanos tus inquietudes o si te gustaría agregar una reseña de pelicula</h2>
-
         </div>
 
         <div class="pos-form">
             <section id="formulario-section">
                 <div class="recuadro-form">
-                    <form name="miformulario" method="get" action="procesar.php">
+                    <form id="form" name="miformulario">
 
                         <fieldset>
 
-                            <input type="text" class="form-control" placeholder="Nombre completo"
+                            <input id="inputName" type="text" class="form-control" placeholder="Nombre completo"
                                 aria-label="Nombre completo" required>
 
                             <div class="col-md-4">
                                 <label for="inputOption" class="form-label"></label>
-                                <select id="inputOption" class="form-select">
-                                    <option selected>Seleccionar el motivo de la consulta</option>
-                                    <option value="1">Consultas</option>
-                                    <option value="2">Reclamos</option>
-                                    <option value="3">Sugerencias</option>
-                                    <option value="3">Problemas técnicos</option>
-                                    <option value="3">Otros</option>
+                                <select id="inputOption" class="form-select" required>
+                                    <option value="">Seleccionar el motivo de la consulta</option>
+                                    <option value="Consultas">Consultas</option>
+                                    <option value="Reclamos">Reclamos</option>
+                                    <option value="Sugerencias">Sugerencias</option>
+                                    <option value="Problemas técnicos">Problemas técnicos</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                             </div>
 
                             <div class="form-control">
                                 <h3>¿Cómo quieres que te contactemos?</h3>
-                                <input type="radio" name="contacto" value="email" id="email" checked>
-                                <label for="email">E-mail</label>
-                                <input type="radio" name="contacto" value="telefono" id="telefono">
-                                <label for="telefono">Teléfono</label><br>
-                                <br><input type="text" class="form-control" placeholder="Contacto" aria-label="opción"
-                                    required>
+                                <div class="radio-contact">
+                                    <div>
+                                        <input type="radio" name="contacto" value="email" id="email" checked>
+                                        <label for="email">E-mail</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="contacto" value="telefono" id="telefono">
+                                        <label for="telefono">Teléfono</label>
+                                    </div>
+                                </div>
+                                <input id="inputContact" type="text" class="form-control" placeholder="Contacto"
+                                    aria-label="opción" required>
 
                             </div>
 
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Escribir aqui..." id="floatingTextarea2"
-                                    style="height: 150px"></textarea>
-
+                                    style="height: 150px" required></textarea>
                             </div>
-
 
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" id="inputGroupFile01">
                             </div>
 
                         </fieldset>
+                        <p id="mensajeGeneral"></p>
                     </form>
-                    <button id="botonEnvio" onclick="mostrarInfoConCheckeo()">Enviar</button>
-                    <p id="demo"></p>
+                    <button id="botonEnvio">Enviar</button>
+
                 </div>
             </section>
         </div>

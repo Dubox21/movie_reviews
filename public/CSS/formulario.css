@@ -1,136 +1,139 @@
-#formulario, 
-#formulario-section{
-    width: 70%;
-    margin: 50px auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-} 
-
-
-/* #formulario ol li {
-  margin-bottom: 0px; 
-  padding-left: 0px; 
-  list-style: none;
-  counter-increment: step-counter;
-  position: relative;
-  width: 100%; 
+#formulario,
+#formulario-section {
+  width: 70%;
+  margin: 50px auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
-#formulario ol li::before {
-  content: counter(step-counter) ".";
-  position: absolute;
-  left: 10px; 
-  top: 0;
-  font-weight: bold;
-} */
-
 
 .form-control,
 .form-select,
 .form-check-label {
-    margin: 0 auto;
-    text-align: left;
-    display: block;
-    width: 70%;
-    background-color: #fff;
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  width: 70%;
+  background-color: #fff;
 }
 
 body {
-    background-color: #F2F2F2;
-    background-image: url("../img/POCHOCLO.jpg");
-    background-size: cover;
-    background-attachment: fixed; 
-    background-position: center; 
-  }
-  
-  /*Donde se ubica el formulario*/
-  section {
-    background-color: #7386BF;
+  background-color: #F2F2F2;
+  background-image: url("../img/POCHOCLO.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
-  }
+/*Donde se ubica el formulario*/
+section {
+  background-color: #7386BF;
 
-  
-  /*Donde se ubica el titulo y subtitulo del formulario*/
-  .fondo-form { 
-    background-color: #c4c6c17b;
-    padding: 30px;
-  }
-  
+}
 
-.subtitulo-formulario {  
-    text-align: center;
-  }
-  
-  .subtitulo-formulario h1,
-  .subtitulo-formulario h2 {
-/*     background-color: #7386BF; */
-    border-radius: 5px;
-    display: inline-block;
-    width: 80%;
-    max-width: 500px;
-    font-weight: bold;
-    color: #534b4b;
-    margin: 10px auto;
-  }
-  
-  .subtitulo-formulario h2{
-    font-size: 18px ;
-  }
-  
-  h3{
-    font-size: 16px ;
-  }
+
+/*Donde se ubica el titulo y subtitulo del formulario*/
+.fondo-form {
+  background-color: #c4c6c17b;
+  padding: 30px;
+}
+
+
+.subtitulo-formulario {
+  text-align: center;
+}
+
+.subtitulo-formulario h1,
+.subtitulo-formulario h2 {
+  /*     background-color: #7386BF; */
+  border-radius: 5px;
+  display: inline-block;
+  width: 80%;
+  max-width: 500px;
+  font-weight: bold;
+  color: #534b4b;
+  margin: 10px auto;
+}
+
+.subtitulo-formulario h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
 
 .recuadro-form {
-    background-color: #c4c6c17b;
-    padding: 20px;
-    border-radius: 5px;
-    border: none;
+  background-color: #c4c6c17b;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
 }
 
 .form-control {
-    font-size: 1em;
-    padding: 10px;
-    border: 1px solid #be9a9a;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    width: 70%;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #be9a9a;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  width: 70%;
 }
 
 /*Caracteristicas del motivo de la consulta*/
 .form-select {
-    font-size: 1em;
-    padding: 10px;
-    border: 1px solid #be9a9a;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    width: 74%;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #be9a9a;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  width: 74%;
 }
 
 
 .form-check-label {
-    font-size: 1em;
-    margin-bottom: 5px;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.radio-contact {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  gap: 20px;
 }
 
 #botonEnvio {
-    background-color: #9311be;
-    color: #fff;
-    padding: 14px 40px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  background-color: #9311be;
+  color: #fff;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
 #botonEnvio:hover {
-    background-color: #7a09a7;
+  background-color: #7a09a7;
 }
 
- @media (max-width: 768px) {
+.mensaje-exito {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Estilos para mensaje de error */
+.mensaje-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
 
   #formulario {
     width: 80%;
@@ -140,9 +143,9 @@ body {
   #formulario-section {
     width: 100%;
     margin: 20px auto;
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
-  
+
   .form-control,
   .form-select,
   .form-check-label {
@@ -157,15 +160,16 @@ body {
     margin-top: 20px;
     text-align: center;
   }
-  .form-select{
-    width: 75%; 
+
+  .form-select {
+    width: 75%;
     margin-bottom: 20px;
   }
 
   .form-control input[type="radio"] {
     display: block;
     margin-bottom: 10px;
-    width: 15px; 
+    width: 15px;
     height: 15px;
     margin-right: 10px;
   }
@@ -175,18 +179,15 @@ body {
     vertical-align: middle;
   }
 
-
   .form-floating textarea {
     width: 70%;
     margin-bottom: 20px;
   }
 
-
   .input-group input[type="file"] {
     width: 70%;
     margin-bottom: 20px;
   }
-
 
   #botonEnvio {
     width: 100%;
@@ -200,8 +201,7 @@ body {
 
   }
 
-
   .ol li {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
   }
 }
