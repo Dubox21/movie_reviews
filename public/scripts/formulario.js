@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const motivo = document.getElementById('inputOption').value.trim();
         const contacto = document.getElementById('inputContact').value.trim();
         const mensaje = document.getElementById('floatingTextarea2').value.trim();
-        const archivo = document.getElementById('inputGroupFile01').files[0]; // Obtener el archivo seleccionado
+        const archivo = document.getElementById('inputGroupFile').files[0]; // Obtener el archivo seleccionado
 
         // Validar que todos los campos obligatorios estén completos
         if (!nombre || motivo === "" || !contacto || !mensaje) {
@@ -25,13 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Preparar el objeto de formulario para enviar
         const form = new FormData();
         form.append('Nombre', nombre);
-        form.append('Motivo', motivo);
         form.append('Contacto', contacto);
         form.append('Mensaje', mensaje);
-        
-        // Añadir archivo al formulario si se seleccionó alguno
         if (archivo) {
-            form.append('archivo', archivo, archivo.name);
+            form.append('file', archivo, archivo.name); // Añadir archivo si está presente
         }
 
         // Enviar el formulario usando FormSubmit.co
@@ -39,30 +36,30 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'POST',
             body: form
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la solicitud de envío del formulario');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Restaurar el estado del botón y mostrar mensaje de éxito
-            botonEnvio.textContent = 'Enviar';
-            botonEnvio.disabled = false;
-            console.log('Formulario enviado exitosamente:', data);
-            document.getElementById('mensajeGeneral').textContent = "El formulario se envió correctamente.";
-            document.getElementById('mensajeGeneral').classList.remove('mensaje-error');
-            document.getElementById('mensajeGeneral').classList.add('mensaje-exito');
-            document.getElementById('form').reset(); // Limpiar el formulario después del envío
-        })
-        .catch(error => {
-            // Restaurar el estado del botón y mostrar mensaje de error
-            botonEnvio.textContent = 'Enviar';
-            botonEnvio.disabled = false;
-            console.error('Error al enviar el formulario:', error);
-            document.getElementById('mensajeGeneral').textContent = "Hubo un problema al enviar el formulario. Por favor, intenta nuevamente más tarde.";
-            document.getElementById('mensajeGeneral').classList.remove('mensaje-exito');
-            document.getElementById('mensajeGeneral').classList.add('mensaje-error');
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud de envío del formulario');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Restaurar el estado del botón y mostrar mensaje de éxito
+                botonEnvio.textContent = 'Enviar';
+                botonEnvio.disabled = false;
+                console.log('Formulario enviado exitosamente:', data);
+                document.getElementById('mensajeGeneral').textContent = "El formulario se envió correctamente.";
+                document.getElementById('mensajeGeneral').classList.remove('mensaje-error');
+                document.getElementById('mensajeGeneral').classList.add('mensaje-exito');
+                document.getElementById('form').reset(); // Limpiar el formulario después del envío
+            })
+            .catch(error => {
+                // Restaurar el estado del botón y mostrar mensaje de error
+                botonEnvio.textContent = 'Enviar';
+                botonEnvio.disabled = false;
+                console.error('Error al enviar el formulario:', error);
+                document.getElementById('mensajeGeneral').textContent = "Hubo un problema al enviar el formulario. Por favor, intenta nuevamente más tarde.";
+                document.getElementById('mensajeGeneral').classList.remove('mensaje-exito');
+                document.getElementById('mensajeGeneral').classList.add('mensaje-error');
+            });
     });
 });
