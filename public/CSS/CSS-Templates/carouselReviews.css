@@ -122,16 +122,17 @@
     border-radius: 50%;
 }
 
-.carousel-control-prev  i:hover,
+.carousel-control-prev i:hover,
 .carousel-control-next i:hover {
     color: var(--colorVioletDark) !important;
-} 
+}
 
- .rating-stars {
+.rating-stars {
     width: 100%;
     margin: 20px 0;
 }
- .star{
+
+.star {
     font-size: 30px;
     color: var(--colorVioletDark)
 }
@@ -150,21 +151,21 @@
     }
 }
 
-@media (min-width: 768px) {
+@media ((min-width: 768px) and (max-width: 1023px)) {
     .carousel .carousel-item {
-        margin: 0 30px;
+        margin: 0 50px;
     }
 
     .carousel-control-prev {
-        left: 26%
+        left: 28%
     }
 
     .carousel-control-next {
-        right: 26%
+        right: 28%
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
     .item {
         width: 582px;
         height: 350px;
@@ -190,10 +191,79 @@
     }
 
     .carousel-control-next {
-        right: 22%; 
+        right: 15%;
     }
-    
+
     .carousel-control-prev {
-        left: 22%; 
+        left: 15%;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1639px) {
+    .item {
+        width: 582px;
+        height: 350px;
+        margin: 0 70px;
+    }
+
+    .description-text_reviews {
+        font-size: 24px;
+    }
+
+    .container_img__reviews {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile_description {
+        font-size: 16px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        font-size: 48px;
+    }
+
+    .carousel-control-next {
+        right: 22%;
+    }
+
+    .carousel-control-prev {
+        left: 22%;
+    }
+}
+
+@media (min-width: 1640px) {
+
+    .item {
+        width: 582px;
+        height: 350px;
+        margin: 0 70px;
+    }
+
+    .description-text_reviews {
+        font-size: 24px;
+    }
+
+    .container_img__reviews {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile_description {
+        font-size: 16px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        font-size: 48px;
+    }
+
+    .carousel-control-next {
+        right: 27%;
+    }
+
+    .carousel-control-prev {
+        left: 27%;
     }
 }
