@@ -1,12 +1,84 @@
-.conteinerbtn {
- font-family: "Outfit", sans-serif;
-display: flex;
-  justify-content: right;
-  padding: 10px;
-  right: 20px;
-  justify-content:space-between;
+/*BARRA DE NAVEGACION*/
+
+.header {
+    background-color: #81449f;
+    box-shadow: 0 4px 5px var(--colorVioletDark);
+    position: fixed;
+    height: 80px;
+    /*puede no estar*/
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
+.navBar {
+    display: flex;
+    /*para que el contenido se alinie*/
+    justify-content: space-between;
+    height: 60px;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #fcfcfc;
+    text-decoration: none;
+}
+
+.logo2 {
+    padding: 0 20px;
+    margin: 5px;
+    line-height: 50px;
+    color: #ebe0ee;
+    /*para centrarlo (debe ser igual al del cuerpo)*/
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu-item {
+    margin: 0 20px;
+    /*para separar cada link*/
+    line-height: 50px;
+    width: max-content;
+    /*para que no corte el contenido*/
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    color: #ffef11;
+}
+
+/*BARRA DE NAVEGACION PARA CELULARES*/
+.nav-toggle {
+    color: #ebe0ee;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+    /*para ocultarlo*/
+}
+
+.conteinerbtn {
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    right: 20px;
+    justify-content: space-between;
+    gap: 15px;
+}
 
 .login {
     width: 95px;
@@ -30,8 +102,8 @@ display: flex;
     transform: scale(1.1);
 }
 
-.escondido{
-    display: none;
+.escondido {
+    display: none !important;
 }
 
 .singup {
@@ -56,16 +128,14 @@ display: flex;
     transform: scale(1.1);
 }
 
-.container_desplegable{
+.container_desplegable {
     display: flex;
     flex-direction: row;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
-    width: 100%;
     height: 72px;
     border-radius: 10px;
-
 }
 
 .desplegable {
@@ -73,7 +143,6 @@ display: flex;
     display: inline-block;
     padding-top: 15px;
     margin-right: 35px;
-
 }
 
 #imgLogin {
@@ -81,11 +150,6 @@ display: flex;
     height: 48px;
     padding: 6px;
     margin-left: 25px;
-
-}
-
-.escondido {
-    display: none;
 }
 
 .despbtn {
@@ -135,9 +199,65 @@ display: flex;
     display: block;
 }
 
-
 /*Cuando la pantalla sea < 768px se le van a aplicar estos estilos*/
 @media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+
+    .navBar {
+        justify-content: space-between; /* Alinea los elementos a los extremos */
+        padding: 0 20px; /* Agrega espacio a los extremos */
+    }
+
+    .nav-link {
+        color: #eee7f0;
+        font-weight: bolder;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        /*para que los elementos queden verticalmente*/
+        align-items: center;
+        margin: 0;
+        list-style: none;
+        background-color: #5b2973;
+        position: fixed;
+        /*para que la posicion dependa del tamanio de la ventana*/
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        /*60px por el logo*/
+        overflow-y: auto;
+        /*para agregar scroll si se necesita*/
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item .login .singup {
+        font-size: 14px;
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #ffef11;
+    }
+
+    .nav-toggle {
+        display: block;
+        /*para que aparezca el menu hamburguesa*/
+        order: 2; /* Cambia el orden para que aparezca al final */
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
 
     .desplegable .despbtn .desplegable-content .conteinerbtn {
         flex-direction: column;
@@ -159,24 +279,24 @@ display: flex;
 
         left: 100%;
         transition: left 0.3s;
-
     }
-    
+
     .conteinerbtn {
-        flex-direction: column;
         margin-right: 0;
-        position: fixed;
         left: 0;
-        top: 90px;
         width: 100%;
-        align-items:center;
-        padding: 100px 0;
+        align-items: center;
     }
-
 
     .conteinerbtn {
         display: block;
         /*para que aparezca el menu hamburguesa*/
     }
-}
 
+    .container_desplegable {
+        justify-content: center; /* Centra horizontalmente */
+        order: 1; /* Cambia el orden para que aparezca antes del botón de hamburguesa */
+        width: auto; /* Ajusta el ancho automáticamente */
+        height: 60px;
+    }
+}

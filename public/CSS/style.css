@@ -3,92 +3,6 @@
     box-sizing: border-box;
     font-family: "Outfit", sans-serif;
     padding-top: 80px;
-
-}
-
-/*BARRA DE NAVEGACION*/
-
-.header {
-    background-color: #81449f;
-    box-shadow: 0 4px 5px var(--colorVioletDark);
-    position: fixed;
-    height: 80px;
-    /*puede no estar*/
-    width: 100%;
-    top: 0;
-    left: 0;
-}
-
-.navBar {
-    display: flex;
-    /*para que el contenido se alinie*/
-    justify-content: space-between;
-    height: 60px;
-    max-width: 992px;
-    margin: 0 auto;
-
-
-}
-
-.nav-link {
-    color: #fcfcfc;
-    text-decoration: none;
-}
-
-.logo2 {
-
-    padding: 0 20px;
-    margin: 5px;
-    line-height: 50px;
-    color: #ebe0ee;
-    /*para centrarlo (debe ser igual al del cuerpo)*/
-}
-
-
-.nav-menu {
-    display: flex;
-    /*para que los elementos queden dispersos horizontal*/
-    margin-right: 40px;
-    list-style: none;
-
-}
-
-.nav-menu-item {
-    margin: 0 20px;
-    /*para separar cada link*/
-    line-height: 50px;
-    width: max-content;
-    /*para que no corte el contenido*/
-
-}
-
-.nav-menu-link {
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-.nav-menu-link:hover,
-.nav-menu-link_active {
-    color: #ffef11;
-
-
-}
-
-/*BARRA DE NAVEGACION PARA CELULARES*/
-.nav-toggle {
-    color: #ebe0ee;
-    background: none;
-    border: none;
-    font-size: 20px;
-    padding: 0 20px;
-    line-height: 60px;
-    cursor: pointer;
-
-    display: none;
-    /*para ocultarlo*/
-
-
 }
 
 /*Cuando la pantalla sea < 768px se le van a aplicar estos estilos*/
@@ -96,61 +10,6 @@
 
     .cuerpo {
         padding-top: 70px;
-    }
-
-    .header {
-        height: 60px;
-    }
-
-
-    .nav-link {
-        color: #eee7f0;
-        font-weight: bolder;
-    }
-
-    .nav-menu{
-        flex-direction: column;
-        /*para que los elementos queden verticalmente*/
-        align-items: center;
-        margin: 0;
-        list-style: none;
-        background-color: #5b2973;
-        position: fixed;
-        /*para que la posicion dependa del tamanio de la ventana*/
-        left: 0;
-        top: 60px;
-        width: 100%;
-        padding: 20px 0;
-
-        height: calc(100% - 60px);
-        /*60px por el logo*/
-        overflow-y: auto;
-        /*para agregar scroll si se necesita*/
-
-        left: 100%;
-        transition: left 0.3s;
-    }
-
-    .nav-menu-item .login .singup{
-        font-size: 14px;
-        line-height: 70px;
-
-    }
-
-
-    .nav-menu-link:hover,
-    .nav-menu-link_active {
-        background: none;
-        color: #ffef11;
-    }
-
-    .nav-toggle {
-        display: block;
-        /*para que aparezca el menu hamburguesa*/
-    }
-
-    .nav-menu_visible {
-        left: 0;
     }
 
     /*para que aparezca el menu hamburguesa*/
@@ -186,20 +45,15 @@
         font-weight: bolder;
         color: #fffdfd;
         text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
-
     }
-
 }
 
-
 /*ACERCA DE NOSOTROS + IMG */
-
 
 .conteinerGral {
     position: relative;
     width: 100%;
     margin: auto;
-
 }
 
 .image2 {
@@ -227,15 +81,11 @@
     transition: .8s ease;
     background-color: #0b0b0b;
     border-radius: 8px;
-
 }
 
 .conteinerGral:hover .superposicion {
     opacity: 0.9;
-
 }
-
-
 
 .Texto-AcercadeNosotros {
     font-size: 30px;
@@ -253,17 +103,13 @@
     font-weight: bolder;
     text-align: center;
     margin-bottom: 20px;
-
 }
-
 
 #textoNosotros {
     color: #fffdfd;
     text-shadow: 1px 1px 2px rgb(47, 45, 45), 0 0 25px rgb(129, 71, 137), 0 0 5px #5b2973;
     font-weight: bolder;
-
 }
-
 
 .conteiner_btnmas {
     display: flex;
@@ -272,7 +118,6 @@
     justify-content: center;
     align-items: center;
     margin: 45px;
-
 }
 
 .btn_2 {
@@ -294,7 +139,6 @@
     text-shadow: none;
 }
 
-
 /*Secciones: HISTORIA + VALORES + MISION (fila)*/
 
 #seccioncard {
@@ -310,16 +154,13 @@
     margin-bottom: 10px;
     margin-top: 12px;
     flex-wrap: wrap;
-
 }
-
 
 .cardAbout {
     position: relative;
     width: 350px;
     height: 400px;
     margin: 30px;
-
 }
 
 .cardAbout .face {
@@ -335,10 +176,7 @@
 .cardAbout .front {
     transform: perspective(600px) rotateY(0deg);
     box-shadow: 0 6px 10px #000;
-
 }
-
-
 
 .cardAbout .front img {
     position: absolute;
@@ -372,10 +210,7 @@
     text-align: center;
     font-size: 25px;
     font: bold;
-
 }
-
-
 
 .cardAbout .back {
     transform: perspective(600px) rotateY(180deg);
@@ -386,9 +221,7 @@
     color: #fefcfc;
     background: rgb(29, 22, 40);
     box-shadow: 0 5px 10px #000;
-
 }
-
 
 .cardAbout .back h2 {
     justify-content: center;
@@ -402,7 +235,6 @@
     font-size: 18px;
 }
 
-
 .cardAbout:hover .front {
     transform: perspective(600px) rotateY(180deg);
 
@@ -411,10 +243,6 @@
 .cardAbout:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }
-
-
-
-
 
 /*PIE DE PAGINA*/
 
