@@ -1,7 +1,6 @@
 body {
     background-color: #8538A6 !important;
     margin:0;
-    font-family: "Outfit", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +8,7 @@ body {
 }
 
 .form-container {
-    width: 500px;
+    width: 230px;
     background-color: rgb(242,242,242);
     border-radius: 10px;
     padding: 50px;
@@ -21,21 +20,17 @@ form {
     gap: 10px;
 }
 
-p {
+.form-container p{
     text-align: center;
     padding: 10px;
-    
-}
-
-label {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
 }
 
 .form-container input, .form-container button {
     border-radius: 5px;
     border: unset;
-    padding: 15px 30px;
-    font-size: large;
+    padding: 15px 25px;
+    font-size: 14px;
 
 }
 
@@ -52,4 +47,32 @@ label {
 
 .escondido {
     display: none;
+}
+
+@media (min-width: 768px) {
+    .form-container {
+        width: 400px;
+    }
+
+    .form-container p {
+        font-size: 16px;
+    }
+
+    .form-container input, .form-container button {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-container {
+        width: 500px;
+    }
+    
+   .form-container p {
+        font-size: 16px;
+    }
+    
+    .form-container input, .form-container button {
+        font-size: large;
+    }
 }
