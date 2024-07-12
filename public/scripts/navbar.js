@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const singUpButton = document.getElementById('singupButton');
+        const singUpButton = document.getElementById('signupButton');
         if (singUpButton) {
             singUpButton.addEventListener('click', function() {
                 window.location.href = '/formRegistro';
