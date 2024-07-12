@@ -79,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('action', 'delete');
     
         const resultado = window.confirm('¿Estás seguro de que quieres eliminar esta película?');
-        if (resultado === true) {
-            window.alert('Ok, si estás seguro.');
-    
+        if (resultado === true) {    
             fetch(`/api/movies/delete/${encodeURIComponent(title)}`, {
                 method: 'DELETE',
             })

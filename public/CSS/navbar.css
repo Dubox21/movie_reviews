@@ -84,9 +84,9 @@
 }
 
 .login {
-    width: 95px;
+    width: 100px;
     height: 35px;
-    font-size: 12px;
+    font-size: 14px;
     background: none;
     border-radius: 32px;
     color: #fffdfd;
@@ -110,9 +110,9 @@
 }
 
 .singup {
-    width: 95px;
+    width: 100px;
     height: 35px;
-    font-size: 12px;
+    font-size: 14px;
     background: none;
     border-radius: 32px;
     color: #fffdfd;
@@ -304,6 +304,10 @@
     }
 
     .login {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .singup {
+        font-size: 12px;
     }
 }
