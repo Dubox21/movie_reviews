@@ -38,6 +38,10 @@
     list-style: none;
 }
 
+.item-button{
+    line-height: 0 !important; 
+}
+
 .nav-menu-item {
     margin: 0 20px;
     /*para separar cada link*/
@@ -73,7 +77,6 @@
 
 .conteinerbtn {
     display: flex;
-    justify-content: right;
     padding: 10px;
     right: 20px;
     justify-content: space-between;
@@ -298,5 +301,9 @@
         order: 1; /* Cambia el orden para que aparezca antes del botón de hamburguesa */
         width: auto; /* Ajusta el ancho automáticamente */
         height: 60px;
+    }
+
+    .login {
+        font-size: 14px;
     }
 }
