@@ -49,6 +49,10 @@ form {
     display: none;
 }
 
+.btn-btn:hover{
+    color: var(--colorVioletLight);
+}
+
 @media (min-width: 768px) {
     .form-container {
         width: 400px;

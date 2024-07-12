@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const register = document.getElementById('register');
+    if (register) {
+        register.addEventListener('click', function () {
+            window.location.href = '/formRegistro';
+        });
+    }
+
+    const forgorPassword = document.getElementById('forgotPassword');
+        if (forgorPassword) {
+            forgorPassword.addEventListener('click', function() {
+                window.location.href = '/inConstruction';
+            });
+        }
+});
+
 document.getElementById("login").addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
