@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Enviar el formulario usando FormSubmit.co
-        fetch('https://formsubmit.co/ajax/lorenadubox@gmail.com', {
+        fetch('https://formsubmit.co/ajax/testersoftware21@gmail.com', {
             method: 'POST',
             body: form
         })
