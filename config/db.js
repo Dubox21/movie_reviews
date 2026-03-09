@@ -2,16 +2,10 @@ import 'dotenv/config';
 import mysql from 'mysql2';
 
 const db = mysql.createConnection({
-
-   host: process.env.MYSQL_ADDON_HOST,
-    user: process.env.MYSQL_ADDON_USER,
-   password: process.env.MYSQL_ADDON_PASSWORD,
-  database: process.env.MYSQL_ADDON_DB
-  
-  //  host: 'localhost',
-   // user: 'root',
-   // password: '',
-   //  database: 'movie_reviews'
+    host: 'localhost',
+    user: 'root',
+   password: '',
+   database: 'movie_reviews'
 });
 
 db.connect(err => {
@@ -23,3 +17,25 @@ db.connect(err => {
 });
 
 export default db;
+
+// import 'dotenv/config';
+// import pkg from 'pg';
+// const { Pool } = pkg;
+
+// // Configurar la conexión usando la variable de entorno
+// const pool = new Pool({
+//     connectionString: process.env.DATABASE,
+//     ssl: { rejectUnauthorized: false },
+// });
+
+// // Probar la conexión
+// pool.connect(err => {
+//     if (err) {
+//         console.error('Error al conectar con PostgreSQL:', err);
+//         return;
+//     }
+//     console.log('Conexión establecida con PostgreSQL.');
+// });
+
+// // Exportar pool
+// export default pool;
