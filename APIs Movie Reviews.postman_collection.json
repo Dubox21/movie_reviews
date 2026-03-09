@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://movie-reviews-b0ek.onrender.com/api/allMovies",
+					"raw": "localhost/api/allMovies",
 					"protocol": "https",
 					"host": [
 						"movie-reviews-b0ek",
