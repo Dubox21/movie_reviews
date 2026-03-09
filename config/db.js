@@ -3,14 +3,14 @@ import mysql from 'mysql2';
 
 const db = mysql.createConnection({
 
-  //  host: process.env.MYSQL_ADDON_HOST,
-  //  user: process.env.MYSQL_ADDON_USER,
- //   password: process.env.MYSQL_ADDON_PASSWORD,
+   host: process.env.MYSQL_ADDON_HOST,
+    user: process.env.MYSQL_ADDON_USER,
+   password: process.env.MYSQL_ADDON_PASSWORD,
   database: process.env.MYSQL_ADDON_DB
   
-    host: 'localhost',
-    user: 'root',
-    password: '',
+  //  host: 'localhost',
+   // user: 'root',
+   // password: '',
    //  database: 'movie_reviews'
 });
 
