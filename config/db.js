@@ -40,58 +40,15 @@
 // // // Exportar pool
 // // export default pool;
 
-// db.js
 import sqlite3 from "sqlite3";
-import fs from "fs";
-import path from "path";
 import 'dotenv/config';
-import { fileURLToPath } from "url";
 
-// Convierte import.meta.url en __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Detectar producción
-const isProd = process.env.NODE_ENV === 'production';
-
-// Rutas
-const sqlitePath = path.join(__dirname, '../movie.db'); // SQLite local
-const jsonPath = path.join(__dirname, 'movies.json');   // JSON para producción
-
-let db;
-
-if (isProd) {
-  // ------------------- Producción -------------------
-  if (!fs.existsSync(jsonPath)) {
-    console.error('No se encontró movies.json en producción. Subilo al proyecto.');
-    db = { all: (query, cb) => cb(null, []) }; // fallback vacío
+const db = new sqlite3.Database("./movie.db", (err) => {
+  if (err) {
+    console.error("Error conectando a la base:", err.message);
   } else {
-    const dbData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-    console.log('DB cargada desde JSON en producción');
-
-    // Creamos un objeto que simula .all() de SQLite
-    db = {
-      all: (query, callback) => {
-        const match = query.match(/FROM (\w+)/i);
-        if (match) {
-          const table = match[1];
-          callback(null, dbData[table] || []);
-        } else {
-          callback(null, []);
-        }
-      }
-    };
+    console.log("Conectado a SQLite");
   }
-
-} else {
-  // ------------------- Local -------------------
-  db = new sqlite3.Database(sqlitePath, (err) => {
-    if (err) {
-      console.error("Error conectando a SQLite local:", err.message);
-    } else {
-      console.log("Conectado a SQLite local");
-    }
-  });
-}
+});
 
 export default db;
