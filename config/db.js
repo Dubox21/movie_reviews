@@ -43,12 +43,18 @@
 import sqlite3 from "sqlite3";
 import 'dotenv/config';
 
-const db = new sqlite3.Database("./movie.db", (err) => {
-  if (err) {
-    console.error("Error conectando a la base:", err.message);
-  } else {
-    console.log("Conectado a SQLite");
-  }
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Path absoluto a movie.db
+const sqlitePath = path.join(__dirname, '../movie.db'); // ajustar según la ubicación real
+
+const db = new sqlite3.Database(sqlitePath, (err) => {
+  if (err) console.error("Error conectando a la base:", err.message);
+  else console.log("Conectado a SQLite:", sqlitePath);
 });
 
 export default db;
