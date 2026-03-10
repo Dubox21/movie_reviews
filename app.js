@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import session from 'express-session';
+import cors from 'cors';
 import movieRoutes from './routes/movieRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import genreRoutes from './routes/genreRoutes.js';
@@ -12,6 +13,7 @@ import allMovieRoutes from './routes/allMovieRoutes.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
+app.use(cors());
 const SECRET_KEY = process.env.SECRET_KEY
 const port = process.env.PORT || 3000;
 
