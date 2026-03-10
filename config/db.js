@@ -40,12 +40,14 @@
 // // // Exportar pool
 // // export default pool;
 
+// db.js
 import sqlite3 from "sqlite3";
+import fs from "fs";
+import path from "path";
 import 'dotenv/config';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
+// Convierte import.meta.url en __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -53,81 +55,43 @@ const __dirname = path.dirname(__filename);
 const isProd = process.env.NODE_ENV === 'production';
 
 // Rutas
-const sqlitePath = path.join(__dirname, '../movie.db'); // tu SQLite local
-const jsonPath = path.join(__dirname, 'movies.json'); // JSON para prod
+const sqlitePath = path.join(__dirname, '../movie.db'); // SQLite local
+const jsonPath = path.join(__dirname, 'movies.json');   // JSON para producción
 
 let db;
 
 if (isProd) {
   // ------------------- Producción -------------------
-  let dbData = {};
-
-  // Si el JSON ya existe, lo cargamos
-  if (fs.existsSync(jsonPath)) {
-    dbData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-    console.log('DB cargada desde JSON en producción');
+  if (!fs.existsSync(jsonPath)) {
+    console.error('No se encontró movies.json en producción. Subilo al proyecto.');
+    db = { all: (query, cb) => cb(null, []) }; // fallback vacío
   } else {
-    // Intentamos generar JSON desde SQLite
-    try {
-      const sqliteDb = new sqlite3.Database(sqlitePath, sqlite3.OPEN_READONLY, (err) => {
-        if (err) {
-          console.error('No se pudo abrir SQLite en producción:', err.message);
+    const dbData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+    console.log('DB cargada desde JSON en producción');
+
+    // Creamos un objeto que simula .all() de SQLite
+    db = {
+      all: (query, callback) => {
+        const match = query.match(/FROM (\w+)/i);
+        if (match) {
+          const table = match[1];
+          callback(null, dbData[table] || []);
+        } else {
+          callback(null, []);
         }
-      });
-
-      // Obtener todas las tablas
-      sqliteDb.all(
-        "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';",
-        (err, tables) => {
-          if (err) throw err;
-
-          let pending = tables.length;
-
-          tables.forEach(({ name }) => {
-            sqliteDb.all(`SELECT * FROM ${name}`, (err, rows) => {
-              if (err) throw err;
-
-              dbData[name] = rows;
-              pending--;
-
-              if (pending === 0) {
-                fs.writeFileSync(jsonPath, JSON.stringify(dbData, null, 2));
-                console.log('JSON generado desde todas las tablas');
-                sqliteDb.close();
-              }
-            });
-          });
-        }
-      );
-
-    } catch (err) {
-      console.error('No se pudo generar JSON desde SQLite:', err.message);
-    }
-  }
-
-  // Exportamos un objeto con .all() compatible con tus modelos
-  db = {
-    all: (query, callback) => {
-      const match = query.match(/FROM (\w+)/i);
-      if (match) {
-        const table = match[1];
-        callback(null, dbData[table] || []);
-      } else {
-        callback(null, []);
       }
-    }
-  };
+    };
+  }
 
 } else {
   // ------------------- Local -------------------
   db = new sqlite3.Database(sqlitePath, (err) => {
     if (err) {
-      console.error("Error conectando a la base:", err.message);
+      console.error("Error conectando a SQLite local:", err.message);
     } else {
-      console.log("Conectado a SQLite");
+      console.log("Conectado a SQLite local");
     }
   });
 }
 
 export default db;
-
