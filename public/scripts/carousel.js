@@ -1,8 +1,9 @@
 // Función para obtener datos de la API
 async function fetchMovies() {
-    const BACKEND_URL = window.location.hostname.includes('onrender.com')
-    ? 'https://movie-reviews-b0ek.onrender.com' // producción
-    : ''; // local, fetch relativo funciona
+    const BACKEND_URL =
+  window.location.hostname === 'localhost'
+    ? ''
+    : 'https://movie-reviews-b0ek.onrender.com';
 
     try {
         const response = await fetch(`${BACKEND_URL}/api/allMovies`);

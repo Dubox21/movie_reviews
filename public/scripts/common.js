@@ -1,14 +1,16 @@
-const BACKEND_URL = window.location.hostname.includes('onrender.com')
-    ? 'https://movie-reviews-b0ek.onrender.com' // producción
-    : ''; // local, fetch relativo funciona
+const BACKEND_URL =
+    window.location.hostname === 'localhost'
+        ? ''
+        : 'https://movie-reviews-b0ek.onrender.com';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    //funcion para cargar los generos de peliculas desde la bd
     async function loadGenres() {
         try {
             const response = await fetch(`${BACKEND_URL}/api/genres`);
             const genres = await response.json();
+
             const genreSelect = document.getElementById('genre_id');
 
             genres.forEach(genre => {
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 option.textContent = genre.name;
                 genreSelect.appendChild(option);
             });
+
         } catch (error) {
             console.error('Error al cargar los géneros:', error);
         }
@@ -24,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadGenres();
 
-    //funcion para cargar los paises de las peliculas desde la bd
+
     async function loadCountry() {
         try {
             const response = await fetch(`${BACKEND_URL}/api/countries`);
             const country = await response.json();
+
             const countrySelect = document.getElementById('country_id');
 
             country.forEach(country => {
@@ -37,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 option.textContent = country.country;
                 countrySelect.appendChild(option);
             });
+
         } catch (error) {
             console.error('Error al cargar los paises:', error);
         }

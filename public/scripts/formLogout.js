@@ -1,6 +1,7 @@
-const BACKEND_URL = window.location.hostname.includes('onrender.com')
-    ? 'https://movie-reviews-b0ek.onrender.com' // producción
-    : ''; // local, fetch relativo funciona
+const BACKEND_URL =
+    window.location.hostname === 'localhost'
+        ? ''
+        : 'https://movie-reviews-b0ek.onrender.com';
 
 document.getElementById("logoutButton").addEventListener("click", async () => {
     try {

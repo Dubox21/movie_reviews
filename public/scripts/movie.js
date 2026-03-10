@@ -3,9 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener el título de la película de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
-    const BACKEND_URL = window.location.hostname.includes('onrender.com')
-    ? 'https://movie-reviews-b0ek.onrender.com' // producción
-    : ''; // local, fetch relativo funciona
+    
+    const BACKEND_URL =
+    window.location.hostname === 'localhost'
+        ? ''
+        : 'https://movie-reviews-b0ek.onrender.com';
+
 
     // Realizar la petición GET al servidor para obtener los detalles de la película
     fetch(`${BACKEND_URL}/api/movies/${encodeURIComponent(title)}`)
