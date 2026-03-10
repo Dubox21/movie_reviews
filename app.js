@@ -13,7 +13,16 @@ import allMovieRoutes from './routes/allMovieRoutes.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://rpmovie-reviews.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:5173"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
 const SECRET_KEY = process.env.SECRET_KEY
 const port = process.env.PORT || 3000;
 
