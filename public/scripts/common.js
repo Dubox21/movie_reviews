@@ -1,9 +1,13 @@
+const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //funcion para cargar los generos de peliculas desde la bd
     async function loadGenres() {
         try {
-            const response = await fetch('/api/genres');
+            const response = await fetch(`${BACKEND_URL}/api/genres`);
             const genres = await response.json();
             const genreSelect = document.getElementById('genre_id');
 
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //funcion para cargar los paises de las peliculas desde la bd
     async function loadCountry() {
         try {
-            const response = await fetch('/api/countries');
+            const response = await fetch(`${BACKEND_URL}/api/countries`);
             const country = await response.json();
             const countrySelect = document.getElementById('country_id');
 

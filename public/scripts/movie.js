@@ -3,9 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener el título de la película de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
+    const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
 
     // Realizar la petición GET al servidor para obtener los detalles de la película
-    fetch(`/api/movies/${encodeURIComponent(title)}`)
+    fetch(`${BACKEND_URL}/api/movies/${encodeURIComponent(title)}`)
         .then(response => {
             if (!response.ok) {
                 // Guardar el código de error en localStorage
@@ -80,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const resultado = window.confirm('¿Estás seguro de que quieres eliminar esta película?');
         if (resultado === true) {    
-            fetch(`/api/movies/delete/${encodeURIComponent(title)}`, {
+            fetch(`${BACKEND_URL}/api/movies/delete/${encodeURIComponent(title)}`, {
                 method: 'DELETE',
             })
             .then(response => {

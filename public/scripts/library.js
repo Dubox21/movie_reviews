@@ -1,3 +1,7 @@
+const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
+
 // Mostrar el loader al principio
 document.getElementById('loader').style.display = 'block';
 
@@ -49,7 +53,7 @@ const handleSearch = async () => {
 
     try {
         // Realizar la solicitud al backend para obtener las películas filtradas
-        const response = await fetch(`/api/movies/search/${encodeURIComponent(searchValue)}`);
+        const response = await fetch(`${BACKEND_URL}/api/movies/search/${encodeURIComponent(searchValue)}`);
         const moviesData = await response.json();
 
         // Limpiar resultados anteriores
@@ -101,7 +105,7 @@ const dropdownContent2 = document.getElementById('myDropdown2');
 //Funcion del dropdown Carrusel 1
 async function loadGenres() {
     try {
-        const response = await fetch('/api/genres');
+        const response = await fetch(`${BACKEND_URL}/api/genres`);
         const genres = await response.json();
 
         // Crear enlace para mostrar todas las películas
@@ -161,7 +165,7 @@ async function loadGenres() {
 //para obtener el genero por id
 async function fetchMoviesByGenre(genreId) {
     try {
-        const response = await fetch(`/api/movies/genre/${genreId}`);
+        const response = await fetch(`${BACKEND_URL}/api/movies/genre/${genreId}`);
         if (!response.ok) {
             throw new Error('Network response was not ok.');
         }

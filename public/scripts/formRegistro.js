@@ -1,3 +1,7 @@
+const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
+    
 document.getElementById("register-form").addEventListener("submit", function(event){
     event.preventDefault(); // Prevenir el envío automático del formulario
 
@@ -43,7 +47,7 @@ document.getElementById("register-form").addEventListener("submit", function(eve
         contrasena: contrasena
     };
 
-    fetch("/api/users/register", {
+    fetch(`${BACKEND_URL}/api/users/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

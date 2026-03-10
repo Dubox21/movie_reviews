@@ -1,3 +1,7 @@
+const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
+    
 document.addEventListener('DOMContentLoaded', () => {
     const register = document.getElementById('register');
     if (register) {
@@ -24,7 +28,7 @@ document.getElementById("login").addEventListener("submit", async (e) => {
     console.log(e.target.children.password.value);
 
     try {
-        const respuesta = await fetch(`/api/users/login`, {
+        const respuesta = await fetch(`${BACKEND_URL}/api/users/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

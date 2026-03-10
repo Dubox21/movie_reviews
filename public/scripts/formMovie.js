@@ -1,3 +1,7 @@
+const BACKEND_URL = window.location.hostname.includes('onrender.com')
+    ? 'https://movie-reviews-b0ek.onrender.com' // producción
+    : ''; // local, fetch relativo funciona
+    
 document.addEventListener('DOMContentLoaded', () => {
 
     //Funcion para el manejo del formulario dependiendo de donde se entre, agregar o modificar
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Si hay un título en la URL, hacer la solicitud para obtener los datos de la película
         if (movieTitle) {
-            fetch(`/api/movies/${encodeURIComponent(movieTitle)}`)
+            fetch(`${BACKEND_URL}/api/movies/${encodeURIComponent(movieTitle)}`)
                 .then(response => {
                     if (!response.ok) {
                         if (response.status === 404) {
@@ -110,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let response;
 
             if (action === 'add') {
-                response = await fetch('/api/movies/add', {
+                response = await fetch(`${BACKEND_URL}/api/movies/add`, {
                     method: 'POST',
                     body: formData
                 });
