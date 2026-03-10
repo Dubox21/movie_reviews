@@ -2,11 +2,12 @@ import db from '../config/db.js';
 
 export const fetchGenres = (callback) => {
     const sql = 'SELECT id, name FROM genres';
-    db.query(sql, (err, results) => {
+
+    db.all(sql, [], (err, rows) => {
         if (err) {
             callback(err, null);
         } else {
-            callback(null, results);
+            callback(null, rows);
         }
     });
 };
